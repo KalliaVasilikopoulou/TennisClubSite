@@ -1,0 +1,369 @@
+body {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    background-image: url("seamless.jpg");
+    z-index: -1;
+}
+
+/*navigation bar*/
+#navbarGen {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: left;
+
+    width: 100%;
+    background-color: #0091d2;
+}
+
+/*navigation button*/
+#navbarGen #button_list { 
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 0;
+    list-style: none;
+}
+
+#navbarGen #button_list #navButton { 
+    height: 100px;
+    min-width: fit-content;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+#navbarGen #navButton a { 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    line-height: 100px;
+}
+
+#navbarGen #navButton:hover #dropdown{ 
+    display: flex;
+    flex-direction: column;
+}
+
+#navbarGen #dropdown { 
+    display: none;
+    position: absolute;
+    left:0;
+    background-color: #fac300;
+    width: 100%;
+    z-index: 1;
+}
+
+#navbarGen #dd_content { 
+    position: relative;
+    top: 0;
+    border-top: solid white 1px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+#navbarGen #dd_content a{ 
+    line-height: 40px;
+    padding: auto;
+}
+
+#navbarGen #dd_content:hover { 
+    background-color: #f78da7;
+}
+
+/*login/signup buttons*/
+#navbarGen #connection_list { 
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 0;
+    list-style: none;
+}
+
+#navbarGen #connection_list button { 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 400;
+
+    height: 100px;
+    width: 100%;
+    min-width: fit-content;
+
+    color:rgb(51, 48, 50);
+    background-color: #fac300;
+    border: none;
+
+    padding: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*page specific content*/
+#main {
+    height: 100%;
+    width: 100%;
+}
+
+#card{ 
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    height: 100%;
+    margin: auto;
+}
+
+/*top of page*/
+#banner{ 
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 300px;
+    width: 100%;
+    margin-top: 0px;
+}
+
+#banner #banner_img { 
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#banner #title { 
+    color: white;
+
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+
+    position: absolute;
+    left: 0;
+    text-align: left;
+    padding:  40px 0px 0px 50px;
+}
+
+#banner #subtitle { 
+    color: white;
+
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 30px;
+
+    position: absolute;
+    top: 90px;
+    left: 0;
+    padding-left: 50px;
+    text-align: left;
+    margin-top: 0px;
+}
+
+/*description*/
+#intro { 
+    min-height: 300px;
+    height: fit-content;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: start;
+}
+
+#intro h1 { 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+ 
+    color: #ca31a4;
+    position: relative;
+    left: 10%;
+    padding-top: 50px;
+    text-align: left;
+}   
+
+#intro p{ 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 20px;
+
+    width: 80%;
+    color: #6c6f6f;
+    position: relative;
+    left: 10%;
+    padding: 20px 0px 40px 0px;
+    text-align: left;
+}
+
+/*news & announcements part - might be removed*/
+#additional { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: center;
+
+    width: 100%;
+
+    margin: 60px 0px 0px 0px;
+}
+
+#additional span { 
+    width: 600px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#additional #head { 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+
+    color: white;
+    height: 60px;
+    margin: 0px;
+    padding: 10px;
+    text-align: left;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#additional #content { 
+    overflow-y: scroll;
+    width: 100%;
+    height: 400px;
+    background-color:#E0E0E0;
+    border-bottom-left-radius: 5px;
+}
+
+#additional #link { 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+
+    height: 70px; 
+    width: 100%; 
+    border-bottom: 1px gray solid;
+}
+
+#additional #link a{ 
+    line-height: 70px;
+    margin: 0px;
+    text-decoration: none;
+}
+
+#additional #link a::before { 
+    content: "•";
+}
+
+#additional span { 
+    padding-bottom: 50px;
+}
+
+#news #head { 
+    background-color: #0091d2;
+}
+
+#news #link a{ 
+    color:#ca31a4;
+}
+
+#announcements #head { 
+    background-color: #fac300;
+}
+
+#announcements #link a{ 
+    color:rgb(78, 12, 62);
+}
+
+/*footer*/
+#footer { 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+
+    width: 100%; 
+    background-color: #999999;
+    position: relative;
+    bottom: 0;
+}
+
+/*footer content - doesn't show in small screens*/
+#sections { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: fit-content;
+    list-style: none;
+    padding:30px 0px 30px 0px;
+    margin: auto;
+}
+
+/*page sections*/
+#sections #ftrSection { 
+    display: flex;
+    flex-direction: column;
+    vertical-align: top; 
+
+    width: 20%;
+    position: center;
+    min-height: 100%;
+}
+
+#ftrSection a { 
+    text-decoration: none;
+    color: white;
+}
+
+#ftrSection h1 { 
+    font-size: 25px;
+    text-align: top;
+}
+
+/*subpages*/
+#ftrSection #scList { 
+    font-size: 20px;
+    padding: 0px;
+    list-style: none;
+}
+
+#ftrSection #scList #listItem { 
+    margin-top: 30px;
+}
+
+#ftrSection #scList #listItem a{ 
+    color:rgb(51, 48, 50);
+}
+
+#footer hr{ 
+    color: black;
+    margin: 10px;
+}
+
+#footer p { 
+    font-size: 20px;
+    color:rgba(202, 49, 164, 1); 
+
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 1026px) {
+    #sections{
+        display: none;
+    }
+}
+
+
