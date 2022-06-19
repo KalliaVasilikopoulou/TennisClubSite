@@ -1,0 +1,176 @@
+html {
+    font-family: 'Lato';
+    font-size: 20px; 
+    font-weight: 1000;
+    min-width: 100%;
+    background-color: white;
+    margin: 0px;
+}
+
+body { 
+    display: grid;
+}
+
+section { 
+    height: 100%;
+    display: block;
+    position: relative;
+    bottom: 0px;
+}
+
+.tennis_card{ 
+    background-color: #0091d2;
+    display: block;
+    width: 1200px; 
+    height: 100%;
+    margin: 12.5% auto;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.tennis_banner{ 
+    margin: 0px;
+    background-color: white;
+    height: 300px;
+}
+
+.tennis_banner h1{ 
+    margin: 0px;
+    padding: 20px 0px 20px 0px;
+    text-align: left;
+    font-size: 40px; 
+    font-style: italic;
+    color: #0091d2;
+    width: 100%;
+    position: relative;
+    left: 10%; 
+}
+
+.tennis_banner p{ 
+    font-size: 15px;
+    color: #6c6f6f; 
+    position: relative;
+    left: 10%; 
+    text-align: left;
+}
+
+.tennis_info{ 
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tennis_info span{ 
+    background-color: white; 
+    width: 40%;
+    box-shadow: 5px 5px #6c6f6f;
+}
+
+.tennis_info .clubs{ 
+    margin: 110px 10px 50px 110px;
+}
+
+.tennis_info .competitions{ 
+    margin: 110px 110px 50px 10px;
+}
+
+.tennis_info #banner { 
+    max-width: 480px;
+    height: 30px; 
+    line-height: 30px;
+    padding: 15px;
+    color: #ca31a4;
+    text-align: left;
+    font-weight: 1000;
+    font-size: 30px;
+}
+
+.tennis_info .clubs #image { 
+    height: 339px;
+    background-image: url("clubs.jpg");
+    margin: 0 auto;
+}
+
+.tennis_info .competitions #image { 
+    height: 339px;
+    background-image: url("competition.jpg");
+    background-position: center;
+    margin: 0 auto;
+}
+
+.tennis_info #text { 
+    padding: 10px;
+    color: #ca31a4;
+}
+
+.redirects { 
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.redirects span{ 
+    background-color: white; 
+    width: 25%;
+    box-shadow: 5px 5px #6c6f6f;
+    background-color: white; 
+    min-height: auto;
+}
+
+.redirects .tennis_tournaments .play_tennis{ 
+    align-self: stretch;
+}
+
+.redirects .play_tennis { 
+    color: #fac300;
+}
+
+.redirects .tennis_lessons { 
+    color: #d7d700;
+}
+
+.redirects .tennis_tournaments { 
+    color: aqua;
+}
+
+.redirects #banner { 
+    height: 30px; 
+    line-height: 30px;
+    padding: 15px;
+    text-align: left;
+    font-weight: 1000;
+    font-size: 30px;
+    border-bottom: 1px solid;
+}
+
+.redirects #text { 
+    padding: 10px;
+    height: 220px;
+    background-color: white; 
+}
+
+.redirects .button{ 
+    min-height: 50px;
+    text-align: left;
+    font-size: 20px;
+    background-color: currentColor;
+}
+
+.redirects .button a { 
+    color: white;
+    display:flex;
+    padding: 15px 0px 15px 15px;
+}
+
+.redirects .button:hover{ 
+    z-index: 500;
+    background-color:  #ca31a4;
+    cursor: pointer;
+}
+
+.redirects #button1{ 
+    border-bottom: 1px solid white;
+}
+
+

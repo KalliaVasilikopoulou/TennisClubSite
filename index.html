@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="index.css">
+
+        <title>Villia Tennis Club</title>
+    </head>
+
+    <body class = "container-fluid p-0 m-0 w-100">
+        
+        <div id = "popup"></div>
+        <!--NAVIGATION BAR-->
+        <nav id = "navbarGen" class = "row m-0 p-0"> 
+            <ul id = "button_list" class = "col-10 p-0 m-0">
+                <!--Home Page-->
+                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1">
+                    <a href="index.html">ΑΡΧΙΚΗ</a> 
+                </li>
+                <!--Tennis Page-->
+                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="tennis.html">ΤΕΝΝΙΣ</a>
+                    <div id = "dropdown" class = "col-12 m-0 p-0">
+                        <div id = "dd_content">
+                            <a href = "lessons.html">Μαθήματα Τέννις</a>
+                        </div>
+            
+                        <div id = "dd_content">
+                            <a href = "tournaments.html">Τουρνουά Τέννις</a>
+                        </div>
+                    </div> 
+                </li>
+                <!--Facilities Page-->
+                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="spaces.html">ΧΩΡΟΙ</a> 
+                    <div id = "dropdown" class = "col-12 m-0 p-0"> 
+                        <div id = "dd_content">
+                            <a href = "courts.html">Γήπεδα</a>
+                        </div>
+                        <div id = "dd_content">
+                            <a href = "#">Εστιατόριο</a>
+                        </div>
+                    </div> 
+                </li>
+                <!--Booking Page-->
+                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="booking.html">ΚΡΑΤΗΣΕΙΣ</a> 
+                    <div id = "dropdown" class = "col-12 m-0 p-0"> 
+                        <div id = "dd_content">
+                            <a href = "#">Κράτηση Γηπέδου</a>
+                        </div>
+                    </div> 
+                </li>
+            </ul>
+            <ul id = "connection_list" class = "col-2 p-0 m-0">
+                <li id = "accButton" class="col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                    <button id = "loginBtn">LOGIN</button> 
+                </li>
+                <li id = "accButton" class = "col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                    <button id = "signupBtn">SIGN UP</button> 
+                </li>
+            </ul>
+        </nav>
+        <!--MAIN-->
+        <div id = "main" class = "row m-0 p-0"> 
+            <div id = "card" class = "col-lg-9 col-xs-12 p-0">  
+                <!--BANNER-->
+                <div id = "banner" class = "row p-0 m-0">
+                    <img src= "frPageBanner.png" id = "banner_img" class = "responsive col-12 p-0 m-0">
+                    <h1 id = "title">VILLIA TENNIS CLUB</h1>
+                    <h2 id = "subtitle">Καλωσήρθατε!</h2>
+                </div>
+                <!--INTRO-->
+                <div id = "intro" class = "row m-0 p-0"> 
+                    <h1 id = "title" class = "row m-0"> 
+                        Σχετικά με εμάς
+                    </h1>
+                    <p id = "text" class = "row m-0">
+                        <br>Η ιδέα για το tennis club μας ξεκίνησε το 2005, όταν η έλλειψη γηπέδων διαθέσιμων στο κοινό στην ευρύτερη περιοχή της Δυτικής Αττικής 
+                        οδήγησε στην ανάγκη δημιουργίας τους. Η ομάδα μας ξεκίνησε με το πρώτο γήπεδο στην περιοχή των Βιλλίων και επεκτάθηκε μετρώντας πλέον τέσσερα
+                        γήπεδα στην αρχική μας τοποθεσία και 13 άλλα στην ευρύτερη περιοχή. </br>
+
+                        <br>Με την πάροδο του χρόνου, επεκταθήκαμε σε περισσότερους τομείς εκτός της διάθεσης χώρου για προπόνηση στο τένις. 
+                        Τώρα μπορούμε να πούμε ότι συνεργαζόμαστε με κάποιους από τους καλύτερους προπονητές της Ελλάδας 
+                        αλλά και παγκοσμίως με μαθήματα για όλες τις ηλικίες και τα επίπεδα ικανοτήτων ενώ προσφέρουμε την ευκαιρία σε οποιονδήποτε να δοκιμάσει το άθλημα 
+                        με ενοικίαση εξοπλισμού εξαιρετικής ποιότητας από τα καταστήματά μας. Στους χώρους μας μπορείτε να βρείτε εστιατόρια, καταστήματα εξοπλισμού καθώς και άριστα 
+                        εξοπλισμένους σταθμούς πρώτων βοηθειών για την περίπτωση ανάγκης. Η σημαντικότηρες εκ των παροχών μας, όμως, είναι για εμάς η συχνή 
+                        διοργάνωση τουρνουά στους χώρους μας καθώς και βραδιών ψυχαγωγίας που φέρνουν κοντά την κοινότητα των μελών μας αλλά και την κοινότητα στην ευρύτερη περιοχή. </br>
+
+                        <br>Επισκεφτείτε μας αν έχετε πάθος για το τέννις, αν έχετε περιέργεια γι'αυτό ή αν απλά θέλετε να γίνετε μέλος της ευρείας κοινότητας μάς: όλοι είναι 
+                        ευπρόσδεκτοι στο κλαμπ μας. </br>
+                    </p>
+                </div>
+                <!--CONTACT INFO-->
+                <div id = "intro" class = "row m-0 p-0">
+                    <h1 id = "title" class = "row m-0">
+                        Επικοινωνία
+                    </h1>
+                    <p id = "text" class = "row m-0">
+                        Για επικοινωνία μαζί μας τηλεφωνικώς: 
+                        <br />
+                        <br />
+                        &#x2022; για τα Βίλια: +30 2263023456, 2263023457 <br />
+                        &#x2022; για τη Μάνδρα: +30 <br />
+                        &#x2022; για την Ελευσίνα: +30 <br />
+                        &#x2022; για τα Μέγαρα: <br />
+                        <br />
+                        Για επικοινωνία μαζί μας μέσω e-mail: 
+                        <br /> 
+                        <br /> 
+                        &#x2022; tennisvillia@gmail.gr <br /> 
+                        &#x2022; tennisclubvillia@otenet.gr <br />
+                        
+                    </p>
+                </div>
+                <!--END-NEWS&ANNOUNCEMENTS-->
+                <div id = "additional" class = "row justify-content-around p-0"> 
+                    <span id = "news" class = "m-0"> 
+                        <div id = "head"> 
+                            <h1>Νέα</h1> 
+                        </div>
+                        <div id = "content">
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                        </div> 
+                    </span>
+                    <span id = "announcements" class = "m-0">
+                        <div id = "head">
+                            <h1>Ανακοινώσεις</h1>
+                        </div>
+                        <div id = "content">
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                            <div id = "link">
+                                <a href = "news">INFO</a>
+                            </div>
+                        </div> 
+                    </span>
+                </div>
+            </div>
+        </div> 
+        <!--FOOTER-->
+        <div id = "footer" class = "row align-items-stretch p-0 m-0">
+            <ul id = "sections" class = "col-lg-8 p-x-0">
+                <li id = "ftrSection" class = "col m-0"> 
+                    <h1> 
+                        <a href = "index.html">ΑΡΧΙΚΗ</a>
+                    </h1>
+
+                    <h1> 
+                        <a href = "login.html">LOG IN</a>
+                    </h1>
+
+                    <h1> 
+                        <a href = "signup.html">SIGN UP</a>
+                    </h1>
+
+                </li>
+                <!--TENNIS-->
+                <li id = "ftrSection" class = "col m-0"> 
+                    <h1> 
+                        <a href = "tennis.html">ΤΕΝΝΙΣ</a>
+                    </h1>
+                    <ul id = "scList">
+                        <li id = "listItem"> 
+                            <a href = "#">Παίξε τέννις</a>
+                        </li>
+                        <li id = "listItem">
+                            <a href = "lessons.html">Μαθήματα τέννις</a> 
+                        </li>
+                        <li id = "listItem">
+                            <a href = "tournaments.html">Τουρνουά τέννις</a>
+                        </li> 
+                    </ul> 
+                </li>
+                <!--SPACES-->
+                <li id = "ftrSection" class = "col m-0"> 
+                    <h1> 
+                        <a href = "spaces.html">ΧΩΡΟΙ</a>
+                    </h1>
+                    <ul id = "scList">
+                        <li id = "listItem"> 
+                            <a href = "courts.html">Γήπεδα</a>
+                        </li>
+                        <li id = "listItem">
+                            <a href = "#">Εστιατόριο</a>
+                        </li> 
+                    </ul> 
+                </li>
+                <!--BOOKING-->
+                <li id = "ftrSection" class = "col m-0"> 
+                    <h1> 
+                        <a href = "booking.html">ΚΡΑΤΗΣΕΙΣ</a>
+                    </h1>
+                    <ul id = "scList">
+                        <li id = "listItem"> 
+                            <a href = "book_court.html">Κράτηση γηπέδου</a>
+                        </li>
+                    </ul> 
+                </li>
+            </ul>
+            <hr>
+            <p> HELLO THIS IS THE END OF THE FRONT PAGE AND I HAVE GAINED SO MUCH WEIGHT JUST MAKING THIS ONE </p>
+        </div>
+
+        <script type = "text/javascript" src = "popup.js"> </script>
+    </body>
+</html>
