@@ -1,315 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/tennis.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="lessonsStyle.css">
-    <link rel="stylesheet" href="indexStyle.css">
-    <title>Lessons</title>
-</head>
-<body>
-    <a name="top"></a>
-    <nav class = "navbarGen"> 
-        <!--Home Page-->
-        <button class = "navButton">
-            <a href="index.html">HOME</a> 
-        </button>
-        <!--Tennis Page-->
-        <button class = "navButton"> <a href="tennis.html">TENNIS</a>
-            <div class = "dropdown">
-                <div class = "dd_content">
-                    <a href = "#">Play Tennis</a>
-                </div>
-    
-                <div class = "dd_content">
-                    <a href = "lessons.html">Tennis Lessons</a>
-                </div>
-    
-                <div class = "dd_content">
-                    <a href = "tournaments.html">Tennis Tournaments</a>
-                </div>
-            </div> 
-        </button>
-        <!--Facilities Page-->
-        <button class = "navButton"> <a href="spaces.html">SPACES</a> 
-            <div class = "dropdown"> 
-                <div class = "dd_content">
-                    <a href = "#">Courts</a>
-                </div>
-    
-                <div class = "dd_content">
-                    <a href = "#">Pool</a>
-                </div>
-    
-                <div class = "dd_content">
-                    <a href = "#">Medical Facilities</a>
-                </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/tennis.png">
 
-                <div class = "dd_content">
-                    <a href = "#">Equipment Store</a>
-                </div>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet"> 
 
-                <div class = "dd_content">
-                    <a href = "#">Restaurant</a>
-                </div>
-            </div> 
-        </button>
-        <!--Events Page-->
-        <button class = "navButton"> <a href="events.html">EVENTS</a> 
-            <div class = "dropdown"> 
-                <div class = "dd_content">
-                    <a href = "#">Community Events</a>
-                </div>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-                <div class = "dd_content">
-                    <a href = "#">Pro Tournaments</a>
-                </div>
+        <link rel="stylesheet" href="styles/lessons.css">
+        <link rel = "stylesheet" href ="styles/navBar.css">
+        <link rel="stylesheet" href="styles/footer.css">
+        
+        <title>Lessons</title>
+    </head>
     
-                <div class = "dd_content">
-                    <a href = "#">Entertainment Events</a>
-                </div>
-            </div> 
-        </button>
-        <!--News & Announcements Page-->
-        <button class = "navButton"> <a href="news_announcements.html">NEWS & ANNOUNCEMENTS</a> 
-            <div class = "dropdown"> 
-                <div class = "dd_content">
-                    <a href = "#">News</a>
-                </div>
+    <body class = "container-fluid p-0 m-0 w-100">
+        <!--<a name="top"></a>-->
+        <!--NAVIGATION BAR-->
+        <nav id = "navbarGen" class = "row m-0 p-0"> 
+            <ul id = "button_list" class = "col-10 p-0 m-0">
+                <!--Home Page-->
+                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1">
+                    <a href="index.html">ΑΡΧΙΚΗ</a> 
+                </li>
+                <!--Tennis Page-->
+                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="tennis.html">ΤΕΝΝΙΣ</a>
+                    <div id = "dropdown" class = "col-12 m-0 p-0">
+                        <div id = "dd_content">
+                            <a href = "lessons.html">Μαθήματα Τέννις</a>
+                        </div>
+            
+                        <div id = "dd_content">
+                            <a href = "tournaments.html">Τουρνουά Τέννις</a>
+                        </div>
+                    </div> 
+                </li>
+                <!--Facilities Page-->
+                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="spaces.html">ΧΩΡΟΙ</a> 
+                    <div id = "dropdown" class = "col-12 m-0 p-0"> 
+                        <div id = "dd_content">
+                            <a href = "courts.html">Γήπεδα</a>
+                        </div>
+                        <div id = "dd_content">
+                            <a href = "#">Εστιατόριο</a>
+                        </div>
+                    </div> 
+                </li>
+                <!--Booking Page-->
+                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a> 
+                </li>
+            </ul>
+            <ul id = "connection_list" class = "col-2 p-0 m-0">
+                <li id = "accButton" class="col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                    <button id = "loginBtn">LOGIN</button> 
+                </li>
+                <li id = "accButton" class = "col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                    <button id = "signupBtn">SIGN UP</button> 
+                </li>
+            </ul>
+        </nav>
 
-                <div class = "dd_content">
-                    <a href = "#">Announcements</a>
-                </div>
-    
-                <div class = "dd_content">
-                    <a href = "#">Subscribe</a>
-                </div>
-            </div> 
-        </button>
-    </nav>
-
-    <div class="card">
-        <div id = "title">
-            <div class = "header">
-                <h1>TENNIS LESSONS</h1>
-                <h4>Courses for Members ┃ VILLIA TENNIS CLUB</h4>
-            </div>
-        </div>
-        <div id = "options">
-            <div class="info" id="junior">
-                <div id="banner">
-                    <h4>JUNIOR CLASS</h4>
-                </div>
-                <div id="text">
-                    <p>
-                        Our club provides junior courses for children over 4 years old. During these lessons, we make sure that the children
-                        are having fun and, at the same time, they are training and improving their abilities. The coaches of these departments
-                        are specially trained so that they can manage young ages with consistency and make the lesson enjoyable. Classes last
-                        about one to two hours and take place twice a week. Children and/or parents can, in collaboration with the coaches,
-                        determine the weekly schedule of the lessons.
-                    </p>
-                    <div class="bottom" id="bottomA">
-                        <p class= photo id="photo1"></p>
-                        <p id="price">
-                            JUNIOR CLASS SUBSCRIPTION: <br>
-                            • price / month: 25 € <br>
-                            • price / 3 months: 65 € <br>
-                            • price / 6 months: 140 € <br>
-                            • price / year: 280 €
-                        </p>
-                    </div>  
-                </div>
-            </div>
-            <div class="info" id="adults">
-                <div id="banner">
-                    <h4>ADULT CLASS</h4>
-                </div>
-                <div id="text">
-                    <p>
-                        For adults we have special training courses, as well as experienced coaches who are prepared to train our members,
-                        even if they have never played tennis. Each member can take classes for three to four hours twice a week and the
-                        training schedule can be set by the members in collaboration with our coaches and staff. The adult sections are
-                        divided into three groups, depending on the student's experience in the sport. Group 1 is the the beginner's group,
-                        where you can choose if it's your first time playing tennis or you have played very few times. Group 2 is for people
-                        who have been involved in the sport for a short period of time and want to gain more experience. Group 3 consists of
-                        members who play tennis for a long time and their purpose is to gain experience at a professional level. The team in
-                        which each member is classified is determined by the coaches, after consulting with the trainees.
-                    </p>
-                    <div class="bottom" id="bottomB">
-                        <p id="price">
-                            ADULT CLASS SUBSCRIPTION: <br>
-                            • price / month: 30 € <br>
-                            • price / 3 months: 80 € <br>
-                            • price / 6 months: 170 € <br>
-                            • price / year: 340 €
-                        </p>
-                        <p class= photo id="photo2"></p>
+        <!--MAIN-->
+        <div id ="lessons_main" class = "row m-0 p-0">
+            <div id = "lessons_card" class = "p-0"> 
+                <div id = "lessons_banner" class = "row m-0 p-0">
+                    <div id = "title">
+                        <h1>
+                            ΜΑΘΗΜΑΤΑ ΤΕΝNΙΣ
+                        </h1>
+                        <h4>
+                            Τμήματα Επιλογής ┃ VILLIA TENNIS CLUB
+                        </h4>
                     </div>
                 </div>
-            </div>
-            <div class="info" id="intensive">
-                <div id="banner">
-                    <h4>INTENSIVE COURSES</h4>
-                </div>
-                <div id="text">
-                    <p>
-                        For our members who want to spend more time in the sport and gain a lot of experience in a short period of time this is
-                        the best option. In these courses, each trainee has the option of taking private lessons with one of our coaches for
-                        2 to 3 hours every five to six times a week, or even every day. The trainee does not need to have any previous experience
-                        with tennis, as he can learn what is needed during the courses.
-                    </p>
-                    <div class="bottom" id="bottomA">
-                        <p class= photo id="photo3"></p>
-                        <p id="price">
-                            INTENSIVE COURSES SUBSCRIPTION: <br>
-                            • price / month: 55 € <br>
-                            • price / 3 months: 145 € <br>
-                            • price / 6 months: 290 € <br>
-                            • price / year: 585 €
-                        </p>
+                <div id = "lessons_info" class = "row p-0 m-0">
+                    <div id = "info_card" class = "row p-0 m-0">
+                        <div id="junior">
+                            <div id="info_banner" class = "row m-0">
+                                <h4>Τμήματα Junior</h4>
+                            </div>
+                            <div id="info_row" class = "row m-0 p-0">
+                                <p id = "text" class = "row">
+                                    Ο όμιλός μας διαθέτει τμήματα ακαδημιών για παιδιά ηλικίας από 4 ετών. Φροντίζουμε σε αυτά τα τμήματα
+                                    το μάθημα να γινέται παιχνίδι, ώστε τα παιδιά να μπορούν να διασκεδάζουν και παράλληλα να προπονούνται και
+                                    να βελτιώνουν τις δυνατότητές τους στο άθλημα. Οι προπονητές των τμημάτων αυτών είναι ειδικά εκπαιδευμένοι
+                                    ώστε να μπορούν να διαχειρίζονται με σύνεση και συνέπεια μικρές ηλικίες και να κάνουν το μάθημα παιχνίδι. Τα
+                                    μαθήματα διαρκούνε περίπου μία με δύο ώρες και γίνονται δύο φορές κάθε βδομάδα. Τα παιδιά ή/και οι γονείς των παιδιών
+                                    μπορούνε, σε συνεργασία με τους προπονητές, να καθορίσουν το εβδομαδιαίο πρόγραμμα που θα γίνονται τα μαθήματα.
+                                </p>
+                            </div>
+                            <div id="info_row" class = "row m-0 p-0">
+                                <span id = "photo">
+                                    <img src = "imgs/junior-club.jpg">
+                                </span>
+                                <span id= "price">
+                                    ΤΙΜΗ ΣΥΝΔΡΟΜΗΣ:<br><br>
+                                    • Μηνιαία συνδρομή: 25 € <br>
+                                    • Τρίμηνη συνδρομή: 65 € <br>
+                                    • Εξάμηνη συνδρομή: 140 € <br>
+                                    • Ετήσια συνδρομή: 280 €
+                                </span>
+                            </div>  
+                        </div>
+                    </div>
+                    <div id = "info_card" class = "row p-0 m-0">
+                        <div id="adults">
+                            <div id="info_banner" class = "row m-0">
+                                <h4>Τμήματα ενηλίκων</h4>
+                            </div>
+                            <div id="info_row" class = "row m-0 p-0">
+                                <p id = "text" class = "row">
+                                    Για τους ενήλικες διαθέτουμε ειδικά τμήματα προπόνησης, καθώς και έμπειρους προπονητές που είναι προετοιμασμένοι
+                                    να εκπαιδεύσουν τα μέλη μας, ακόμα και αν αυτά δεν έχουν ασχοληθεί καθόλου με το άθλημα παλιότερα. Κάθε μέλος μπορεί
+                                    να κάνει μαθήματα για τρεις με τέσσερις ώρες κάθε δύο φορές τη βδομάδα και το ωράριο προπόνησης μπορεί να καθοριστεί από τα μέλη
+                                    σε συνεργασία με τους προπονητές και το προσωπικό μας. Τα τμήματα ενηλίκων χωρίζονται σε τρεις ομάδες, ανάλογα με
+                                    το πόσο έχει ασχοληθεί ο κάθε εκπαιδευόμενος με το τένις. Η ομάδα 1 είναι η ομάδα που συμμετέχουν οι αρχάριοι, δηλαδή
+                                    όσα άτομα δεν έχουν ασχοληθεί καθόλου ή έχουν ασχοληθεί ελάχιστα με το άθλημα. Η ομάδα 2 είναι αυτή στην οποία συμμετέχουν
+                                    όσοι έχουν ασχολήθει για κάποια μικρή χρονική περίοδο με το άθλημα και θέλουν να αποκτήσουν περισσότερη εμπειρία. Η ομάδα 3
+                                    αποτελείται από άτομα τα οποία έχουν ασχοληθεί για μια αρκετά μεγάλη χρονική περίοδο με το τένις και σκοπός τους είναι να
+                                    ασχοληθούν σοβαρά με το άθλημα, ακόμα και σε επαγγελματικό επίπεδο. Η ομάδα στην οποία κατατάσσεται το κάθε μέλος καθορίζεται
+                                    από τους προπονητές αφού συνεννοηθούν πρώτα με τους εκπαιδευόμενους.
+                                </p>
+                            </div>
+                            <div id="info_row" class = "row m-0 p-0">
+                                    <span id= "price" >
+                                        ΤΙΜΗ ΣΥΝΔΡΟΜΗΣ:<br><br>
+                                        • Μηνιαία συνδρομή: 30 € <br>
+                                        • Τρίμηνη συνδρομή: 80 € <br>
+                                        • Εξάμηνη συνδρομή: 170 € <br>
+                                        • Ετήσια συνδρομή: 340 €
+                                    </span>
+                                    <span id="photo">
+                                        <img src = "imgs/adult-club.jpg">
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id = "info_card" class = "row p-0 m-0">
+                        <div id="intensive">
+                            <div id="info_banner" class = "row m-0">
+                                <h4>Εντατικά μαθήματα</h4>
+                            </div>
+                            <div id="info_row" class = "row m-0 p-0">
+                                <p id = "text" class = "row">
+                                    Για τα μέλη μας τα οποία θέλουν να ασχοληθούν εντατικά με το άθλημα και να αποκτήσουν μεγάλη εμπειρία σε μικρό χρονικό διάστημα
+                                    υπάρχει η επιλογή των εντατικών μαθημάτων. Στα εντατικά μαθήματα ο κάθε εκπαιδευόμενος έχει την επιλογή να κάνει ιδιαίτερα μαθήματα
+                                    με έναν από τους προπονητές μας για 2 με 3 ώρες κάθε πέντε με έξι φορές τη βδομάδα. Ο εκπαιδευόμενος δεν είναι απαραίτητο να έχει
+                                    κάποια προηγούμενη εμπειρία με το τένις, καθώς μπορεί να μάθει ό,τι χρειάζεται κατα την διάρκεια των εντατικών μαθημάτων.
+                                </p>
+                            </div>
+                            <div id="info_row" class = "row m-0">
+                                <span id = "photo">
+                                    <img src = "imgs/intensive-club.jpg">
+                                </span>
+                                <span id= "price">
+                                    ΤΙΜΗ ΣΥΝΔΡΟΜΗΣ:<br><br>
+                                    • Μηνιαία συνδρομή: 55 € <br>
+                                    • Τρίμηνη συνδρομή: 145 € <br>
+                                    • Εξάμηνη συνδρομή: 290 € <br>
+                                    • Ετήσια συνδρομή: 585 €
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id = "info_card" class = "row p-0 m-0">
+                        <div id="contest">
+                            <div id="info_banner" class = "row m-0">
+                                <h4>Αγωνιστικά τμήματα</h4>
+                            </div>
+                            <div id="info_row" class = "row m-0">
+                                <p id = "text" class = "row">
+                                    Τα αγωνιστικά τμήματα λειτουργούν για όλους όσους θέλουν να λάβουν μέρος σε αγώνες τένις και χρειάζονται να εξασκηθούν κατάλληλα.
+                                    Για τις συγκεκριμένες περιπτώσεις έχουμε ειδικά καταρτισμένους προπονητές, οι οποίοι θα προπονήσουν όσο χρειαστεί τους διαγωνιζόμενους,
+                                    θα τους ενημερώσουν κατάλληλα για τους την διαδικασία των αγώνων και θα τους καθοδηγήσουν στον δρόμο για την νίκη. Οι ημέρες και οι
+                                    ώρες που θα γίνονται οι προπονήσεις καθορίζονται από τον εκπαιδευόμενο κατόπιν συννενόησης με τον προπονητή του και έχουν, τυπικά,
+                                    οριστεί να διαρκούν περίπου τρεις ώρες τη μέρα και να γίνονται κάθε τέσσερις με πέντε μέρες τη βδομάδα. Πριν τους αγώνες ο διαγωνιζόμενος
+                                    θα προπονείται εντατικά και, την ημέρα διαξαγωγής των αγώνων, θα συμμετάσχει με συνοδεία του προπονητή του.
+                                </p>
+                            </div>
+                            <div id="info_row" class = "row m-0">
+                                <span id= "price">
+                                    ΤΙΜΗ ΣΥΝΔΡΟΜΗΣ:<br><br>
+                                    • Μηνιαία συνδρομή: 50 € <br>
+                                    • Τρίμηνη συνδρομή: 140 € <br>
+                                    • Εξάμηνη συνδρομή: 285 € <br>
+                                    • Ετήσια συνδρομή: 580 €
+                                </span>
+                                <span id = "photo">
+                                    <img src="imgs/contest-club.jpg">
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="info" id="contest">
-                <div id="banner">
-                    <h4>PRE - COMPETITION COURSES</h4>
+                <!--
+                <div id="membership">
+                    <button>
+                        <a>SUBSCRIBE NOW</a>
+                    </button>
                 </div>
-                <div id="text">
-                    <p>
-                        The competition courses are open to all those who want to take part in tennis matches and need to practice properly.
-                        For these courses we have specially trained coaches, who will train the contestants as much as necessary, will
-                        inform them properly about the competiton process and will guide them on the road to victory. The schedule of
-                        the training is determined by the trainee in consultation with his coach and is typically set to contain about three
-                        hours of training each day, four to five days a week. Prior to the competitions, the competitor will train
-                        intensively and, on the competition day, they will participate accompanied by their coach.
-                    </p>
-                    <div class="bottom" id="bottomB">
-                        <p id="price">
-                            PRE-COMPETITION <br>COURSES SUBSCRIPTION: <br>
-                            • price / month: 50 € <br>
-                            • price / 3 months: 140 € <br>
-                            • price / 6 months: 285 € <br>
-                            • price / year: 580 €
-                        </p>
-                        <p class= photo id="photo4"></p>
-                    </div>
-                </div>
+                -->
             </div>
         </div>
-
-        <hr>
-
-        <div id="membership">
-            <button>
-                <a>SUBSCRIBE NOW</a>
-            </button>
-            <p class="membership-term">
-                In order to be able to take one of the classes above, you must create an account on the website!
-            </p>
-        </div>
-    </div>
-
-    <footer>
-        <div class = "footer">
-            <ul class = "sections">
-                <li class = "ftrSection" id = "Special"> 
+        
+        <!--FOOTER-->
+        <div id = "footer" class = "row align-items-stretch p-0 m-0">
+            <ul id = "sections" class = "col-lg-8 p-x-0">
+                <li id = "ftrSection" class = "col m-0"> 
                     <h1> 
-                        <a href = "index.html">HOME</a>
+                        <a href = "index.html">ΑΡΧΙΚΗ</a>
                     </h1>
 
                     <h1> 
-                        <a href = "Booking">BOOKING</a>
+                        <a href = "login.html">LOG IN</a>
                     </h1>
 
                     <h1> 
-                        <a href = "Membership">MEMBERSHIP</a>
+                        <a href = "signup.html">SIGN UP</a>
                     </h1>
 
                 </li>
-                <li class = "ftrSection"> 
+                <!--TENNIS-->
+                <li id = "ftrSection" class = "col m-0"> 
                     <h1> 
-                        <a href = "tennis.html">TENNIS</a>
+                        <a href = "tennis.html">ΤΕΝΝΙΣ</a>
                     </h1>
-                    <ul class = "scList">
-                        <li class = "listItem"> 
-                            <a href = "#">Play Tennis</a>
+                    <ul id = "scList">
+                        <li id = "listItem"> 
+                            <a href = "#">Παίξε τέννις</a>
                         </li>
-                        <li class = "listItem">
-                            <a href = "#">Tennis Lessons</a> 
+                        <li id = "listItem">
+                            <a href = "lessons.html">Μαθήματα τέννις</a> 
                         </li>
-                        <li class = "listItem">
-                            <a href = "#">Tennis Tournaments</a>
+                        <li id = "listItem">
+                            <a href = "tournaments.html">Τουρνουά τέννις</a>
                         </li> 
                     </ul> 
                 </li>
-                <li class = "ftrSection"> 
+                <!--SPACES-->
+                <li id = "ftrSection" class = "col m-0"> 
                     <h1> 
-                        <a href = "Spaces">SPACES</a>
+                        <a href = "spaces.html">ΧΩΡΟΙ</a>
                     </h1>
-                    <ul class = "scList">
-                        <li class = "listItem"> 
-                            <a href = "#">Courts</a>
+                    <ul id = "scList">
+                        <li id = "listItem"> 
+                            <a href = "courts.html">Γήπεδα</a>
                         </li>
-                        <li class = "listItem">
-                            <a href = "#">Pool</a> 
-                        </li>
-                        <li class = "listItem">
-                            <a href = "#">Medical Facilities</a>
-                        </li> 
-                        <li class = "listItem">
-                            <a href = "#">Equipment Store</a>
-                        </li> 
-                        <li class = "listItem">
-                            <a href = "restaurant.html">Restaurant</a>
+                        <li id = "listItem">
+                            <a href = "#">Εστιατόριο</a>
                         </li> 
                     </ul> 
                 </li>
-                <li class = "ftrSection"> 
+                <!--BOOKING-->
+                <li id = "ftrSection" class = "col m-0"> 
                     <h1> 
-                        <a href = "events.html">EVENTS</a>
+                        <a href = "booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a>
                     </h1>
-                    <ul class = "scList">
-                        <li class = "listItem"> 
-                            <a href = "#">Community</a>
-                        </li>
-                        <li class = "listItem">
-                            <a href = "#">Pro Tournaments</a> 
-                        </li>
-                        <li class = "listItem">
-                            <a href = "#">Entertainment Events</a>
-                        </li> 
-                    </ul> 
-                </li>
-                <li class = "ftrSection"> 
-                    <h1> 
-                        <a href = "news_announcements.html">NEWS & ANNOUNCEMENTS</a>
-                    </h1>
-                    <ul class = "scList">
-                        <li class = "listItem"> 
-                            <a href = "#">News</a>
-                        </li>
-                        <li class = "listItem">
-                            <a href = "#">Announcements</a> 
-                        </li>
-                        <li class = "listItem">
-                            <a href = "#">Subscribe</a>
-                        </li> 
-                    </ul> 
                 </li>
             </ul>
             <hr>
             <p> HELLO THIS IS THE END OF THE FRONT PAGE AND I HAVE GAINED SO MUCH WEIGHT JUST MAKING THIS ONE </p>
         </div>
-    </footer>
 
-    <a href=#top>
-        <button id="scroll-up"></button>
-    </a>
+        <!--
+        <a href=#top>
+            <button id="scroll-up"></button>
+        </a>-->
 
-</body>
+    </body>
 </html>
