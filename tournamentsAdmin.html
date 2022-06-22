@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/tennis.png">
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet"> 
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-        <link rel="stylesheet" href="styles/tennis.css">
+        <link rel="stylesheet" href="styles/navBar.css">
         <link rel="stylesheet" href="styles/footer.css">
-        <link rel="stylesheet" href="styles/navBar.css">   
+        <link rel="stylesheet" href="styles/tournaments.css">
+        <link rel="stylesheet" href="styles/tournamentsAdmin.css">
         <link rel="stylesheet" href="styles/logInOrUp.css">
-
-        <title>Villia Tennis Club | Tennis</title>
+        
+        <title>Villia Tennis Club | Tournaments</title>
     </head>
 
     <body class = "container-fluid p-0 m-0 w-100">
+        <!--<a name="top"></a>-->
 
         <!--LOGIN & SIGNUP-->
         <div class = "popup" id = "login">
@@ -103,8 +106,8 @@
                     </form>
                 </div>
             </div>
-        </div>       
-        
+        </div>
+
         <!--NAVIGATION BAR-->
         <div class = "navbarGen row m-0 p-0">
             <ul class = "button_list col-10 p-0 m-0">
@@ -153,116 +156,64 @@
         </div>
 
         <!--MAIN-->
-        <section class = "tennis_main row p-0 m-0"> 
-            <div class = "tennis_card p-0"> 
-                <div class = "tennis_banner row m-0 p-0"> 
-                    <h1 id = "title" class = "row">
-                        Τέννις, άθληση και κοινωνικοποίηση
-                    </h1>
-                    <p id = "subtitle" class = "row">
-                        Το τέννις δεν αποτελεί μόνο άθλημα. Είναι και μία υπέροχη ευκαρία για διασκέδαση και κοινωνικοποίηση!<br />
-                        <br /> 
-                        Στους χώρους μας, εκτός από υψηλής ποιότητας γήπεδα και εξοπλισμό, θα βρείτε και χώρους αναψυχής όπου μπορείτε να έρθετε σε 
-                        επαφή με άλλα μέλη μας. Η κοινότητα μας διοργανώνει συχνά τουρνουά αλλά ακόμα και για τους νέους στο άθλημα, υπάρχουν εβδομαδιαίες
-                        συναντήσεις και, φυσικά, ευκαιρίες για μάθηση μέσω συνεργασίας. <br />
-                        Οι δράσεις της κοινότητας των μελών μας αλλά και οι δικές μας παροχές, επιτρέπουν σε οποιονδήποτε να συμμετάσχει στο άθλημα
-                        αλλά και να διασκεδάσει στους χώρους μας.
-                    </p>
+        <div class = "tournaments_main row p-0 m-0">
+            <div class = "tournaments_card p-0">
+                <div class = "tournaments_banner_title row m-0 p-0">
+                    <div>
+                        <h1>
+                            ΤΟΥΡΝΟΥΑ
+                        </h1>
+                        <h4>
+                            Επερχόμενα Τουρνουά ┃ VILLIA TENNIS CLUB
+                        </h4>
+                    </div>
                 </div>
-                <div class = "tennis_info row m-0 p-0">
-                    <div class = "tennis_info_row row m-0">
-                        <span id = "clubs" class = "p-0">
-                            <div class = "info_card" > 
-                                <div class = "banner">
-                                    Clubs
-                                </div> 
-                                <div class = "image"> 
-                                </div>
-                                <div class = "text"> 
-                                    Αν θέλετε να γνωρίσετε άλλους λάτρεις του αθλήματος αλλά και να συνεργαστείτε με εκείνους, είτε καθώς μαθαίνετε, είτε σε ανταγωνισμό, 
-                                    τα clubs που τρέχουν στο χώρο μας, οργανωμένα από την κοινότητα, είναι η καλύτερη ευκαιρία. Απευθύνονται σε άτομα διαφορετικών 
-                                    επιπέδων ικανοτήτων και στόχων ενώ η συμμετοχή σε αυτά είναι ανοιχτή σε όλους. <br /> 
-                                    Για συμμετοχή σε κάποιο εκ των club μπορείτε online να επικοινωνίσετε με κάποιον εκπρόσωπό τους (ζητήστε μας
-                                    τα στοιχεία επικοινωνίας με e-mail!). Διαφορετικά, μπορείτε να βρείτε φόρμες συμμετοχής στους χώρους μας όπου εξηγούνται οι στόχοι κάθε 
-                                    club και άρα να διαλέξετε τι σας ταιριάζει καλύτερα. 
-                                </div>    
-                            </div>
-                        </span>
-                        <span id = "competitions" class = "p-0"> 
-                            <div class = "info_card" >
-                                <div class = "banner"> 
-                                    Διαγωνισμοί
-                                </div>
-                                <div class = "image"> 
-                                </div>
-                                <div class = "text">
-                                    Αν είστε λάτρης του υγιούς ανταγωνισμού, είναι χαρά μας να σας ενημερώσουμε ότι στο χώρο μας πραγματοποιούνται διαγωνισμοί, διοργανωμένοι 
-                                    από την κοινότητα, σε εβδομαδιαία βάση. Ελάτε Πέμπτη ή Σάββατο και συμμετάσχετε σε αγώνες μέχρι τη τελική νίκη ή ήττα σας, στα καθορισμένα
-                                    γήπεδά μας και γνωρίστε τα μέλη της κοινότητας μας. Τα γήπεδα για τους διαγωνισμούς διατίθονται δωρεάν σε μέλη του κλαμπ και με ελάχιστο
-                                    χρηματικό αντίτιμο στους επισκέπτες. Πέρα από αυτό, η μόνη απαίτηση για συμμετοχή στους διαγωνισμούς είναι η καλή σας διάθεση! 
-                                </div>
-                            </div>
-                        </span> 
+                <div class = "tournaments_banner_subtitle row m-0 p-0"> 
+                    <div class = "title row"> 
+                        <h1>
+                            Λίγα λόγια για τα τουρνουά μας...
+                        </h1>
                     </div>
-                    <div class = "tennis_info_row row m-0"> 
-                        <span id = "play_tennis" class = "p-0">
-                            <div class = "info_card">
-                                <div  class = "banner">  
-                                    Παίξτε Τέννις 
-                                </div>
-                                <div class = "image"> 
-                                    
-                                </div>
-                                <div class = "text"> 
-                                    Τα γήπεδά μας διατίθονται στο κοινό για προπόνηση ατομικά, σε ζευγάρια και σε ομάδες. Απαιτείται online ή τηλεφωνική κράτηση 
-                                    στην οποία μπορείτε να διευκρινήσετε την ημερομηνία και ώρα επίσκεψής σας, το χρόνο κατά τον οποίο θα χρειαστείτε το χώρο, το
-                                    είδος του γηπέδου που προτιμάτε, ακόμα και εξοπλισμό που πιθανώς θέλετε να νοικιάσετε. 
-                                </div>
-                                <div class = "button"> 
-                                    <a>Κράτηση γηπέδου</a>
-                                </div>
-                            </div>
-                        </span>
-                        <span id = "tennis_lessons" class = "p-0">  
-                            <div class = "info_card">
-                                <div class = "banner"> 
-                                    Μαθήματα Τέννις
-                                </div>
-                                <div class = "image"> 
+                    <div class = "subtitle row"> 
+                        <p >
+                            Το κλαμπ μας διοργανώνει τουρνουά τένις σε τακτά χρονικά διαστήματα, τα οποία πραγματοποιούνται στις εγκαταστάσεις μας. Όλα τα μέλη μας,
+                            ανεξαρτήτως ηλικίας, εμπειρίας ή επιπέδου δεξιοτήτων, μπορούν να συμμετέχουν στα τουρνουά μας. Στα τουρνουά μπορούν να πάρουν μέρος και άτομα
+                            που δεν αποτελούν μέλη του κλαμπ μας, αλλά θέλουν μόνο να συμμετέχουν στους αγώνες (τα μη μέλη συνήθως έχουν πρόσβαση σε συγκεκριμένα τουρνουά).<br>
+                            Με λίγα απλά βήματα θα μπρορέσετε κι εσείς να πάρετε μέρος σε ένα από τα τουρνουά μας!<br>
+                            Αρχικά θα χρειαστεί να φτιάξετε λογαριασμό στο σάιτ μας. Μετά, το μόνο που χρειάζεται είναι να επιλέξετε ένα από τα επερχόμενα τουρνουά που
+                            θα βρείτε στο ημερολόγιο-τουρνουά στο τέλος της σελίδας και να συμπληρώσετε με τα στοιχεία σας την φόρμα που θα σας δωθεί στην συνέχεια.<br>  
+                        </p>
+                    </div>
+                </div>
+                <div class = "tournaments_info row m-0 p-0"> 
+                    <div class = "tournaments_info_banner row m-0 p-0"> 
+                        <h1>ΕΠΕΡΧΟΜΕΝΑ ΤΟΥΡΝΟΥΑ</h1>
+                    </div>
 
-                                </div>
-                                <div class = "text"> 
-                                    Στο χώρο του club μας δίνεται η δυνατότητα σε άτομα κάθε επιπέδου να μάθουν τέννις ή να βελτιώσουν τις ικανότητές τους με 
-                                    συμμετοχή στα μαθήματά μας. Μαθήματα κλείνονται στο χώρο του club ή με επικοινωνία με κάποιον εκ των προπονητών μας, για 
-                                    ομάδες των 2 ή 4 ατόμων ή ατομικά. 
-                                </div>
-                                <div class = "button"> 
-                                    <a href = "lessons.html">Περισσότερες πληροφορίες για τα μαθήματα</a>
-                                </div>
-                            </div>
-                        </span>
-                        <span id = "tennis_tournaments" class = "p-0"> 
-                            <div class = "info_card"> 
-                                <div class = "banner"> 
-                                    Τουρνουά Τέννις
-                                </div>
-                                <div class = "image"> 
-        
-                                </div>
-                                <div class = "text"> 
-                                    Στο χώρο μας, σε μηνιαία βάση, διοργανώνονται τουρνουά ανοιχτά σε όλους με βαθμίδες για διαφορετικά επίπεδα 
-                                    ικανοτήτων. Για συμμετοχή χρειάζεται εμπρόθεσμη συμπλήρωση φόρμας συμμετοχής που μπορεί να γίνει online ή στους 
-                                    χώρους του club. Η συμμετοχή είναι δωρεάν για όλους. 
-                                </div>
-                                <div class = "button"> 
-                                    <a href="tournaments.html">Περισσότερες πληροφορίες για τα τουρνουά</a>
-                                </div>
-                            </div>
-                        </span>
+                    <div class = "tournament_rows"> 
+
                     </div>
+
+                    <div class = "buttons row m-0"> 
+
+                    </div>
+                </div>
+                <div class = "tournaments_info row m-0 p-0"> 
+                    <div class = "tournaments_info_banner row m-0 p-0"> 
+                        <h1>ΣΥΜΜΕΤΟΧΗ ΣΕ ΤΟΥΡΝΟΥΑ</h1>
+                    </div>
+                    <div class = "board_row m-0">
+                        <table class = "board">
+
+                        </table>
+                    </div> 
                 </div>
             </div>
-        </section> 
+        
+            <script type = "text/javascript" src = "scripts/addTournaments.js"> </script>
+            <script type = "text/javascript" src = "scripts/addToBoard.js"> </script>
+            <script type = "text/javascript" src = "scripts/editTournaments.js"> </script>
+        </div>
 
         <!--FOOTER-->
         <div class = "footer row align-items-stretch p-0 m-0">
@@ -323,7 +274,12 @@
             <p> HELLO THIS IS THE END OF THE FRONT PAGE AND I HAVE GAINED SO MUCH WEIGHT JUST MAKING THIS ONE </p>
         </div>
 
+        <!--
+        <a href=#top>
+            <button id="scroll-up"></button>
+        </a>
+        -->
+        
         <script type = "text/javascript" src = "scripts/popup_new.js"> </script>
     </body>
-
 </html>
