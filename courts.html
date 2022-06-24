@@ -4,106 +4,24 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/tennis.png">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet"> 
-        
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+        <link rel="stylesheet" href="styles/courts.css">
+        <link rel = "stylesheet" href ="styles/navBar.css">
         <link rel="stylesheet" href="styles/footer.css">
-        <link rel="stylesheet" href="styles/navBar.css"> 
-        <link rel = "stylesheet" href = "styles/courts.css">
-
-        <title>Villia Tennis Club | Courts</title>
-    </head>
-
-    <body class = "container-fluid p-0 m-0 w-100">
-
-        <!--LOGIN & SIGNUP-->
-        <div class = "popup" id = "login">
-            <div class = "modal-container"> 
-                <div class = "modal"> 
-                    <div class = "button_row row m-0 p-0"> 
-                        <button class = "close col-1 p-0">
-                        </button> 
-                    </div>
-                    <form class = "form">
-                        <div class = "inputs col m-0">
-                            <div class="title row m-0 p-0"> 
-                                <h1>
-                                    LOGIN
-                                </h1> 
-                            </div>
-                            <div class = "field row m-0 p-0"> 
-                                <label for = "e-mail" class = "field_name col-5 p-0"> E-mail or username </label>
-                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
-                            </div>
-                            <div class = "field row m-0 p-0"> 
-                                <label for = "password" class = "field_name col-5 p-0"> Password </label>
-                                <input type="text" name="password" class = "field_input col-5 p-0">
-                            </div> 
-                        </div>
-                        <div class = "redirect row m-0 p-0">
-                            <a> I don't have an account &rarr;</a>
-                        </div>
-                        <button type = "submit" class = "submit"> 
-                            Submit
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
         
-        <div class = "popup" id = "signup"> 
-            <div class = "modal-container"> 
-                <div class = "modal m-0"> 
-                    <div class = "button_row row m-0 p-0"> 
-                        <button class = "close col-1 p-0" >
-                        </button> 
-                    </div>
-                    <form class = "form">
-                        <div class = "inputs col m-0">
-                            <div class="title row m-0 p-0"> 
-                                <h1>
-                                    SIGN UP
-                                </h1> 
-                            </div>
-                            <div class = "field row m-0 p-0"> 
-                                <label for = "e-mail" class = "field_name col-5 p-0"> E-mail </label>
-                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
-                            </div>
-                            <div class = "field row m-0 p-0"> 
-                                <label for = "name" class = "field_name col-5 p-0"> Username </label>
-                                <input type="text" name="user_name" class = "field_input col-5 p-0">
-                            </div>
-                            <div class = "field row m-0 p-0"> 
-                                <label for = "full_name" class = "field_name col-5 p-0"> Full name </label>
-                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
-                            </div>
-                            <div class = "field row m-0 p-0"> 
-                                <label for = "password" class = "field_name col-5 p-0"> Password </label>
-                                <input type="text" name="password" class = "field_input col-5 p-0">
-                            </div>
-                            <div class = "field row m-0 p-0"> 
-                                <label for = "repeat_password" class = "field_name col-5 p-0"> Repeat password </label>
-                                <input type="text" name="repeat_password" class = "field_input col-5 p-0">
-                            </div> 
-                        </div>
-                        <div class = "redirect row m-0 p-0">
-                            <a> I already have an account &rarr;</a>
-                        </div>
-                        <button type = "submit" class = "submit"> 
-                            Submit
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-                
+        <title>Courts</title>
+    </head>
+    
+    <body class = "container-fluid p-0 m-0 w-100">
+        <!--<a name="top"></a>-->
         <!--NAVIGATION BAR-->
         <div class = "navbarGen row m-0 p-0">
             <ul class = "button_list col-10 p-0 m-0">
@@ -132,7 +50,13 @@
                             <a href = "courts.html">Γήπεδα</a>
                         </div>
                         <div class = "dd_content">
-                            <a href = "#">Εστιατόριο</a>
+                            <a href = "restaurant.html">Εστιατόριο</a>
+                        </div>
+                        <div class = "dd_content">
+                            <a href = "pool.html">Πισίνα</a>
+                        </div>
+                        <div class = "dd_content">
+                            <a href = "medicalFacilities.html">Κέντρο Θεραπείας</a>
                         </div>
                     </div> 
                 </li>
@@ -152,75 +76,116 @@
         </div>
 
         <!--MAIN-->
-        <div class = "courts_main row p-0 m-0"> 
-            <div class = "courts_card p-0">
-                <div class = "courts_banner row m-0 p-0"> 
-                    <h1 id = "title" class = "row">
-                        Τα γήπεδά μας
-                    </h1>
-                    <p id = "subtitle" class = "row">
-                        Το club μας διαθέτει 17 γήπεδα διαφόρων ειδών, για κάθε προτίμηση. Κατά την κράτηση, ανάλογα με τη διαθεσιμότητα 
-                        και την περιοχή, δίνεται η δυνατότητα επιλογής του επιθυμητού είδους γηπέδου. Στην περίπτωση που δεν γνωρίζετε πιο
-                        είναι το κατάλληλο γήπεδο για εσάς, ακολουθούν κάποιες γενικές πληροφορίες. 
-                    </p>
-                </div>
-                <div class = "courts_info row p-0 m-0"> 
-                    <div class = "info_card row p-0 m-0"> 
-                        <div class = "info_banner row m-0"> 
-                            <h1 id = "title">Hard tennis courts</h1>
-                        </div>
-                        <div class = "info_text row m-0">
-                            <p>
-                                Hard courts are one of the main types of courts commonly found at parks, 
-                                recreation centers, clubs, and schools. Composed of varying mixtures of 
-                                asphalt and concrete, hard courts also contain an acrylic surface layer 
-                                (like paint or coating) to seal the surface and provide a level of cushioning. 
-                                Hard surface courts have lower energy absorption than clay courts, making the 
-                                tennis ball bounce higher and move faster. Hard courts are an all-around court, 
-                                which makes them ideal for most types of tennis players. The US Open and the 
-                                Australian Open are the only two Grand Slam tournaments that use a hard court surface. 
-                            </p>
-                        </div> 
-                    </div>
-                    <div class = "info_card row p-0 m-0"> 
-                        <div class = "info_banner row m-0"> 
-                            <h1>Clay tennis courts</h1>
-                        </div>
-                        <div class = "info_text row m-0">
-                            <p>
-                                Clay courts mainly come in two different forms: The red clay court is a coarse mixture made from brick,
-                                 and the green clay court, which is a crushed metabasalt, also known as Har-Tru. These materials dry much 
-                                 quicker than standard clay, which is rarely found on modern tennis court surfaces. Due to their textured 
-                                 surfaces, clay courts feature the slowest surface for ball speed. High-bounce serves like topspin are 
-                                 easier to return on this surface due to the ball’s reduced speed. This reduced speed makes points last 
-                                 longer, which is ideal for baseline players who have a more defensive style of play. Clay courts are 
-                                 slightly easier on the human body, as the surface absorbs more shock, and also allows players to slide into 
-                                 place rather than coming to a complete stop, conserving some of their energy. The French Open is the only 
-                                 Grand Slam that uses a clay court. Professionals Roger Federer and Rafael Nadal are considered two of the 
-                                 best players on clay courts to date. 
-                            </p>
-                        </div> 
-                    </div>
-                    <div class = "info_card row p-0 m-0"> 
-                        <div class = "info_banner row m-0"> 
-                            <h1>Grass tennis courts</h1>
-                        </div>
-                        <div class = "info_text row m-0">
-                            <p>Grass courts, also known as lawn courts, used to be the most common type of tennis court surface. However, due to their high cost and maintenance, grass courts are less commonly used than hard courts and clay courts. A grass surface consists of short-cut grass on tightly packed soil, and is the fastest type of court, offering low ball bounces and shorter rallies. This fast surface also provides an advantage to players with big serves, as the ball is harder to return to start the point. There are many variables to how a ball behaves on a grass court, such as how many players have played on it before, how often it is mowed, and the overall health and quality of the grass itself. While all four of the Grand Slam tournaments once used grass courts, Wimbledon is currently the only one that still features a grass court. </p>
-                        </div> 
-                    </div>
-                    <div class = "info_card row p-0 m-0"> 
-                        <div class = "info_banner row m-0"> 
-                            <h1>Synthetic tennis courts</h1>
-                        </div>
-                        <div class = "info_text row m-0">
-                            <p>For the softness and feel of a grass court without the maintenance, some public and private facilities may opt for a synthetic turf court. Synthetic courts usually contain plastic grass fibers with better durability and less upkeep than a standard grass court. The sand-filled topping that layers the surface of a synthetic turf court protects the court itself from weather conditions, allowing it to dry faster, and making it less susceptible to wear over time. The materials used are non-toxic and not prone to pests like real grass.</p>
-                        </div> 
+        <div class="courts_main row m-0 p-0">
+            <div class = "courts_card p-0"> 
+                <div class = "courts_banner row m-0 p-0">
+                    <div id = "title">
+                        <h1>
+                            ΓΗΠΕΔΑ
+                        </h1>
+                        <h4>
+                            Γήπεδα Τένις ┃ VILLIA TENNIS CLUB
+                        </h4>
                     </div>
                 </div>
+                <div class = "courts_info row p-0 m-0">
+                    <div class = "info_card row p-0 m-0">
+                        <div id="prologue">
+                            <div class="info_banner row m-0">
+                                <h4>Λίγα λόγια για τα γήπεδά μας...</h4>
+                            </div>
+                            <div class="info_row row m-0 p-0">
+                                <p class = "text row">
+                                    Το κλαμπ μας διαθέτει 17 γήπεδα διαφόρων ειδών, για κάθε προτίμηση. Κατά την κράτηση, ανάλογα με τη διαθεσιμότητα 
+                                    και την περιοχή, δίνεται η δυνατότητα επιλογής του επιθυμητού είδους γηπέδου. Στην περίπτωση που δεν γνωρίζετε πιο
+                                    είναι το κατάλληλο γήπεδο για εσάς, ακολουθούν κάποιες γενικές πληροφορίες...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "info_card row p-0 m-0">
+                        <div id="hard_courts">
+                            <div class="info_banner row m-0">
+                                <h4>Σκληρά γήπεδα</h4>
+                            </div>
+                            <div class="info_row row m-0 p-0"><img src = "imgs/courtsPage/hard-tennis-court.jpg"></div>
+                            <div class="info_row row m-0 p-0">
+                                <p class = "text row">
+                                    Τα σκληρά γήπεδα είναι ένας από τους κύριους τύπους γηπέδων που βρίσκονται συνήθως στα πάρκα, κέντρα αναψυχής, συλλόγους και σχολεία. Αποτελείται από διάφορα μείγματα, όπως
+                                    άσφαλτο και σκυρόδεμα. Τα σκληρά γήπεδα περιέχουν επίσης ακρυλικό επιφανειακό στρώμα (όπως χρώμα ή επίστρωση), προκειμένου να σφραγιστεί η επιφάνεια και να δημιουργηθεί
+                                    έτσι ένα επίπεδο απορρόφησης κραδασμών. Τα γήπεδα σκληρής επιφάνειας έχουν χαμηλότερη απορρόφηση ενέργειας από τα χωμάτινα γήπεδα, ώστε η μπάλα του τένις να αναπηδά ψηλότερα
+                                    και να κινείται πιο γρήγορα, γεγονός που τα καθιστά ιδανικά για τους περισσότερους τύπους παικτών τένις. Ο τύπος αυτός των σκληρών γηπέδων τένις αποτελεί έναν τυπο γηπέδων που
+                                    χρησιμοποιείται συνήθως στις μεγάλες διοργανώσεις, όπως είναι το US Open και το Australian Open, καθώς είναι τα μόνα τουρνουά Grand Slam που χρησιμοποιούν σκληρό γήπεδο.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "info_card row p-0 m-0">
+                        <div id="clay_courts">
+                            <div class="info_banner row m-0">
+                                <h4>Χωμάτινα γήπεδα</h4>
+                            </div>
+                            <div class="info_row row m-0 p-0"><img src = "imgs/courtsPage/clay-tennis-court.jpg"></div>
+                            <div class="info_row row m-0 p-0">
+                                <p class = "text row">
+                                    Υπάρχουν δύο διαφορετικά είδη χωμάτινων γηπέδων: Το γήπεδο κόκκινου πηλού, ένα χονδροειδές μείγμα από τούβλα, και το γήπεδο από πράσινο πηλό, από θρυμματισμένο μεταβασάλτη, γνωστό
+                                    και ως Har-Tru. Αυτά τα υλικά στεγνώνουν πολύ πιο γρήγορα από το τυπικό χώμα, που σπάνια συναντάται σε σύγχρονες επιφάνειες γηπέδων τένις. Λόγω της υφής της επιφάνειας τους, το τένις
+                                    σε χωμάτινα γήπεδα θεωρείται το καλύτερο και πιο απολαυστικό, αφού η αίσθηση που προσδίδει το χώμα στη μπάλα αλλά και στην κίνηση του αθλητή μέσα στο γήπεδο είναι πολύ ξεχωριστή. Τα
+                                    σερβίς υψηλής αναπήδησης, όπως είναι το topspin (περιστροφή της μπάλας που παράγεται από το χτύπημα) επηρεάζονται από το χώμα, με αποτέλεσμα να προκαλείται μεγαλύτερη αναπήδηση στη μπάλα.
+                                    Αυτό συντελεί στο να έχουν μεγάλη διάρκεια οι πόντοι και να διαρκούν μεγαλύτερο χρόνο οι αγώνες, κάτι που είναι ιδανικό για τους παίκτες βασικής γραμμής που έχουν πιο αμυντικό στυλ παιχνιδιού. 
+                                    Τα γήπεδα από χώμα προσφέρουν μια ελαφρώς ευκολότερη επιφάνεια για το ανθρώπινο σώμα, καθώς απορροφούν περισσότερους κραδασμούς και επιτρέπουν επίσης στους παίκτες να γλιστρήσουν μέσα στο
+                                    χώμα, κάτι το οποίο έχει μια ιδιάζουσα γοητεία. Το Γαλλικό Ανοιχτό Grand Slam (French Open) είναι το μοναδικό Grand Slam που χρησιμοποιεί χωμάτινο γήπεδο. Οι επαγγελματίες Roger Federer
+                                    και Rafael Nadal θεωρούνται δύο από τους καλύτερους παίκτες στα χωμάτινα γήπεδα μέχρι σήμερα.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "info_card row p-0 m-0">
+                        <div id="grass_courts">
+                            <div class="info_banner row m-0">
+                                <h4>Γήπεδα με γρασίδι</h4>
+                            </div>
+                            <div class="info_row row m-0 p-0"><img src = "imgs/courtsPage/grass-tennis-court.jpg"></div>
+                            <div class="info_row row m-0 p-0">
+                                <p class = "text row">
+                                    Τα γήπεδα με γρασίδι, γνωστά και ως γήπεδα με γκαζόν, ήταν κάποτε ο πιο κοινός τύπος επιφάνειας γηπέδου τένις. Ωστόσο, λόγω του υψηλού κόστους για την συντήρησή τους, τα γήπεδα με γρασίδι
+                                    χρησιμοποιούνται λιγότερο συχνά από τα σκληρά γήπεδα και τα γήπεδα με χώμα. Μια επιφάνεια γρασιδιού αποτελείται από κοντό γρασίδι σε σφιχτά συσκευασμένο έδαφος και ευνοεί τις υψηλές ταχύτητες.
+                                    Αυτός ο τύπος γηπέδου προσφέρει, επίσης, χαμηλές αναπηδήσεις μπάλας. Αυτό σημαίνει πως οι παίκτες που είναι καλύτεροι στο γρήγορο παιχνίδι, ειδικά αυτοί που βασίζονται στο δυνατό σερβίς τους,
+                                    είναι περισσότερο ευνοημένοι. Υπάρχουν πολλοί και διαφορετικοί παράγοντες που κάνουν όλο και πιο σπάνιο αυτό το είδος γηπέδου, όπως το πώς μια μπάλα συμπεριφέρεται σε ένα γήπεδο με γρασίδι,
+                                    ή το πόσο συχνά πρέπει να κουρεύεται και, γενικότερα, ό,τι αφορά τη συνολική υγεία και ποιότητα του χλοοτάπητα. Ενώ και τα τέσσερα τουρνουά Grand Slam κάποτε χρησιμοποιούσαν γήπεδα με γρασίδι,
+                                    το Wimbledon είναι το μόνο που διαθέτει ακόμα ένα γήπεδο με γρασίδι.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "info_card row p-0 m-0">
+                        <div id="synthetic_courts">
+                            <div class="info_banner row m-0">
+                                <h4>Γήπεδα συνθετικού χλοοτάπητα</h4>
+                            </div>
+                            <div class="info_row row m-0 p-0"><img src = "imgs/courtsPage/synthetic-tennis-court.jpg"></div>
+                            <div class="info_row row m-0 p-0">
+                                <p class = "text row">
+                                    Προκειμένου να προσφερθεί ένα γήπεδο με γρασίδι, που να συνδυάζει την απαλότητα και την αίσθηση της φυσικής επαφής, χωρίς συντήρηση, ορισμένες δημόσιες
+                                    και ιδιωτικές εγκαταστάσεις μπορούν να επιλέξουν έναν συνθετικό χλοοτάπητα. Τα συνθετικά συνθετικού χλοοτάπητα περιέχουν συνήθως πλαστικές ίνες γρασιδιού με καλύτερη
+                                    ανθεκτικότητα και απαιτείται λιγότερη συντήρηση από ένα τυπικό γήπεδο με γρασίδι. Η επικάλυψη με άμμο που τοποθετείται στην επιφάνεια ενός γηπέδου συνθετικού
+                                    χλοοτάπητα, προστατεύει το ίδιο το γήπεδο από τις καιρικές συνθήκες, επιτρέποντας το γρηγορότερο στέγνωμα του, κάτι που το καθιστά λιγότερο ευαίσθητο στη φθορά
+                                    με την πάροδο του χρόνου. Τα υλικά που χρησιμοποιούνται είναι μη τοξικά και δεν είναι επιρρεπή σε παράσιτα όπως συμβαίνει με το πραγματικό γρασίδι.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div id="membership">
+                    <button>
+                        <a>SUBSCRIBE NOW</a>
+                    </button>
+                </div>
+                -->
             </div>
         </div>
-
+        
         <!--FOOTER-->
         <div class = "footer row align-items-stretch p-0 m-0">
             <ul class = "sections col-lg-8 p-x-0">
@@ -265,8 +230,14 @@
                             <a href = "courts.html">Γήπεδα</a>
                         </li>
                         <li class = "listItem">
-                            <a href = "#">Εστιατόριο</a>
-                        </li> 
+                            <a href = "restaurant.html">Εστιατόριο</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "pool.html">Πισίνα</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "medicalFacilities.html">Κέντρο Θεραπείας</a>
+                        </li>
                     </ul> 
                 </li>
                 <!--BOOKING-->
@@ -279,8 +250,13 @@
             <hr>
             <p> HELLO THIS IS THE END OF THE FRONT PAGE AND I HAVE GAINED SO MUCH WEIGHT JUST MAKING THIS ONE </p>
         </div>
-        
-        <script type = "text/javascript" src = "scripts/popup_new.js"> </script>
+
+        <!--
+        <a href=#top>
+            <button id="scroll-up"></button>
+        </a>-->
+
+        <scripts type = "text/javascript" src = "scripts/popup_new.js"></scripts>
 
     </body>
 </html>

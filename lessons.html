@@ -16,60 +16,71 @@
         <link rel="stylesheet" href="styles/lessons.css">
         <link rel = "stylesheet" href ="styles/navBar.css">
         <link rel="stylesheet" href="styles/footer.css">
+        <link rel="stylesheet" href="styles/logInOrUp.css">
         
         <title>Lessons</title>
     </head>
     
     <body class = "container-fluid p-0 m-0 w-100">
         <!--<a name="top"></a>-->
+
         <!--NAVIGATION BAR-->
-        <nav id = "navbarGen" class = "row m-0 p-0"> 
-            <ul id = "button_list" class = "col-10 p-0 m-0">
+        <div class = "navbarGen row m-0 p-0">
+            <ul class = "button_list col-10 p-0 m-0">
                 <!--Home Page-->
-                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1">
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1">
                     <a href="index.html">ΑΡΧΙΚΗ</a> 
                 </li>
                 <!--Tennis Page-->
-                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="tennis.html">ΤΕΝΝΙΣ</a>
-                    <div id = "dropdown" class = "col-12 m-0 p-0">
-                        <div id = "dd_content">
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="tennis.html">ΤΕΝΝΙΣ</a>
+                    <div class = "dropdown col-12 m-0 p-0">
+                        <div class = "dd_content">
                             <a href = "lessons.html">Μαθήματα Τέννις</a>
                         </div>
             
-                        <div id = "dd_content">
+                        <div class = "dd_content">
                             <a href = "tournaments.html">Τουρνουά Τέννις</a>
                         </div>
                     </div> 
                 </li>
                 <!--Facilities Page-->
-                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="spaces.html">ΧΩΡΟΙ</a> 
-                    <div id = "dropdown" class = "col-12 m-0 p-0"> 
-                        <div id = "dd_content">
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="spaces.html">ΧΩΡΟΙ</a> 
+                    <div class = "dropdown col-12 m-0 p-0"> 
+                        <div class = "dd_content">
                             <a href = "courts.html">Γήπεδα</a>
                         </div>
-                        <div id = "dd_content">
-                            <a href = "#">Εστιατόριο</a>
+                        <div class = "dd_content">
+                            <a href = "restaurant.html">Εστιατόριο</a>
+                        </div>
+                        <div class = "dd_content">
+                            <a href = "pool.html">Πισίνα</a>
+                        </div>
+                        <div class = "dd_content">
+                            <a href = "medicalFacilities.html">Κέντρο Θεραπείας</a>
                         </div>
                     </div> 
                 </li>
                 <!--Booking Page-->
-                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a> 
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a> 
                 </li>
             </ul>
-            <ul id = "connection_list" class = "col-2 p-0 m-0">
-                <li id = "accButton" class="col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+            <ul class = "connection_list col-2 p-0 m-0">
+                <li class="accButton col-lg-6 col-md-6 col-sm-6 p-0 m-0">
                     <button id = "loginBtn">LOGIN</button> 
                 </li>
-                <li id = "accButton" class = "col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                <li class = "accButton col-lg-6 col-md-6 col-sm-6 p-0 m-0">
                     <button id = "signupBtn">SIGN UP</button> 
                 </li>
             </ul>
-        </nav>
+        </div>
 
         <!--MAIN-->
-        <div id ="lessons_main" class = "row m-0 p-0">
-            <div id = "lessons_card" class = "p-0"> 
-                <div id = "lessons_banner" class = "row m-0 p-0">
+        <div class = "lessons_main row m-0 p-0">
+            <div class = "lessons_card p-0"> 
+                <div class = "lessons_banner row m-0 p-0">
                     <div id = "title">
                         <h1>
                             ΜΑΘΗΜΑΤΑ ΤΕΝNΙΣ
@@ -79,14 +90,14 @@
                         </h4>
                     </div>
                 </div>
-                <div id = "lessons_info" class = "row p-0 m-0">
-                    <div id = "info_card" class = "row p-0 m-0">
+                <div class = "lessons_info row p-0 m-0">
+                    <div class = "info_card row p-0 m-0">
                         <div id="junior">
-                            <div id="info_banner" class = "row m-0">
+                            <div class = "info_banner row m-0">
                                 <h4>Τμήματα Junior</h4>
                             </div>
-                            <div id="info_row" class = "row m-0 p-0">
-                                <p id = "text" class = "row">
+                            <div class = "info_row row m-0 p-0">
+                                <p class = "text row">
                                     Ο όμιλός μας διαθέτει τμήματα ακαδημιών για παιδιά ηλικίας από 4 ετών. Φροντίζουμε σε αυτά τα τμήματα
                                     το μάθημα να γινέται παιχνίδι, ώστε τα παιδιά να μπορούν να διασκεδάζουν και παράλληλα να προπονούνται και
                                     να βελτιώνουν τις δυνατότητές τους στο άθλημα. Οι προπονητές των τμημάτων αυτών είναι ειδικά εκπαιδευμένοι
@@ -95,11 +106,11 @@
                                     μπορούνε, σε συνεργασία με τους προπονητές, να καθορίσουν το εβδομαδιαίο πρόγραμμα που θα γίνονται τα μαθήματα.
                                 </p>
                             </div>
-                            <div id="info_row" class = "row m-0 p-0">
-                                <span id = "photo">
-                                    <img src = "imgs/junior-club.jpg">
+                            <div class = "info_row row m-0 p-0">
+                                <span class = "photo">
+                                    <img src = "imgs/lessonsPage/junior-club.jpg">
                                 </span>
-                                <span id= "price">
+                                <span class = "side_text">
                                     ΤΙΜΗ ΣΥΝΔΡΟΜΗΣ:<br><br>
                                     • Μηνιαία συνδρομή: 25 € <br>
                                     • Τρίμηνη συνδρομή: 65 € <br>
@@ -109,13 +120,13 @@
                             </div>  
                         </div>
                     </div>
-                    <div id = "info_card" class = "row p-0 m-0">
+                    <div class = "info_card row p-0 m-0">
                         <div id="adults">
-                            <div id="info_banner" class = "row m-0">
+                            <div class = "info_banner row m-0">
                                 <h4>Τμήματα ενηλίκων</h4>
                             </div>
-                            <div id="info_row" class = "row m-0 p-0">
-                                <p id = "text" class = "row">
+                            <div class = "info_row row m-0 p-0">
+                                <p class = "text row">
                                     Για τους ενήλικες διαθέτουμε ειδικά τμήματα προπόνησης, καθώς και έμπειρους προπονητές που είναι προετοιμασμένοι
                                     να εκπαιδεύσουν τα μέλη μας, ακόμα και αν αυτά δεν έχουν ασχοληθεί καθόλου με το άθλημα παλιότερα. Κάθε μέλος μπορεί
                                     να κάνει μαθήματα για τρεις με τέσσερις ώρες κάθε δύο φορές τη βδομάδα και το ωράριο προπόνησης μπορεί να καθοριστεί από τα μέλη
@@ -128,38 +139,38 @@
                                     από τους προπονητές αφού συνεννοηθούν πρώτα με τους εκπαιδευόμενους.
                                 </p>
                             </div>
-                            <div id="info_row" class = "row m-0 p-0">
-                                    <span id= "price" >
+                            <div class = "info_row row m-0 p-0">
+                                    <span class = "side_text" >
                                         ΤΙΜΗ ΣΥΝΔΡΟΜΗΣ:<br><br>
                                         • Μηνιαία συνδρομή: 30 € <br>
                                         • Τρίμηνη συνδρομή: 80 € <br>
                                         • Εξάμηνη συνδρομή: 170 € <br>
                                         • Ετήσια συνδρομή: 340 €
                                     </span>
-                                    <span id="photo">
-                                        <img src = "imgs/adult-club.jpg">
+                                    <span class ="photo">
+                                        <img src = "imgs/lessonsPage/adult-club.jpg">
                                     </span>
                             </div>
                         </div>
                     </div>
-                    <div id = "info_card" class = "row p-0 m-0">
-                        <div id="intensive">
-                            <div id="info_banner" class = "row m-0">
+                    <div class = "info_card row p-0 m-0">
+                        <div id="intensive"> 
+                            <div class = "info_banner row m-0">
                                 <h4>Εντατικά μαθήματα</h4>
                             </div>
-                            <div id="info_row" class = "row m-0 p-0">
-                                <p id = "text" class = "row">
+                            <div class = "info_row row m-0 p-0">
+                                <p class = "text row">
                                     Για τα μέλη μας τα οποία θέλουν να ασχοληθούν εντατικά με το άθλημα και να αποκτήσουν μεγάλη εμπειρία σε μικρό χρονικό διάστημα
                                     υπάρχει η επιλογή των εντατικών μαθημάτων. Στα εντατικά μαθήματα ο κάθε εκπαιδευόμενος έχει την επιλογή να κάνει ιδιαίτερα μαθήματα
                                     με έναν από τους προπονητές μας για 2 με 3 ώρες κάθε πέντε με έξι φορές τη βδομάδα. Ο εκπαιδευόμενος δεν είναι απαραίτητο να έχει
                                     κάποια προηγούμενη εμπειρία με το τένις, καθώς μπορεί να μάθει ό,τι χρειάζεται κατα την διάρκεια των εντατικών μαθημάτων.
                                 </p>
                             </div>
-                            <div id="info_row" class = "row m-0">
-                                <span id = "photo">
-                                    <img src = "imgs/intensive-club.jpg">
+                            <div class = "info_row row m-0">
+                                <span class = "photo">
+                                    <img src = "imgs/lessonsPage/intensive-club.jpg">
                                 </span>
-                                <span id= "price">
+                                <span class = "side_text">
                                     ΤΙΜΗ ΣΥΝΔΡΟΜΗΣ:<br><br>
                                     • Μηνιαία συνδρομή: 55 € <br>
                                     • Τρίμηνη συνδρομή: 145 € <br>
@@ -169,13 +180,13 @@
                             </div>
                         </div>
                     </div>
-                    <div id = "info_card" class = "row p-0 m-0">
+                    <div class = "info_card row p-0 m-0">
                         <div id="contest">
-                            <div id="info_banner" class = "row m-0">
+                            <div class = "info_banner row m-0">
                                 <h4>Αγωνιστικά τμήματα</h4>
                             </div>
-                            <div id="info_row" class = "row m-0">
-                                <p id = "text" class = "row">
+                            <div class = "info_row row m-0">
+                                <p class = "text row">
                                     Τα αγωνιστικά τμήματα λειτουργούν για όλους όσους θέλουν να λάβουν μέρος σε αγώνες τένις και χρειάζονται να εξασκηθούν κατάλληλα.
                                     Για τις συγκεκριμένες περιπτώσεις έχουμε ειδικά καταρτισμένους προπονητές, οι οποίοι θα προπονήσουν όσο χρειαστεί τους διαγωνιζόμενους,
                                     θα τους ενημερώσουν κατάλληλα για τους την διαδικασία των αγώνων και θα τους καθοδηγήσουν στον δρόμο για την νίκη. Οι ημέρες και οι
@@ -184,16 +195,16 @@
                                     θα προπονείται εντατικά και, την ημέρα διαξαγωγής των αγώνων, θα συμμετάσχει με συνοδεία του προπονητή του.
                                 </p>
                             </div>
-                            <div id="info_row" class = "row m-0">
-                                <span id= "price">
+                            <div class = "info_row row m-0">
+                                <span class = "side_text">
                                     ΤΙΜΗ ΣΥΝΔΡΟΜΗΣ:<br><br>
                                     • Μηνιαία συνδρομή: 50 € <br>
                                     • Τρίμηνη συνδρομή: 140 € <br>
                                     • Εξάμηνη συνδρομή: 285 € <br>
                                     • Ετήσια συνδρομή: 580 €
                                 </span>
-                                <span id = "photo">
-                                    <img src="imgs/contest-club.jpg">
+                                <span class = "photo">
+                                    <img src="imgs/lessonsPage/contest-club.jpg">
                                 </span>
                             </div>
                         </div>
@@ -210,55 +221,61 @@
         </div>
         
         <!--FOOTER-->
-        <div id = "footer" class = "row align-items-stretch p-0 m-0">
-            <ul id = "sections" class = "col-lg-8 p-x-0">
-                <li id = "ftrSection" class = "col m-0"> 
+        <div class = "footer row align-items-stretch p-0 m-0">
+            <ul class = "sections col-lg-8 p-x-0">
+                <li class = "ftrSection col m-0"> 
                     <h1> 
                         <a href = "index.html">ΑΡΧΙΚΗ</a>
                     </h1>
-
+    
                     <h1> 
                         <a href = "login.html">LOG IN</a>
                     </h1>
-
+    
                     <h1> 
                         <a href = "signup.html">SIGN UP</a>
                     </h1>
-
+    
                 </li>
                 <!--TENNIS-->
-                <li id = "ftrSection" class = "col m-0"> 
+                <li class = "ftrSection col m-0"> 
                     <h1> 
                         <a href = "tennis.html">ΤΕΝΝΙΣ</a>
                     </h1>
-                    <ul id = "scList">
-                        <li id = "listItem"> 
+                    <ul class = "scList">
+                        <li class = "listItem"> 
                             <a href = "#">Παίξε τέννις</a>
                         </li>
-                        <li id = "listItem">
+                        <li class = "listItem">
                             <a href = "lessons.html">Μαθήματα τέννις</a> 
                         </li>
-                        <li id = "listItem">
+                        <li class = "listItem">
                             <a href = "tournaments.html">Τουρνουά τέννις</a>
                         </li> 
                     </ul> 
                 </li>
                 <!--SPACES-->
-                <li id = "ftrSection" class = "col m-0"> 
+                <li class = "ftrSection col m-0"> 
                     <h1> 
                         <a href = "spaces.html">ΧΩΡΟΙ</a>
                     </h1>
-                    <ul id = "scList">
-                        <li id = "listItem"> 
+                    <ul class = "scList">
+                        <li class = "listItem"> 
                             <a href = "courts.html">Γήπεδα</a>
                         </li>
-                        <li id = "listItem">
-                            <a href = "#">Εστιατόριο</a>
-                        </li> 
+                        <li class = "listItem">
+                            <a href = "restaurant.html">Εστιατόριο</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "pool.html">Πισίνα</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "medicalFacilities.html">Κέντρο Θεραπείας</a>
+                        </li>
                     </ul> 
                 </li>
                 <!--BOOKING-->
-                <li id = "ftrSection" class = "col m-0"> 
+                <li class = "ftrSection col m-0"> 
                     <h1> 
                         <a href = "booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a>
                     </h1>
@@ -272,6 +289,8 @@
         <a href=#top>
             <button id="scroll-up"></button>
         </a>-->
+
+        <scripts type = "text/javascript" src = "scripts/popup_new.js"></scripts>
 
     </body>
 </html>

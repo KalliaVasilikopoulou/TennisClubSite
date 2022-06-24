@@ -1,4 +1,4 @@
-.pool_card { 
+.courts_card { 
     display: flex; 
     flex-direction: column;
 
@@ -7,7 +7,7 @@
     margin: auto;
 }
 
-.pool_card .pool_banner { 
+.courts_card .courts_banner { 
     display: flex; 
     flex-direction: column;
     flex-wrap: wrap;
@@ -21,12 +21,12 @@
     text-shadow: -1.2px -1.2px 0 #000, 1.2px -1.2px 0 #000, -1.2px 1.2px 0 #000, 1.2px 1.2px 0 #000;
     padding-bottom: 30px;
     
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url("../imgs/poolPage/poolPageBanner.jpg");
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../imgs/courtsPage/courtsPageBanner.jpg");
     background-position: center;
     background-size: cover;
 }
 
-.pool_card .pool_banner #title{
+.courts_card .courts_banner #title{
     text-align: left;
 
     font-family: 'Comfortaa', sans-serif;
@@ -41,7 +41,7 @@
     word-wrap: normal;
 }
 
-.pool_card .pool_info {
+.courts_card .courts_info {
     width: 100%;
     background-color: white;
 
@@ -49,7 +49,7 @@
     flex-direction: column;
 }
 
-.pool_info .info_card{ 
+.courts_info .info_card{ 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -58,18 +58,18 @@
     margin-bottom: 30px;
 }
 
-.pool_info .info_card div{ 
+.courts_info .info_card div{ 
     width: 100%;
 }
 
-.pool_info .info_card .info_banner { 
+.courts_info .info_card .info_banner { 
     width: 100%;
     min-height: 60px;
     height: fit-content;
     background-color: #0091d2;
 }
 
-.pool_info .info_card .info_banner h4{
+.courts_info .info_card .info_banner h4{
     font-family: 'Comfortaa', sans-serif;
     font-weight: 300;
     font-size: 40px;
@@ -79,7 +79,7 @@
     margin:auto;
 }
 
-.pool_info .info_row {
+.courts_info .info_row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -117,21 +117,31 @@
     color: #6c6f6f;
 }
 
-#section .photo1{
-    box-shadow: -5px 5px #6c6f6f;
+img{
+    width: 85%;
+    height: 400px;
+    min-width: 80%;
+    /* max-height: 550px; */
+    margin: 40px 20px 30px 20px;
+    box-shadow: -2px 2px 5px #6c6f6f;
 }
 
-#section .photo2{
-    box-shadow: 5px 5px #6c6f6f;
+.info_row .text{
+    margin-bottom: 80px;
 }
+
+#prologue .info_row .text{
+    margin-bottom: 130px;
+}
+
 
 @media only screen and (max-width: 1350px) {
 
-    .pool_card .pool_banner #title{ 
+    .courts_card .courts_banner #title{ 
         font-size: 35px;
     }
 
-    .pool_info .info_card .info_banner h4{ 
+    .courts_info .info_card .info_banner h4{ 
         font-size: 35px;
     }
     .info_row .text{ 
@@ -145,11 +155,11 @@
 
 @media only screen and (max-width: 900px) {
 
-    .pool_card .pool_banner #title{ 
+    .courts_card .courts_banner #title{ 
         font-size: 30px;
     }
 
-    .pool_info .info_card .info_banner h4{ 
+    .courts_info .info_card .info_banner h4{ 
         font-size: 30px;
     }
     .info_row .text{ 
@@ -162,18 +172,18 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    .pool_card{
+    .courts_card{
         width: 100%;
     }
 }
 
 @media only screen and (max-width: 700px) {
-    .info_row .side_text, .info_row .photo1, .info_row .photo2 {
-        min-width: 80%;
-    }
-
     .info_row .side_text {
         margin-top: 0px;
+    }
+
+    img {
+        height: 200px;
     }
 }
 
@@ -186,7 +196,7 @@
     grid-template: 400px / 1fr 1fr;
 }
 
-.pool_info .info_card #banner h4::before{
+.courts_info .info_card #banner h4::before{
     content: "";
     display: inline-block;
     width :40px;
@@ -203,12 +213,12 @@
     left: 5px;
 }
 
-.pool_card #membership{
+.courts_card #membership{
     margin: auto;
     height: 10px;
 }
 
-.pool_card #membership button{
+.courts_card #membership button{
     width: 25%;
     height: 70px;
     margin-top: 10px;
@@ -223,7 +233,7 @@
     transition: 0.35s;
 }
 
-.pool_card #membership button:hover {
+.courts_card #membership button:hover {
 	color: #0091d2;
     box-shadow: 5px 7px #565858;
 	background-color: #d5f1fe;

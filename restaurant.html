@@ -13,162 +13,208 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="restaurantStyle.css">
-        <link rel="stylesheet" href="index.css">
-
+        <link rel="stylesheet" href="styles/restaurant.css">
+        <link rel = "stylesheet" href ="styles/navBar.css">
+        <link rel="stylesheet" href="styles/footer.css">
+        
         <title>Restaurant</title>
     </head>
-
+    
     <body class = "container-fluid p-0 m-0 w-100">
-        <a name="top"></a>
-        <nav id = "navbarGen" class = "row m-0 p-0"> 
-            <ul id = "button_list" class = "col-10 p-0 m-0">
+        <!--<a name="top"></a>-->
+        <!--NAVIGATION BAR-->
+        <div class = "navbarGen row m-0 p-0">
+            <ul class = "button_list col-10 p-0 m-0">
                 <!--Home Page-->
-                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1">
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1">
                     <a href="index.html">ΑΡΧΙΚΗ</a> 
                 </li>
                 <!--Tennis Page-->
-                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="tennis.html">ΤΕΝΝΙΣ</a>
-                    <div id = "dropdown" class = "col-12 m-0 p-0">
-                        <div id = "dd_content">
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="tennis.html">ΤΕΝΝΙΣ</a>
+                    <div class = "dropdown col-12 m-0 p-0">
+                        <div class = "dd_content">
                             <a href = "lessons.html">Μαθήματα Τέννις</a>
                         </div>
             
-                        <div id = "dd_content">
+                        <div class = "dd_content">
                             <a href = "tournaments.html">Τουρνουά Τέννις</a>
                         </div>
                     </div> 
                 </li>
                 <!--Facilities Page-->
-                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="spaces.html">ΧΩΡΟΙ</a> 
-                    <div id = "dropdown" class = "col-12 m-0 p-0"> 
-                        <div id = "dd_content">
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="spaces.html">ΧΩΡΟΙ</a> 
+                    <div class = "dropdown col-12 m-0 p-0"> 
+                        <div class = "dd_content">
                             <a href = "courts.html">Γήπεδα</a>
                         </div>
-                        <div id = "dd_content">
-                            <a href = "#">Εστιατόριο</a>
+                        <div class = "dd_content">
+                            <a href = "restaurant.html">Εστιατόριο</a>
+                        </div>
+                        <div class = "dd_content">
+                            <a href = "pool.html">Πισίνα</a>
+                        </div>
+                        <div class = "dd_content">
+                            <a href = "medicalFacilities.html">Κέντρο Θεραπείας</a>
                         </div>
                     </div> 
                 </li>
                 <!--Booking Page-->
-                <li id = "navButton" class = "col-lg-2 col-md-1 col-sm-1"> <a href="booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a> 
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a> 
                 </li>
             </ul>
-            <ul id = "connection_list" class = "col-2 p-0 m-0">
-                <li id = "accButton" class="col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+            <ul class = "connection_list col-2 p-0 m-0">
+                <li class="accButton col-lg-6 col-md-6 col-sm-6 p-0 m-0">
                     <button id = "loginBtn">LOGIN</button> 
                 </li>
-                <li id = "accButton" class = "col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                <li class = "accButton col-lg-6 col-md-6 col-sm-6 p-0 m-0">
                     <button id = "signupBtn">SIGN UP</button> 
                 </li>
             </ul>
-        </nav>
-
-        <div class="card">
-            <div id = "title">
-                <div class = "header">
-
-                    <h1>ΤΟ ΕΣΤΙΑΤΟΡΙΟ ΜΑΣ</h1>
-
-                    <h4>VILLIA TENNIS & FOOD ┃ VILLIA TENNIS CLUB</h4>
-                </div>
-            </div>
-            <div id = "info">
-                <div id="banner">
-                    <h4>Γεύματα για όλα τα μελη και τους συγγενείς!</h4>
-                </div>
-                <div id="text">
-                    <p>
-                        Το εστιατόριό μας είναι μια γευστική όαση για να απολαύσουν όλα τα μέλη μας καθώς και οι συγγενείς τους εξαιρετικές επιλογές για φαγητό όλη την ημέρα.
-                        Οι όμορφοι εξωτερικοι χώροι του κλάμπ μας συνθέτουν το ιδανικό περιβάλλον για καλό φαγητό μετά την άθληση, ατομικά αλλά και οικογενειακά γεύματα
-                        καθώς και κάθε είδους εκδηλώσεις.<br><br>
-                        Το προσωπικό μας διαθέτει πολλά χρόνια εμπειρίας, ώστε να διασφαλιστεί την ποιότητα και την άριστη εξυπηρέτηση σας για ένα αξέχαστο γεύμα! 
-                        Ελάτε σε εμάς για να απολαύσετε τα υπέροχα γεύματά που ετοιμάζουμε για εσάς, παρακολουθώντας ταυτόχρονα, αγώνες και τουρνουά τένις.
-
-                    </p>
-                    <div class="bottom">
-                        <p id= photo></p>
-                        <p id="price"></p>
-                        <p>
-                            ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ: <br>
-                            • Δευτέρα-Παρασκευή 8:00 π.μ. - 7:30 μ.μ. <br>
-                            • Σάββατο 8:00 π.μ. - 6:00 μ.μ. <br>
-                            • Κυριακή 8:00 π.μ. - 3:30μ.μ.
-                        </p>
-                    </div>
-                    <p>
-                        Το μενού στο εστιατόριο μας είναι πλούσιο σε γευστικές προτάσεις. Δοκιμάστε αυθεντικές και παραδοσιακές νόστιμες συνταγές, όπως υπέροχες σαλάτες,
-                        ορεκτικά, σπιτικά πιάτα, ψητά κρέατα, θαλασσινά, σπιτικά γλυκά, επιδόρπια, παγωτά, μεγάλη ποικιλία από ετικέτες κρασιών και άλλα είδη αλκοόλ.<br><br> 
-                        Οι κριτικές από τους πελάτες μας  σχετικά με τα γεύματα, την εξυπηρέτηση και τη συνολική εμπειρία που είχαν από την επίσκεψή τους στον χώρο μας είναι εξαιρετικές!!
-                        Το τένις κλάμπ μας είναι μια πολύ καλή επιλογή για καλό φαγητό και κατάλληλο για παρέες, οικογένειες και παιδιά.<br><br>
-
-
-                    </p>
-                </div>
-                <div id="slideshow">
-                    <ul>
-                        <li><div></div></li>
-                        <li><div></div></li>
-                        <li><div></div></li>
-                        <li><div></div></li>
-                        <li><div></div></li>
-                    </ul>
-                </div>
-
-                <div id="invitation"><p>Κάντε μια επίσκεψη για να δοκιμάσετε τα νόστιμα γεύματά μας και δεν θα απογοητευτείτε!</p></div>
-
-            </div>
         </div>
 
-        <div id = "footer" class = "row align-items-stretch p-0 m-0">
-            <ul id = "sections" class = "col-lg-8 p-x-0">
-                <li id = "ftrSection" class = "col m-0"> 
+        <!--MAIN-->
+        <div class ="restaurant_main row m-0 p-0">
+            <div class = "restaurant_card p-0"> 
+                <div class = "restaurant_banner row m-0 p-0">
+                    <div id = "title">
+                        <h1>
+                            ΤΟ ΕΣΤΙΑΤΟΡΙΟ ΜΑΣ
+                        </h1>
+                        <h4>
+                            Villia Tennis & Food ┃ VILLIA TENNIS CLUB
+                        </h4>
+                    </div>
+                </div>
+                <div class = "restaurant_info row p-0 m-0">
+                    <div class = "info_card row p-0 m-0">
+                        <div id="section">
+                            <div class="info_banner row m-0">
+                                <h4>Γεύματα για όλα τα μελη και τους συγγενείς!</h4>
+                            </div>
+                            <div class="info_row row m-0 p-0">
+                                <p class = "text row">
+                                    Το εστιατόριό μας είναι μια γευστική όαση για να απολαύσουν όλα τα μέλη μας καθώς και οι συγγενείς τους εξαιρετικές επιλογές για φαγητό όλη την ημέρα.
+                                    Οι όμορφοι εξωτερικοι χώροι του κλάμπ μας συνθέτουν το ιδανικό περιβάλλον για καλό φαγητό μετά την άθληση, ατομικά αλλά και οικογενειακά γεύματα
+                                    καθώς και κάθε είδους εκδηλώσεις.<br><br>
+                                    Το προσωπικό μας διαθέτει πολλά χρόνια εμπειρίας, ώστε να διασφαλιστεί την ποιότητα και την άριστη εξυπηρέτηση σας για ένα αξέχαστο γεύμα! 
+                                    Ελάτε σε εμάς για να απολαύσετε τα υπέροχα γεύματά που ετοιμάζουμε για εσάς, παρακολουθώντας ταυτόχρονα, αγώνες και τουρνουά τένις.
+                                </p>
+                            </div>
+                            <div class="info_row row m-0 p-0">
+                                <span class = "photo">
+                                    <img src = "imgs/restaurantPage/tables.jpg">
+                                </span>
+                                <span class= "side_text">
+                                    <div style="min-height: 30px;"></div>
+                                    ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ: <br>
+                                    <div style="min-height: 10px;"></div>
+                                    • Δευτέρα 8:00 π.μ. - 7:30 μ.μ. <br>
+                                    • Τρίτη 8:00 π.μ. - 7:30 μ.μ. <br>
+                                    • Τετάρτη 8:00 π.μ. - 3:30 μ.μ. <br>
+                                    • Πέμπτη 8:00 π.μ. - 3:30 μ.μ. <br>
+                                    • Παρασκευή 8:00 π.μ. - 6:30 μ.μ. <br>
+                                    • Σάββατο 8:00 π.μ. - 6:00 μ.μ. <br>
+                                    • Κυριακή 8:00 π.μ. - 3:30μ.μ.
+                                </span>
+                            </div>
+                            <div class="info_row row m-0 p-0">
+                                <p class = "text row">
+                                    Το μενού στο εστιατόριο μας είναι πλούσιο σε γευστικές προτάσεις. Δοκιμάστε αυθεντικές και παραδοσιακές νόστιμες συνταγές, όπως υπέροχες σαλάτες,
+                                    ορεκτικά, σπιτικά πιάτα, ψητά κρέατα, θαλασσινά, σπιτικά γλυκά, επιδόρπια, παγωτά, μεγάλη ποικιλία από ετικέτες κρασιών και άλλα είδη αλκοόλ.<br><br> 
+                                    Οι κριτικές από τους πελάτες μας  σχετικά με τα γεύματα, την εξυπηρέτηση και τη συνολική εμπειρία που είχαν από την επίσκεψή τους στον χώρο μας είναι εξαιρετικές!!
+                                    Το τένις κλάμπ μας είναι μια πολύ καλή επιλογή για καλό φαγητό και κατάλληλο για παρέες, οικογένειες και παιδιά.
+                                </p>
+                            </div>
+                            <div style="min-height: 60px;"></div>
+                            <div class="info_row row m-0 p-0">
+                                <div id="slideshow">
+                                    <ul>
+                                        <li><div></div></li>
+                                        <li><div></div></li>
+                                        <li><div></div></li>
+                                        <li><div></div></li>
+                                        <li><div></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info_row row m-0 p-0">
+                                <p class = "text row">
+                                    Κάντε μια επίσκεψη για να δοκιμάσετε τα νόστιμα γεύματά μας και δεν θα απογοητευτείτε!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="min-height: 100px;"></div>
+                </div>
+                <!--
+                <div id="membership">
+                    <button>
+                        <a>SUBSCRIBE NOW</a>
+                    </button>
+                </div>
+                -->
+            </div>
+        </div>
+        
+        <!--FOOTER-->
+        <div class = "footer row align-items-stretch p-0 m-0">
+            <ul class = "sections col-lg-8 p-x-0">
+                <li class = "ftrSection col m-0"> 
                     <h1> 
                         <a href = "index.html">ΑΡΧΙΚΗ</a>
                     </h1>
-
+    
                     <h1> 
                         <a href = "login.html">LOG IN</a>
                     </h1>
-
+    
                     <h1> 
                         <a href = "signup.html">SIGN UP</a>
                     </h1>
-
+    
                 </li>
                 <!--TENNIS-->
-                <li id = "ftrSection" class = "col m-0"> 
+                <li class = "ftrSection col m-0"> 
                     <h1> 
                         <a href = "tennis.html">ΤΕΝΝΙΣ</a>
                     </h1>
-                    <ul id = "scList">
-                        <li id = "listItem"> 
+                    <ul class = "scList">
+                        <li class = "listItem"> 
                             <a href = "#">Παίξε τέννις</a>
                         </li>
-                        <li id = "listItem">
+                        <li class = "listItem">
                             <a href = "lessons.html">Μαθήματα τέννις</a> 
                         </li>
-                        <li id = "listItem">
+                        <li class = "listItem">
                             <a href = "tournaments.html">Τουρνουά τέννις</a>
                         </li> 
                     </ul> 
                 </li>
                 <!--SPACES-->
-                <li id = "ftrSection" class = "col m-0"> 
+                <li class = "ftrSection col m-0"> 
                     <h1> 
                         <a href = "spaces.html">ΧΩΡΟΙ</a>
                     </h1>
-                    <ul id = "scList">
-                        <li id = "listItem"> 
+                    <ul class = "scList">
+                        <li class = "listItem"> 
                             <a href = "courts.html">Γήπεδα</a>
                         </li>
-                        <li id = "listItem">
-                            <a href = "#">Εστιατόριο</a>
-                        </li> 
+                        <li class = "listItem">
+                            <a href = "restaurant.html">Εστιατόριο</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "pool.html">Πισίνα</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "medicalFacilities.html">Κέντρο Θεραπείας</a>
+                        </li>
                     </ul> 
                 </li>
                 <!--BOOKING-->
-                <li id = "ftrSection" class = "col m-0"> 
+                <li class = "ftrSection col m-0"> 
                     <h1> 
                         <a href = "booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a>
                     </h1>
@@ -178,9 +224,12 @@
             <p> HELLO THIS IS THE END OF THE FRONT PAGE AND I HAVE GAINED SO MUCH WEIGHT JUST MAKING THIS ONE </p>
         </div>
 
+        <!--
         <a href=#top>
             <button id="scroll-up"></button>
-        </a>
+        </a>-->
+
+        <scripts type = "text/javascript" src = "scripts/popup_new.js"></scripts>
 
     </body>
 </html>

@@ -7,7 +7,7 @@ body {
 }
 
 /*navigation bar*/
-#navbarGen {
+.navbarGen {
     display: flex; 
     flex-direction: row;
     flex-wrap: wrap;
@@ -18,7 +18,7 @@ body {
 }
 
 /*navigation button*/
-#navbarGen #button_list { 
+.navbarGen .button_list { 
     display: flex;
     flex-direction: row;
     position: relative;
@@ -26,7 +26,7 @@ body {
     list-style: none;
 }
 
-#navbarGen #button_list #navButton { 
+.navbarGen .button_list .navButton { 
     height: 100px;
     min-width: fit-content;
     width: 100%;
@@ -35,7 +35,7 @@ body {
     cursor: pointer;
 }
 
-#navbarGen #navButton a { 
+.navbarGen .navButton a { 
     font-family: 'Comfortaa', sans-serif;
     font-weight: 300;
     font-size: 20px;
@@ -44,12 +44,12 @@ body {
     line-height: 100px;
 }
 
-#navbarGen #navButton:hover #dropdown{ 
+.navbarGen .navButton:hover .dropdown{ 
     display: flex;
     flex-direction: column;
 }
 
-#navbarGen #dropdown { 
+.navbarGen .dropdown { 
     display: none;
     position: absolute;
     left:0;
@@ -58,7 +58,7 @@ body {
     z-index: 1;
 }
 
-#navbarGen #dd_content { 
+.navbarGen .dd_content { 
     position: relative;
     top: 0;
     border-top: solid white 1px;
@@ -67,17 +67,17 @@ body {
     margin: auto;
 }
 
-#navbarGen #dd_content a{ 
+.navbarGen .dd_content a{ 
     line-height: 40px;
     padding: auto;
 }
 
-#navbarGen #dd_content:hover { 
+.navbarGen .dd_content:hover { 
     background-color: #f78da7;
 }
 
 /*login/signup buttons*/
-#navbarGen #connection_list { 
+.navbarGen .connection_list { 
     display: flex;
     flex-direction: row;
     position: relative;
@@ -85,7 +85,7 @@ body {
     list-style: none;
 }
 
-#navbarGen #connection_list button { 
+.navbarGen .connection_list button { 
     font-family: 'Comfortaa', sans-serif;
     font-weight: 400;
 
