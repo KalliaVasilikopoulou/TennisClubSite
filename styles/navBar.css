@@ -1,0 +1,103 @@
+body {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    background-image: url("../imgs/seamless.jpg");
+    z-index: -1;
+}
+
+/*navigation bar*/
+.navbarGen {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: left;
+
+    width: 100%;
+    background-color: #0091d2;
+}
+
+/*navigation button*/
+.navbarGen .button_list { 
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 0;
+    list-style: none;
+}
+
+.navbarGen .button_list .navButton { 
+    height: 100px;
+    min-width: fit-content;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.navbarGen .navButton a { 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    line-height: 100px;
+}
+
+.navbarGen .navButton:hover .dropdown{ 
+    display: flex;
+    flex-direction: column;
+}
+
+.navbarGen .dropdown { 
+    display: none;
+    position: absolute;
+    left:0;
+    background-color: #fac300;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbarGen .dd_content { 
+    position: relative;
+    top: 0;
+    border-top: solid white 1px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.navbarGen .dd_content a{ 
+    line-height: 40px;
+    padding: auto;
+}
+
+.navbarGen .dd_content:hover { 
+    background-color: #f78da7;
+}
+
+/*login/signup buttons*/
+.navbarGen .connection_list { 
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 0;
+    list-style: none;
+}
+
+.navbarGen .connection_list button { 
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 400;
+
+    height: 100px;
+    width: 100%;
+    min-width: fit-content;
+
+    color:rgb(51, 48, 50);
+    background-color: #fac300;
+    border: none;
+
+    padding: 0px;
+    text-align: center;
+    cursor: pointer;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "tennis_club",
+  "version": "1.0.0",
+  "description": "Tennis Club website for web programming course, 8th semester",
+  "main": "start.cjs",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "nodemon": "^1.3.3",
+    "pg": "^8.7.3",
+    "session": "^0.1.0"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "reinstall": "npm run clean && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect ./start.cjs",
+    "watch": "nodemon ./start.cjs",
+    "start": "node ./start.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

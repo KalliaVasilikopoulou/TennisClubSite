@@ -1,0 +1,211 @@
+html {
+    font-family: 'Lato' 'Sans-serif';
+}
+
+.card #title { 
+    height: 300px; 
+    margin: auto;
+    color: white;
+    background-image: url("tennis3.png");
+    background-position: center;
+    background-size: cover;
+    text-align: left;
+}
+
+.header {
+    height: 300px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+h1 {
+    padding-top: 40px;
+    padding-left: 30px;
+    margin-top: 0px;
+    color: white;
+    font-style: bold;
+    font-size: 40px;
+}
+
+.header h4 {
+    padding-left: 30px;
+}
+
+.card #options {
+    margin: auto;
+    margin-bottom: 0px;
+}
+
+.info #banner { 
+    width: 100%;
+    height: 60px;
+    background-color: #0091d2;
+    color: white;
+    font-size: 25px;
+    text-align: left;
+}
+
+.info #banner h4{
+    margin-top: 0px;
+    padding: 10px;
+    height: 44.8px;
+}
+
+.info #banner h4::before{
+    content: "";
+    display: inline-block;
+    width :40px;
+    height: 20px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 10px;
+    background-image: url("tennis-player-white.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 34px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.info #text{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+    background-color: white;
+    color: #6c6f6f;
+    background-image: linear-gradient(to bottom, white 98%,#0091d2);
+}
+
+#contest #text {
+    background-image: linear-gradient(to bottom, white , white);
+}
+
+.bottom{
+    padding-top: 40px;
+    padding-bottom: 50px;
+    margin-left: 46.6875px;
+    width: 90%;
+    display: grid;
+    grid-template: 400px / 1fr 1fr;
+}
+
+#bottomA .photo{
+    grid-column: 1 / 2;
+    box-shadow: -5px 5px #6c6f6f;
+}
+
+#bottomB .photo{
+    grid-column: 2 / 3;
+    box-shadow: 5px 5px #6c6f6f;
+}
+
+.bottom .photo{
+    margin: 0px;
+}
+
+#photo1{
+    background-image: url("junior-club.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#photo2{
+    background-image: url("adult-club.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#photo3{
+    background-image: url("intensive-club.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#photo4{
+    background-image: url("contest-club.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#bottomA #price{
+    grid-column: 2 / 3;
+    padding-left:100px;
+}
+
+#bottomB #price{
+    grid-column: 1 / 2;
+    padding-left: 60px;
+    padding-right: 0px;
+}
+
+.bottom #price{
+    margin: 0px;
+    padding-top: 50px;
+}
+
+.card hr {
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.card #membership{
+    margin: auto;
+    height: 200px;
+}
+
+.card #membership button{
+    width: 25%;
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    color: white;
+    box-shadow: 2px 2px #6c6f6f;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #0091d2;
+    border: 0px;
+	border-radius: 10px;
+    transition: 0.35s;
+}
+
+.card #membership button:hover {
+	color: #0091d2;
+    box-shadow: 5px 7px #565858;
+	background-color: #d5f1fe;
+	transition: 0.35s;
+}
+
+.card #membership .membership-term{
+    text-decoration: underline 1px;
+    text-underline-offset: 3px;
+    color: red;
+    text-align: left !important;
+    width: 90%;
+    margin: auto;
+    padding-top: 60px;
+}
+
+#scroll-up{
+    display: block;
+    height: 50px;
+    width: 50px;
+    right: 20px;
+    bottom: 20px;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-image: url("scroll-up-blue.png") , radial-gradient(white 26%,#3498db);
+    border-radius: 50%;
+    border: 0px;
+}

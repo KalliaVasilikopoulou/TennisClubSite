@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="styles/footer.css">
+        <link rel="stylesheet" href="styles/navBar.css"> 
+        <link rel = "stylesheet" href = "styles/spaces.css">
+        <link rel="stylesheet" href="styles/logInOrUp.css">
+
+        <title>Villia Tennis Club | Spaces</title>
+    </head>
+
+    <body class = "container-fluid p-0 m-0 w-100">
+
+        <!--LOGIN & SIGNUP-->
+        <div class = "popup" id = "login">
+            <div class = "modal-container"> 
+                <div class = "modal"> 
+                    <div class = "button_row row m-0 p-0"> 
+                        <button class = "close col-1 p-0">
+                        </button> 
+                    </div>
+                    <form class = "form">
+                        <div class = "inputs col m-0">
+                            <div class="title row m-0 p-0"> 
+                                <h1>
+                                    LOGIN
+                                </h1> 
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "e-mail" class = "field_name col-5 p-0"> E-mail or username </label>
+                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "password" class = "field_name col-5 p-0"> Password </label>
+                                <input type="text" name="password" class = "field_input col-5 p-0">
+                            </div> 
+                        </div>
+                        <div class = "redirect row m-0 p-0">
+                            <a> I don't have an account &rarr;</a>
+                        </div>
+                        <button type = "submit" class = "submit"> 
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class = "popup" id = "signup"> 
+            <div class = "modal-container"> 
+                <div class = "modal m-0"> 
+                    <div class = "button_row row m-0 p-0"> 
+                        <button class = "close col-1 p-0" >
+                        </button> 
+                    </div>
+                    <form class = "form">
+                        <div class = "inputs col m-0">
+                            <div class="title row m-0 p-0"> 
+                                <h1>
+                                    SIGN UP
+                                </h1> 
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "e-mail" class = "field_name col-5 p-0"> E-mail </label>
+                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "name" class = "field_name col-5 p-0"> Username </label>
+                                <input type="text" name="user_name" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "full_name" class = "field_name col-5 p-0"> Full name </label>
+                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "password" class = "field_name col-5 p-0"> Password </label>
+                                <input type="text" name="password" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "repeat_password" class = "field_name col-5 p-0"> Repeat password </label>
+                                <input type="text" name="repeat_password" class = "field_input col-5 p-0">
+                            </div> 
+                        </div>
+                        <div class = "redirect row m-0 p-0">
+                            <a> I already have an account &rarr;</a>
+                        </div>
+                        <button type = "submit" class = "submit"> 
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!--NAVIGATION BAR-->
+        <div class = "navbarGen row m-0 p-0">
+            <ul class = "button_list col-10 p-0 m-0">
+                <!--Home Page-->
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1">
+                    <a href="index.html">ΑΡΧΙΚΗ</a> 
+                </li>
+                <!--Tennis Page-->
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="tennis.html">ΤΕΝΝΙΣ</a>
+                    <div class = "dropdown col-12 m-0 p-0">
+                        <div class = "dd_content">
+                            <a href = "lessons.html">Μαθήματα Τέννις</a>
+                        </div>
+            
+                        <div class = "dd_content">
+                            <a href = "tournaments.html">Τουρνουά Τέννις</a>
+                        </div>
+                    </div> 
+                </li>
+                <!--Facilities Page-->
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="spaces.html">ΧΩΡΟΙ</a> 
+                    <div class = "dropdown col-12 m-0 p-0"> 
+                        <div class = "dd_content">
+                            <a href = "courts.html">Γήπεδα</a>
+                        </div>
+                        <div class = "dd_content">
+                            <a href = "#">Εστιατόριο</a>
+                        </div>
+                    </div> 
+                </li>
+                <!--Booking Page-->
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a> 
+                </li>
+            </ul>
+            <ul class = "connection_list col-2 p-0 m-0">
+                <li class="accButton col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                    <button id = "loginBtn">LOGIN</button> 
+                </li>
+                <li class = "accButton col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                    <button id = "signupBtn">SIGN UP</button> 
+                </li>
+            </ul>
+        </div>
+
+        <!--MAIN-->
+        <div class = "spaces_main row p-0 m-0">
+            <div class = "spaces_card p-0">
+                <div class = "spaces_banner row m-0 p-0"> 
+                    <h1 id = "title" class = "row"> 
+                        Οι χώροι μας 
+                    </h1>
+                    <p id = "subtitle" class = "row"> 
+                        Χάλια μαυρα, δε μου αρέσει η σελίδα.
+                    </p>
+                </div>
+                <div class = "spaces_info row p-0 m-0"> 
+                    <div class = "spaces_info_row row m-0">
+                        <span id = "courts" class = "p-0">
+                            <div class = "info_card">
+                                <div class = "banner"> 
+                                    Γήπεδα
+                                </div>
+                                <div class = "text"> 
+                                    Στο club μας μπορείτε να διαλέξετε ανάμεσα σε 17 γήπεδα όλων των τύπων τη στιγμή που κάνετε την κράτηση. Βρείτε τις
+                                    τοποθεσίες καθώς και πληροφορίες για τα γήπεδα μας παρακάτω.
+                                </div>
+                                <div class = "button"> 
+                                    <a href = "courts.html">Τα γήπεδά μας</a> 
+                                </div>
+                            </div>
+                        </span> 
+                        <span id = "restaurant" class = "p-0"> 
+                            <div class = "info_card">
+                                <div class = "banner"> 
+                                    Εστιατόριο
+                                </div>
+                                <div class = "text"> 
+                                    Στο εστιατόριό μας θα βρείτε πιάτα από βραβευμένους chef της χώρας σε προσιτές τιμές και με υπέροχη θέα από το πάρκο μας.
+                                    Δείτε περισσότερες πλληροφορίες παρακάτω.
+                                </div>
+                                <div class = "button"> 
+                                    <a href = "restaurant.html">Το εστιατόριό μας</a>
+                                </div>
+                            </div>
+                        </span>
+                    </div> 
+                    <div class = "spaces_info_row row m-0"> 
+                        <span id = "pool" class = "p-0"> 
+                            <div class = "info_card">
+                                <div class = "banner"> 
+                                    Πισίνα
+                                </div>
+                                <div class = "text"> 
+                                    Τους καλοκαιρινούς μήνες, η πισίνα μας είναι ανοιχτή στα μέλη μας. Οι κρατήσεις γίνονται τηλεφωνικώς ενώ κατά την χρήση 
+                                    απαιτείται κατάλληλος εξοπλισμός για εξασφάλιση των απαραίτητων υγειονομικών συνθηκών. <br />
+                                    <strong>Ωράριο λειτουργίας:</strong> 9.00πμ - 6.00μμ
+                                </div>
+                            </div>
+                        </span>
+                        <span id = "equipment" class = "p-0"> 
+                            <div class = "info_card">
+                                <div class = "banner"> 
+                                    Εξοπλισμός
+                                </div>
+                                <div class = "text"> 
+                                    Στο club μας μπορείτε να αγοράσετε ή να νοικιάσετε εξοπλισμό οποιουδήποτε επιπέδου από το κατάστημα εξοπλισμού μας. Αγορές και 
+                                    ενοικιάσεις γίνονται τηλεφωνικώς ή στο χώρο του καταστήματος. Οι υπηρεσίες του καταστήματός μας είναι ανοιχτές σε όλους, χωρίς περιορισμούς. 
+                                    <br /><strong>Ωράριο λειτουργίας:</strong><br />
+                                    για ενοικιάσεις: καθημερινά 9.00πμ - 9.00μμ <br />
+                                    για αγορές: Δευτέρα - Παρασκευή 9.00πμ - 9.00μμ
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--FOOTER-->
+        <div class = "footer row align-items-stretch p-0 m-0">
+            <ul class = "sections col-lg-8 p-x-0">
+                <li class = "ftrSection col m-0"> 
+                    <h1> 
+                        <a href = "index.html">ΑΡΧΙΚΗ</a>
+                    </h1>
+    
+                    <h1> 
+                        <a href = "login.html">LOG IN</a>
+                    </h1>
+    
+                    <h1> 
+                        <a href = "signup.html">SIGN UP</a>
+                    </h1>
+    
+                </li>
+                <!--TENNIS-->
+                <li class = "ftrSection col m-0"> 
+                    <h1> 
+                        <a href = "tennis.html">ΤΕΝΝΙΣ</a>
+                    </h1>
+                    <ul class = "scList">
+                        <li class = "listItem"> 
+                            <a href = "#">Παίξε τέννις</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "lessons.html">Μαθήματα τέννις</a> 
+                        </li>
+                        <li class = "listItem">
+                            <a href = "tournaments.html">Τουρνουά τέννις</a>
+                        </li> 
+                    </ul> 
+                </li>
+                <!--SPACES-->
+                <li class = "ftrSection col m-0"> 
+                    <h1> 
+                        <a href = "spaces.html">ΧΩΡΟΙ</a>
+                    </h1>
+                    <ul class = "scList">
+                        <li class = "listItem"> 
+                            <a href = "courts.html">Γήπεδα</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "#">Εστιατόριο</a>
+                        </li> 
+                    </ul> 
+                </li>
+                <!--BOOKING-->
+                <li class = "ftrSection col m-0"> 
+                    <h1> 
+                        <a href = "booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a>
+                    </h1>
+                </li>
+            </ul>
+            <hr>
+            <p> HELLO THIS IS THE END OF THE FRONT PAGE AND I HAVE GAINED SO MUCH WEIGHT JUST MAKING THIS ONE </p>
+        </div>
+
+        <script type = "text/javascript" src = "scripts/popup_new.js"> </script>
+
+    </body>
+
+</html>

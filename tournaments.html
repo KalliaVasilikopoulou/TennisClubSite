@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="https://img.icons8.com/color/48/000000/tennis.png">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="styles/navBar.css">
+        <link rel="stylesheet" href="styles/footer.css">
+        <link rel="stylesheet" href="styles/tournaments.css">
+        <link rel="stylesheet" href="styles/logInOrUp.css">
+        
+        <title>Villia Tennis Club | Tournaments</title>
+    </head>
+
+    <body class = "container-fluid p-0 m-0 w-100">
+        <!--<a name="top"></a>-->
+
+        <!--LOGIN & SIGNUP-->
+        <div class = "popup" id = "login">
+            <div class = "modal-container"> 
+                <div class = "modal"> 
+                    <div class = "button_row row m-0 p-0"> 
+                        <button class = "close col-1 p-0">
+                        </button> 
+                    </div>
+                    <form class = "form">
+                        <div class = "inputs col m-0">
+                            <div class="title row m-0 p-0"> 
+                                <h1>
+                                    LOGIN
+                                </h1> 
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "e-mail" class = "field_name col-5 p-0"> E-mail or username </label>
+                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "password" class = "field_name col-5 p-0"> Password </label>
+                                <input type="text" name="password" class = "field_input col-5 p-0">
+                            </div> 
+                        </div>
+                        <div class = "redirect row m-0 p-0">
+                            <a> I don't have an account &rarr;</a>
+                        </div>
+                        <button type = "submit" class = "submit"> 
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class = "popup" id = "signup"> 
+            <div class = "modal-container"> 
+                <div class = "modal m-0"> 
+                    <div class = "button_row row m-0 p-0"> 
+                        <button class = "close col-1 p-0" >
+                        </button> 
+                    </div>
+                    <form class = "form">
+                        <div class = "inputs col m-0">
+                            <div class="title row m-0 p-0"> 
+                                <h1>
+                                    SIGN UP
+                                </h1> 
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "e-mail" class = "field_name col-5 p-0"> E-mail </label>
+                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "name" class = "field_name col-5 p-0"> Username </label>
+                                <input type="text" name="user_name" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "full_name" class = "field_name col-5 p-0"> Full name </label>
+                                <input type="text" name="e-mail" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "password" class = "field_name col-5 p-0"> Password </label>
+                                <input type="text" name="password" class = "field_input col-5 p-0">
+                            </div>
+                            <div class = "field row m-0 p-0"> 
+                                <label for = "repeat_password" class = "field_name col-5 p-0"> Repeat password </label>
+                                <input type="text" name="repeat_password" class = "field_input col-5 p-0">
+                            </div> 
+                        </div>
+                        <div class = "redirect row m-0 p-0">
+                            <a> I already have an account &rarr;</a>
+                        </div>
+                        <button type = "submit" class = "submit"> 
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--NAVIGATION BAR-->
+        <div class = "navbarGen row m-0 p-0">
+            <ul class = "button_list col-10 p-0 m-0">
+                <!--Home Page-->
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1">
+                    <a href="index.html">ΑΡΧΙΚΗ</a> 
+                </li>
+                <!--Tennis Page-->
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="tennis.html">ΤΕΝΝΙΣ</a>
+                    <div class = "dropdown col-12 m-0 p-0">
+                        <div class = "dd_content">
+                            <a href = "lessons.html">Μαθήματα Τέννις</a>
+                        </div>
+            
+                        <div class = "dd_content">
+                            <a href = "tournaments.html">Τουρνουά Τέννις</a>
+                        </div>
+                    </div> 
+                </li>
+                <!--Facilities Page-->
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="spaces.html">ΧΩΡΟΙ</a> 
+                    <div class = "dropdown col-12 m-0 p-0"> 
+                        <div class = "dd_content">
+                            <a href = "courts.html">Γήπεδα</a>
+                        </div>
+                        <div class = "dd_content">
+                            <a href = "#">Εστιατόριο</a>
+                        </div>
+                    </div> 
+                </li>
+                <!--Booking Page-->
+                <li class = "navButton col-lg-2 col-md-1 col-sm-1"> 
+                    <a href="booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a> 
+                </li>
+            </ul>
+            <ul class = "connection_list col-2 p-0 m-0">
+                <li class="accButton col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                    <button id = "loginBtn">LOGIN</button> 
+                </li>
+                <li class = "accButton col-lg-6 col-md-6 col-sm-6 p-0 m-0">
+                    <button id = "signupBtn">SIGN UP</button> 
+                </li>
+            </ul>
+        </div>
+
+        <!--MAIN-->
+        <div class = "tournaments_main row p-0 m-0">
+            <div class = "tournaments_card p-0">
+                <div class = "tournaments_banner_title row m-0 p-0">
+                    <div>
+                        <h1>
+                            ΤΟΥΡΝΟΥΑ
+                        </h1>
+                        <h4>
+                            Επερχόμενα Τουρνουά ┃ VILLIA TENNIS CLUB
+                        </h4>
+                    </div>
+                </div>
+                <div class = "tournaments_banner_subtitle row m-0 p-0"> 
+                    <div class = "title row"> 
+                        <h1>
+                            Λίγα λόγια για τα τουρνουά μας...
+                        </h1>
+                    </div>
+                    <div class = "subtitle row"> 
+                        <p >
+                            Το κλαμπ μας διοργανώνει τουρνουά τένις σε τακτά χρονικά διαστήματα, τα οποία πραγματοποιούνται στις εγκαταστάσεις μας. Όλα τα μέλη μας,
+                            ανεξαρτήτως ηλικίας, εμπειρίας ή επιπέδου δεξιοτήτων, μπορούν να συμμετέχουν στα τουρνουά μας. Στα τουρνουά μπορούν να πάρουν μέρος και άτομα
+                            που δεν αποτελούν μέλη του κλαμπ μας, αλλά θέλουν μόνο να συμμετέχουν στους αγώνες (τα μη μέλη συνήθως έχουν πρόσβαση σε συγκεκριμένα τουρνουά).<br>
+                            Με λίγα απλά βήματα θα μπρορέσετε κι εσείς να πάρετε μέρος σε ένα από τα τουρνουά μας!<br>
+                            Αρχικά θα χρειαστεί να φτιάξετε λογαριασμό στο σάιτ μας. Μετά, το μόνο που χρειάζεται είναι να επιλέξετε ένα από τα επερχόμενα τουρνουά που
+                            θα βρείτε στο ημερολόγιο-τουρνουά στο τέλος της σελίδας και να συμπληρώσετε με τα στοιχεία σας την φόρμα που θα σας δωθεί στην συνέχεια.<br>  
+                        </p>
+                    </div>
+                </div>
+                
+                <div class = "tournaments_info row m-0 p-0"> 
+                    <div class = "tournaments_info_banner row m-0 p-0"> 
+                        <h1>ΕΠΕΡΧΟΜΕΝΑ ΤΟΥΡΝΟΥΑ</h1>
+                    </div>
+                    <div class = 'tournaments_info_row'>
+                        <div class = "month_title row m-0"> 
+                            <h4> ΑΠΡΙΛΗΣ </h4>
+                        </div>
+                        <div id = "t1"> 
+                            <div class = "tournament_row">
+                                <span class ="tournament_description">
+                                    <h4 class = "tournament_title">
+                                        Ανοιχτό Τουρνουά Τένις 2022
+                                    </h4>
+                                    <p class = "tournament_details">
+                                        Το τουρνουά αυτό είναι ανοιχτό για όλους όσους επιθυμούν να συμμετάσχουν, ακόμα και όσους που δεν είναι μέλη του συλλόγου μας!
+                                        Δεχόμαστε συμμετοχές από παίκτες ηλικίας 15 ετών μέχρι και ενήλικες και το τουρνουά θα διαρκέσει περίπου μία εβδομάδα.
+                                    </p>
+                                </span>
+                                <span class ="tournament_poster">
+                                    <h1>ΑΝΟΙΧΤΟ ΤΟΥΡΝΟΥΑ ΤΕΝΙΣ 2022</h1>
+                                    <h2>23 Απριλίου 2022 - 30 Απριλίου 2022</h2>
+                                    <h4>Το τουρνουά είναι ανοιχτό και για μη μέλη του κλαμπ</h4>
+                                    <h4>ΒΡΑΒΕΙΑ ΓΙΑ ΤΟΥΣ ΝΙΚΗΤΕΣ!</h4><div id="gap1"></div>
+                                    <h4>ΔΗΛΩΣΤΕ ΣΥΜΜΕΤΟΧΗ ΤΩΡΑ</h4>
+                                    <p>Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες.</p>
+                                </span>
+                            </div> 
+                        </div>
+                        <div id = "t2"> 
+                            <div class = "tournament_row">
+                                <span class = "tournament_poster">
+                                    <h2>ΕΤΗΣΙΟ ΦΙΛΑΝΘΡΩΠΙΚΟ ΤΟΥΡΝΟΥΑ JUNIOR 2022</h2><br>
+                                    <h3>25 Απριλίου 2022 - 26 Απριλίου 2022</h3>
+                                    <h4>ΒΟΗΘΗΣΤΕ ΤΑ ΠΑΙΔΙΑ ΠΟΥ ΕΙΝΑΙ ΣΕ ΑΝΑΓΚΗ</h4><div id="gap2"></div>
+                                    <h4>ΔΗΛΩΣΤΕ ΣΥΜΜΕΤΟΧΗ ΤΩΡΑ</h4>
+                                    <p>Επικοινωνήστε μαζί μας για περισσότερες πληροφορίες.</p>
+                                </span>
+                                <span class ="tournament_description">
+                                    <h4 class = "tournament_title">
+                                        Ετήσιο Φιλανθρωπικό Τουρνουά Junior
+                                    </h4>
+                                    <p class = "tournament_details">
+                                        Αυτό το τουρνουά, μία από τις κορυφαίες διοργανώσεις τένις στην περιοχή, καθώς, χάρη σε αυτό, καταφέρνουμε κάθε χρόνο να
+                                        συγκέντρωσουμε και να δωρίσουμε ένα μεγάλο χρηματικό ποσό σε τοπικές φιλανθρωπικές οργανώσεις που επικεντρώνονται στα παιδιά!
+                                        Σκοπός μας είναι, μέσω αυτής της διοργάνωσης, να αναπτυχθούμε και να συνεισφέρουμε συνεχώς στην κοινότητά μας. Στο τουρνουά θα
+                                        μπορούν να συμμετάσχουν παιδιά ηλικίας εώς και 12 ετών, που είναι μέλη του κλαμπ μας. Με την συμμετοχή τους στο τουρνουά, οι μικροί
+                                        μα φίλοι θα μπορέσουν να συμβάλουν, ταυτόχρονα, στην καλυτέρευση της ποιότητας ζωής και άλλων παιδιών, τα οποία είναι σε ανάγκη .
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <p><div class="calendar-details">
+                    <div class="calendar-title">ΣΥΜΜΕΤΟΧΗ ΣΕ ΤΟΥΡΝΟΥΑ</div><br><br>
+                    Παρακάτω μπορείτε να δείτε το ημερολόγιο με τα επερχόμενα τουρνουά του κλαμπ μας και να επιλέξετε αυτό στο οποίο θέλετε να συμμετάσχετε.
+                </div></p>
+                <div class="calendar">
+                    <div id="banner">
+                        <h4>ΗΜΕΡΟΛΟΓΙΟ ΤΟΥΡΝΟΥΑ ΑΝΟΙΞΗ-ΚΑΛΟΚΑΙΡΙ 2022</h4>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Ημερομηνία Έναρξης</th>
+                            <th>Ημερομηνία Λήξης</th>
+                            <th>Τίτλος Τουρνουά</th>
+                            <th>Δικαίωμα Εισόδου</th>
+                            <th>Ηλικιακή Κατηγορία</th>
+                        </tr>
+                        <tr>
+                            <td>23 Απριλίου 2022</td>
+                            <td>30 Απριλίου 2022</td>
+                            <td><a href = "">Ανοιχτό Τουρνουά Τένις 2022</a></td>
+                            <td>Μέλη και μη μέλη</td>
+                            <td>Junior,Adult</td>
+                        </tr>
+                        <tr>
+                            <td>25 Απριλίου 2022</td>
+                            <td>26 Απριλίου 2022</td>
+                            <td><a href = "">Ετήσιο Φιλανθρωπικό Τουρνουά Junior</a></td>
+                            <td>Μέλη</td>
+                            <td>Junior</td>
+                        </tr>
+                        <tr>
+                            <td>15 Μαΐου 2022</td>
+                            <td>18 Μαΐου 2022</td>
+                            <td><a href = "">Χάσμα γενεών - Ανοιχτό Τουρνουά</a></td>
+                            <td>Μέλη και μη μέλη</td>
+                            <td>Junior, Adult, Senior</td>
+                        </tr>
+                        <tr>
+                            <td>6 Ιουλίου 2022</td>
+                            <td>11 Ιουλίου 2022</td>
+                            <td><a href = "">Μασκαράτα Τουρνουά 2022</a></td>
+                            <td>Μέλη</td>
+                            <td>Adult</td>
+                        </tr>
+                        <tr>
+                            <td>11 Ιουλίου 2022</td>
+                            <td>14 Ιουλίου 2022</td>
+                            <td><a href = "">Εκδήλωση Αλληλεγγύης - Ανοιχτό Τουρνουά</a></td>
+                            <td>Μέλη και μη μέλη</td>
+                            <td>Junior, Adult, Senior</td>
+                        </tr>
+                        <tr>
+                            <td>12 Ιουλίου 2022</td>
+                            <td>15 Ιουλίου 2022</td>
+                            <td><a href = "">Κλειστό Τουρνουά και Ημέρα Τελικών</a></td>
+                            <td>Μέλη</td>
+                            <td>Adult</td>
+                        </tr>
+                        <tr>
+                            <td>26 Ιουλίου 2022</td>
+                            <td>29 Ιουλίου 2022</td>
+                            <td>Επερχόμενο Τουρνουά (Άγνωστος Τίτλος)</td>
+                            <td>Μέλη και μη μέλη</td>
+                            <td>Junior</td>
+                        </tr>
+                        <tr>
+                            <td>4 Ιουλίου 2022</td>
+                            <td>8 Ιουλίου 2022</td>
+                            <td>Επερχόμενο Τουρνουά (Άγνωστος Τίτλος)</td>
+                            <td>Μέλη</td>
+                            <td>Junior, Adult, Senior</td>
+                        </tr>
+                        <tr>
+                            <td>11 Ιουλίου 2022</td>
+                            <td>16 Ιουλίου 2022</td>
+                            <td>Επερχόμενο Τουρνουά (Άγνωστος Τίτλος)</td>
+                            <td>Μέλη και μη μέλη</td>
+                            <td>Senior</td>
+                        </tr>
+                        <tr>
+                            <td>5 Aυγούστου 2022</td>
+                            <td>11 Aυγούστου 2022</td>
+                            <td>Επερχόμενο Τουρνουά (Άγνωστος Τίτλος)</td>
+                            <td>Μέλη και μη μέλη</td>
+                            <td>Adult, Senior</td>
+                        </tr>
+                    </table>
+                </div>-->
+            </div>
+            <script type = "text/javascript" src = "../scripts/tournaments.js"> </script>
+        </div>
+        
+        <!--FOOTER-->
+        <div class = "footer row align-items-stretch p-0 m-0">
+            <ul class = "sections col-lg-8 p-x-0">
+                <li class = "ftrSection col m-0"> 
+                    <h1> 
+                        <a href = "index.html">ΑΡΧΙΚΗ</a>
+                    </h1>
+    
+                    <h1> 
+                        <a href = "login.html">LOG IN</a>
+                    </h1>
+    
+                    <h1> 
+                        <a href = "signup.html">SIGN UP</a>
+                    </h1>
+    
+                </li>
+                <!--TENNIS-->
+                <li class = "ftrSection col m-0"> 
+                    <h1> 
+                        <a href = "tennis.html">ΤΕΝΝΙΣ</a>
+                    </h1>
+                    <ul class = "scList">
+                        <li class = "listItem"> 
+                            <a href = "#">Παίξε τέννις</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "lessons.html">Μαθήματα τέννις</a> 
+                        </li>
+                        <li class = "listItem">
+                            <a href = "tournaments.html">Τουρνουά τέννις</a>
+                        </li> 
+                    </ul> 
+                </li>
+                <!--SPACES-->
+                <li class = "ftrSection col m-0"> 
+                    <h1> 
+                        <a href = "spaces.html">ΧΩΡΟΙ</a>
+                    </h1>
+                    <ul class = "scList">
+                        <li class = "listItem"> 
+                            <a href = "courts.html">Γήπεδα</a>
+                        </li>
+                        <li class = "listItem">
+                            <a href = "#">Εστιατόριο</a>
+                        </li> 
+                    </ul> 
+                </li>
+                <!--BOOKING-->
+                <li class = "ftrSection col m-0"> 
+                    <h1> 
+                        <a href = "booking.html">ΚΡΑΤΗΣΗ ΓΗΠΕΔΟΥ</a>
+                    </h1>
+                </li>
+            </ul>
+            <hr>
+            <p> HELLO THIS IS THE END OF THE FRONT PAGE AND I HAVE GAINED SO MUCH WEIGHT JUST MAKING THIS ONE </p>
+        </div>
+
+        <script type = "text/javascript" src = "scripts/popup_new.js"></script>
+
+        <!--
+        <a href=#top>
+            <button id="scroll-up"></button>
+        </a>
+        -->
+
+
+    </body>
+</html>
