@@ -167,9 +167,12 @@ router.post('/tournamentsAdmin/deleteMonthFromDB' , tournamentsController.delete
 router.get('/deleteMonthSelect' , tournamentsController.deleteMonthSelect);
 router.get('/editTournamentSelect' , tournamentsController.editTournamentSelect);
 router.post('/tournamentsAdmin/editTournamentAtDB' , upload.single('poster'), tournamentsController.editTournamentAtDB);
-router.get('/tournamentForm/joinTournament' , tournamentsController.joinTournament);
+router.post('/tournamentForm/joinTournament' , tournamentsController.joinTournament);
 router.get('/tournaments/userTournaments', loginController.checkAuthenticated, tournamentsController.renderUserTournaments);
 router.get('/cancelJoinTournament', loginController.checkAuthenticated, tournamentsController.cancelJoinTournament);
+router.get('/showComments', tournamentsController.rendershowComments);
+
+router.get('/getAdminRights', loginController.checkAuthenticated, loginController.getAdminRights);
 
 module.exports = router;
 

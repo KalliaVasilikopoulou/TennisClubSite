@@ -4,8 +4,10 @@ const tableWidth = 14;
 const tableHeight = 8;
 let currentCourt = 1;
 let hoursArray = [];
+let refresh= false;
 
 let makeBooking = (event) => { 
+    refresh = true;
     let date = event.target.getAttribute("date");
     let time = event.target.getAttribute("time");
     let datetime = date+time;
@@ -15,7 +17,7 @@ let makeBooking = (event) => {
         (response) => response.json()
         .then((json) => fillCells(json))
     )
-    location.reload();
+    //setTimeout(location.reload(), 2000);
 }
 
 let closeForm = () => { 
@@ -73,6 +75,7 @@ let fillCells = (reservations) => {
             cell.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
         }
     }
+    if (refresh) {refresh= false; location.reload();};
 }
 
 let identifyDataColumns = () => { 
