@@ -55,7 +55,8 @@ CREATE TABLE TOURNAMENT (
 
 CREATE TABLE joins ( 
     ParticipantID integer NOT NULL, 
-    TournamentID varchar(100) NOT NULL, 
+    TournamentID varchar(100) NOT NULL,
+    comments text,
     FOREIGN KEY(ParticipantID) REFERENCES ACCOUNT(AccountID) ON DELETE CASCADE ON UPDATE CASCADE, 
     FOREIGN KEY(TournamentID) REFERENCES TOURNAMENT(TournamentID) ON DELETE CASCADE ON UPDATE CASCADE
 );
