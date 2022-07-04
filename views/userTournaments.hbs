@@ -1,0 +1,25 @@
+
+<div class = "booking_main row m-0">
+    <div class = "booking_card p-0"> 
+        <div class = "booking_banner row m-0">
+            <h1 id = "title" class = "row">
+                Τα τουρνουά μου
+            </h1>
+            <p id = "subtitle" class = "row"> 
+                Σε αυτήν την σελίδα μπορείτε να βρείτε τις κρατήσεις που έχετε κάνει για τα τουρνουά μας . Οι κρατήσεις αφορούν  όλα τα γήπεδα μας.
+                Αν υπάρξει κάποια αλλαγή στην ώρα προσέλευσης ή και τη συμμετοχή σας παρακαλούμε να επικοινωνήσετε στα τηλέφωνα του κλάμπ μας.
+            </p>
+            <p id = "my_tournaments" class = "row">
+                {{#each tournaments}}
+                <div class="each_tournament">
+                    • <span style = "font-size: 24px; color:#ca31a4">{{title}}: &nbsp;&nbsp;&nbsp;{{startdate}} - {{enddate}} <br></span>
+                    {{details}}<br>
+                </div>
+                {{/each}}
+            </p>
+        </div> 
+        <div class = "booking_info row m-0"> 
+        </div>
+    </div>
+</div>
+
