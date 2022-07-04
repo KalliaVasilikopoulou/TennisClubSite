@@ -1,6 +1,6 @@
 # advancedProgrammingTechniques
 
-Site για Tennis Club
+Εφαρμογή Tennis Club
 
 Περιγραφή 
 

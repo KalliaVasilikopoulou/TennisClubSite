@@ -17,6 +17,49 @@ function showAccountMenu() {
 }
 
 
+function hideAccountChoices(adminRights){
+    if (adminRights){
+
+        let accountChoice = document.querySelectorAll(".accountChoice");
+        accountChoice[0].style.display = "none";
+        accountChoice[1].style.display = "none";
+
+        // let reservationsLi = document.createElement('li');
+        // reservationsLi.className = "accountChoice";
+        // let reservationsA = document.createElement('a');
+        // reservationsA.className = "choise";
+        // reservationsA.innerHTML = "Οι κρατήσεις μου";
+        // reservationsLi.appendChild(reservationsA);
+        // let reservationsDiv = document.createElement('div');
+        // reservationsDiv.id = "reservations";
+        // reservationsDiv.className = "accountInfoDropdown";
+        // reservationsLi.appendChild(reservationsDiv);
+        // let reservationsUl = document.createElement('ul');
+        // reservationsUl.className = "accountList";
+        // reservationsDiv.appendChild(reservationsUl);
+        // let liElement = document.querySelector(".accountChoices");
+        // liElement.insertBefore(reservationsLi, liElement.firstChild);
+
+        // let tournamentsLi = document.createElement('li');
+        // tournamentsLi.className = "accountChoice";
+        // let tournamentsA = document.createElement('a');
+        // tournamentsA.className = "choise";
+        // tournamentsA.innerHTML = "Τα τουρνουά μου";
+        // tournamentsLi.appendChild(tournamentsA);
+        // let tournamentsDiv = document.createElement('div');
+        // tournamentsDiv.id = "tournaments";
+        // tournamentsDiv.className = "accountInfoDropdown";
+        // tournamentsLi.appendChild(tournamentsDiv);
+        // let tournamentsUl = document.createElement('ul');
+        // tournamentsUl.className = "accountList";
+        // tournamentsDiv.appendChild(tournamentsUl);
+        // liElement = document.querySelector(".accountChoices");
+        // liElement.insertBefore(tournamentsLi, liElement.firstChild);
+        
+    }
+}
+
+
 function addMyTournaments(tournaments){
     let accountList = document.querySelector("#tournaments .accountList");
     for (tour of tournaments){
@@ -62,6 +105,7 @@ function addMyTournaments(tournaments){
 
 
 function addMyReservations(reservations){
+
     let accountList = document.querySelector("#reservations .accountList");
     for (rsv of reservations){
         let listItem = document.createElement("li");
@@ -95,7 +139,6 @@ function addMyReservations(reservations){
         // reservationCancelBtn.className = 'row';
         reservationCancelBtn.appendChild(reservationCancelHref);
         listItem.appendChild(reservationCancelBtn);
-        reservationCancelBtn.style.width = "100%";
 
         accountList.appendChild(listItem);
         listItem.style.display = 'flex';
@@ -115,6 +158,7 @@ let fetchUserTournaments = () => {
 }
 
 let renderUserTournaments = (tournaments) => {
+    console.log(tournaments);
     addMyTournaments(tournaments);
 }
 
@@ -129,12 +173,28 @@ let fetchUserReservations = () => {
 }
 
 let renderUserReservations = (reservations) => {
+    console.log(reservations);
     addMyReservations(reservations);
 }
 
 
 
+let fetchAdminRights = () => { 
+    fetch('/getAdminRights')     //the fetched result is a list of strings
+    .then(
+        (response) => response.json()   //we turn the list of strings into a list of jason objects
+        .then((json) => renderAdminRights(json))
+    )
+}
+
+let renderAdminRights = (adminRights) => {
+    hideAccountChoices(adminRights[0].adminrights);
+}
+
+
+
 window.addEventListener('DOMContentLoaded', (event) => { 
-    fetchUserTournaments();
     fetchUserReservations();
+    fetchUserTournaments();
+    fetchAdminRights();
 });

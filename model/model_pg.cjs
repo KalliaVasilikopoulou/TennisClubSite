@@ -59,6 +59,26 @@ let registerUser = (username, password, email, fullname, callback) => {
     })
 }
 
+let getAdminRights = (accountid, callback) => {
+    const query = { 
+        text: 
+        `select distinct adminrights 
+        from account
+        where accountid = '${accountid}';`
+    }
+
+
+    sql.query(query, (err, res) => { 
+        if(err) { 
+            callback(err.stack);
+        }
+        else { 
+            callback(null, res.rows)  //returns results as rows
+        }
+    })
+
+}
+
 //used by booking controller
 let getTablehours = (callback) => { 
 
@@ -392,12 +412,11 @@ let updateTournament = (newTournament, callback) => {
 
 }
 
-//below are functions added after handing project in 
-let joinTournament= (participantid, tournamentid, callback) => {
+
+let searchJoin = (participantid, tournamentid, callback) => {
     const query = { 
         text: 
-        `insert into joins(participantid, tournamentid)
-         VALUES (${participantid}, '${tournamentid}');`
+        `select * from joins where participantid = ${participantid} and tournamentid = '${tournamentid}';`
     }
 
 
@@ -409,6 +428,51 @@ let joinTournament= (participantid, tournamentid, callback) => {
             callback(null, res.rows)  
         }
     })
+
+}
+
+//below are functions added after handing project in 
+let joinTournament= (joined, participantid, tournamentid, comments, callback) => {
+        let query;
+        if (joined.length == 0)
+            query = { 
+                text: 
+                `insert into joins(participantid, tournamentid, comments)
+                VALUES (${participantid}, '${tournamentid}', '${comments}');`
+            };
+        else
+            query = { 
+                text: 
+                `update joins
+                set comments = '${comments}'
+                where participantid = ${participantid} and tournamentid = '${tournamentid}';`
+            };
+    
+    
+        sql.query(query, (err, res) => { 
+            if(err) { 
+                callback(err.stack);
+            }
+            else { 
+                callback(null, res.rows)  
+            }
+        })
+    // const query = { 
+    //     text: 
+    //     `insert into joins(participantid, tournamentid, comments)
+    //      VALUES (${participantid}, '${tournamentid}', '${comments}')
+    //      where ;`
+    // }
+
+
+    // sql.query(query, (err, res) => { 
+    //     if(err) { 
+    //         callback(err.stack);
+    //     }
+    //     else { 
+    //         callback(null, res.rows)  
+    //     }
+    // })
 
 }
 
@@ -452,5 +516,25 @@ let getUserTournaments = (participantid, callback) => {
 
 }
 
-module.exports = {getUserByUsername, registerUser, getTablehours, bookSlot, changeSlotAvailability, deleteReservation, courtReservations, accountReservations, cancelReservation, 
-getTournaments, getTournamentById, getTournamentsNumber, addTournament, deleteTournament, getMonths, deleteMonth, updateTournament, joinTournament, getUserTournaments, getMonthTournaments, cancelJoinTournament};
+let getAllJoins = (callback) => {
+    const query = { 
+        text: 
+        `select distinct accountname, title, comments 
+        from account join (joins join tournament on joins.tournamentid = tournament.tournamentid) on accountid=participantid;`
+    }
+
+
+    sql.query(query, (err, res) => { 
+        if(err) { 
+            callback(err.stack);
+        }
+        else { 
+            callback(null, res.rows)  //returns results as rows
+        }
+    })
+
+}
+
+module.exports = {getUserByUsername, registerUser, getAdminRights, 
+                  getTablehours, bookSlot, changeSlotAvailability, deleteReservation, courtReservations, accountReservations, cancelReservation, 
+                  getTournaments, getTournamentById, getTournamentsNumber, addTournament, deleteTournament, getMonths, deleteMonth, updateTournament, joinTournament, getUserTournaments, getMonthTournaments, cancelJoinTournament, getAllJoins, searchJoin};

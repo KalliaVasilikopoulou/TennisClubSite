@@ -2,6 +2,8 @@ const bcrypt = require("bcrypt");
 const dotenv = require("dotenv");
 
 let userModel = require("../model/model_pg.cjs");
+// let tournamentsController = require ('./tournamentsController.cjs');
+// let bookingController = require ('./bookingController.cjs');
 
 let register = (req, res) => {
     let check = true; 
@@ -89,4 +91,17 @@ let checkAuthenticated = (req, res, next) => {
     }
 }
 
-module.exports = {register, login, logout, checkAuthenticated};
+
+let getAdminRights = (req, res) => { 
+    userModel.getAdminRights(req.session.loggedUserId, function(err, adminRights) {
+        if(err) { 
+            res.send(err);
+        }
+        else {
+            res.send (adminRights);
+        }
+    });
+}
+
+
+module.exports = {register, login, logout, checkAuthenticated, getAdminRights};

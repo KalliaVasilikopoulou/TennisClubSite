@@ -400,18 +400,67 @@ function renderChoice (req, res) {
 
 
 function joinTournament (req,res) {
-    model.joinTournament(req.session.loggedUserId, req.query.tournamentid, function(err, join) {
-        if (err)
-            return console.error(err.message);
+    model.getAdminRights(req.session.loggedUserId, function(err, adminRights) {
+        if(err) { 
+            res.send(err);
+        }
         else {
-            if(err) { 
-                res.send(err);
-            }
-            else {
+            if (adminRights[0].adminrights) {
+                console.log("Admin account can not join tournaments...");
                 res.redirect("/tournamentForm");
             }
+            else {
+                model.searchJoin(req.session.loggedUserId, req.body.tournamentid, function(searchErr, joined) {
+                    if (searchErr){
+                        res.send(searchErr);
+                    }
+                    else {
+                        model.joinTournament(joined, req.session.loggedUserId, req.body.tournamentid, req.body.comments, function(err, join) {
+                            if (err)
+                                return console.error(err.message);
+                            else {
+                                if(err) { 
+                                    res.send(err);
+                                }
+                                else {
+                                    res.redirect("/tournamentForm");
+                                }
+                            }
+                        }); 
+                    }});
+            }
         }
-    }); 
+    });
+    // model.searchJoin(req.session.loggedUserId, req.body.tournamentid, function(searchErr, joined) {
+    //     if (searchErr){
+    //         res.send(searchErr);
+    //     }
+    //     else {
+    //         model.joinTournament(joined, req.session.loggedUserId, req.body.tournamentid, req.body.comments, function(err, join) {
+    //             if (err)
+    //                 return console.error(err.message);
+    //             else {
+    //                 if(err) { 
+    //                     res.send(err);
+    //                 }
+    //                 else {
+    //                     res.redirect("/tournamentForm");
+    //                 }
+    //             }
+    //         }); 
+    //     }});
+    // model.joinTournament(req.session.loggedUserId, req.query.tournamentid, req.query.comments, function(err, join) {
+    //     if (err)
+    //         return console.error(err.message);
+    //     else {
+    //         if(err) { 
+    //             res.send(err);
+    //         }
+    //         else {
+    //             res.redirect("/tournamentForm");
+    //         }
+    //     }
+    // }); 
 }
 
 
@@ -429,6 +478,24 @@ function cancelJoinTournament (req,res) {
             }
         }
     }); 
+}
+
+function rendershowComments(req,res) {
+    let scripts = [];
+    model.getAllJoins(function(err, joins) {
+        if(err) { 
+            res.send(err);
+        }
+        else {
+            let emptyJoin=1;
+            for (let j in joins)
+                if (joins[j].comments != "")
+                    emptyJoin=0;
+            if (emptyJoin) joins = null;
+            // href="/userTournaments"
+            res.render('tournamentComments', {layout: 'signed', title: "Villia Tennis Club | Tournament Comments", style: "tournamentComments.css", joins: joins , scripts: scripts});
+        }
+    });
 }
 
 
@@ -496,3 +563,4 @@ exports.renderUserTournaments = renderUserTournaments;
 exports.deleteTournamentSelect = deleteTournamentSelect;
 exports.deleteMonthSelect = deleteMonthSelect;
 exports.cancelJoinTournament = cancelJoinTournament;
+exports.rendershowComments = rendershowComments;
