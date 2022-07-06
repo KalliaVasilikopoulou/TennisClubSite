@@ -32,3 +32,6 @@ SESSION_NAME =
  - να θέσει στο test για την διαγραφή μήνα το όνομα του ισχίοντος μήνα στα αγγλικά (με κεφαλαίο το πρώτο γράμμα) μέσα στο unit test.
 
  Αφού ολοκληρώσει τα παραπάνω, ο χρήστης μπορεί να τρέξει το unit test μέσω της εντολής  $ run test.
+ 
+ ------
+ late updates to main branch for heroky deployment (final app is in release branch)
