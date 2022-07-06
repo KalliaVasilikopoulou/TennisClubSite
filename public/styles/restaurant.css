@@ -123,7 +123,6 @@
 
 
 #slideshow {
-    /* width: 80%; */
     height: 400px;
     margin: auto;
     margin-bottom: 60px;
@@ -243,70 +242,3 @@
         margin-top: 0px;
     }
 }
-
-/*#info_text #bottom{
-    padding-top: 40px;
-    padding-bottom: 50px;
-    margin-left: 46.6875px;
-    width: 90%;
-    display: grid;
-    grid-template: 400px / 1fr 1fr;
-}
-
-.restaurant_info .info_card #banner h4::before{
-    content: "";
-    display: inline-block;
-    width :40px;
-    height: 20px;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-left: 10px;
-    background-image: url("../imgs/tennis-player-white.png");
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size: 34px;
-    position: relative;
-    top: 5px;
-    left: 5px;
-}
-
-.restaurant_card #membership{
-    margin: auto;
-    height: 10px;
-}
-
-.restaurant_card #membership button{
-    width: 25%;
-    height: 70px;
-    margin-top: 10px;
-    margin-bottom: 32px;
-    color: white;
-    box-shadow: 2px 2px #6c6f6f;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #0091d2;
-    border: 0px;
-	border-radius: 10px;
-    transition: 0.35s;
-}
-
-.restaurant_card #membership button:hover {
-	color: #0091d2;
-    box-shadow: 5px 7px #565858;
-	background-color: #d5f1fe;
-	transition: 0.35s;
-}
-
-#scroll-up{
-    display: block;
-    height: 50px;
-    width: 50px;
-    right: 20px;
-    bottom: 20px;
-    position: fixed;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-image: url("scroll-up-blue.png") , radial-gradient(white 26%,#3498db);
-    border-radius: 50%;
-    border: 0px;
-}*/

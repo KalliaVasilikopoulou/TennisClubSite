@@ -3,9 +3,9 @@ dotenv.config();
 
 let model = require('../model/model_pg.cjs');
 
-const max = 4; 
-const min = 1;
-let courtVariable = min;
+const max = 4;  //the club has a total of 4 courts
+const min = 1;  //first (initial) court
+let courtVariable = min;    //courtVariable variable is the variable used for the number of the current court
 let accountReservations = [];
 let currentAccountReservations = [];
 
@@ -23,7 +23,7 @@ function increment(req, res) {
 }
 
 /** 
-*@description used when pressing "previous" button in booking page to show next court page
+*@description used when pressing "previous" button in booking page to show previous court page
 */
 function decrement(req, res) { 
     if(courtVariable == min) { 
@@ -50,7 +50,7 @@ function tablehours(req, res) {
 }
 
 /** 
- * @description used by bookingAdmin in case time slot needs to be set unavailable - reservation is made for admin account
+ * @description used by bookingAdmin in case time slot needs to be set unavailable - reservation is made for admin account, although admin is not supposed to make reservations
  */
 function changeBooking(req, res, next) { 
     let courtid = `C_${courtVariable}`;
@@ -110,7 +110,7 @@ function getCurrentCourt(req, res) {
 }
 
 /**
- * 
+ * @description returns all reservations (all attributes) of current court
  */
 function getReservations(req, res) { 
     let courtId = `C_${courtVariable}`;
@@ -124,6 +124,10 @@ function getReservations(req, res) {
     });
 }
 
+
+/**
+ * @description returns all reservations (all attributes) of logged user
+ */
 function getAccountReservations(req, res, next) {
     model.accountReservations(req.session.loggedUserId, (err, rows) => { 
         if(err) { 
@@ -136,12 +140,11 @@ function getAccountReservations(req, res, next) {
                 currentAccountReservations.push(i);
             }
             res.send(currentAccountReservations);
-            // next();
         }
     })
 }
 
-
+//deletes specific reservation from reservation table of database for a specific user
 function cancelReservation (req,res) {
     model.cancelReservation(req.session.loggedUserId, req.query.reservationid, function(err, cancelReservation) {
         if (err)
@@ -157,11 +160,14 @@ function cancelReservation (req,res) {
     }); 
 }
 
-
+//when logged in, get account reservations
 function setGlobal(req, res, next) { 
     accountReservations = currentAccountReservations;
     exports.accountReservations = accountReservations;
 }
+
+
+// render page
 
 function renderBookingAdmin(req, res) { 
     let scripts = [];
@@ -173,6 +179,11 @@ function renderBooking(req, res) {
     res.render('booking', {layout: 'signed.hbs', title: "Villia Tennis Club | Booking", style: "/booking.css", courtVariable: courtVariable, scripts: scripts, reservations: accountReservations});
 }
 
+
+//when renderChoise gets called, initial court is set to be court 1
+//checks if the user that has logged in as a simple user or an administrator and directs to different pages each time
+// if simple user -> direct to booking page
+// if administrator -> direct to bookingAdmin page
 function renderChoice(req, res) { 
 
     if(req.session.newSession == true) { 

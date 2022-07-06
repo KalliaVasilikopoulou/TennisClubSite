@@ -5,6 +5,9 @@ const multer = require("multer");
 const dotenv = require('dotenv');
 dotenv.config();
 
+
+//multer is used so that the posters of the images will be stored in the local disk
+
 //Configuration for Multer
 const multerStorage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -39,7 +42,9 @@ const bookingController = require('../controller/bookingController.cjs');
 
 const loginController = require('../controller/loginController.cjs');
 
+
 //page render
+
 router.route('/').get((req, res) => { 
     if(req.session.loggedUserId) { 
         res.render('index',{layout: 'signed.hbs', title : "Villia Tennis Club", style: "index.css"});
@@ -141,6 +146,9 @@ router.get('/logout', loginController.logout);
 router.post('/loginForm', loginController.login, bookingController.setGlobal);
 router.post('/registerForm', loginController.register);
 
+//account routers
+router.get('/getAdminRights', loginController.checkAuthenticated, loginController.getAdminRights);
+
 //booking routers 
 router.get('/booking', loginController.checkAuthenticated, bookingController.renderChoice);
 router.get('/booking/courts/next', bookingController.increment);
@@ -170,9 +178,7 @@ router.post('/tournamentsAdmin/editTournamentAtDB' , upload.single('poster'), to
 router.post('/tournamentForm/joinTournament' , tournamentsController.joinTournament);
 router.get('/tournaments/userTournaments', loginController.checkAuthenticated, tournamentsController.renderUserTournaments);
 router.get('/cancelJoinTournament', loginController.checkAuthenticated, tournamentsController.cancelJoinTournament);
-router.get('/showComments', tournamentsController.rendershowComments);
-
-router.get('/getAdminRights', loginController.checkAuthenticated, loginController.getAdminRights);
+router.get('/showComments', loginController.checkAuthenticated, tournamentsController.rendershowComments);
 
 module.exports = router;
 

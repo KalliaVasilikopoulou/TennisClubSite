@@ -1,11 +1,13 @@
 let table = document.querySelector(".table");
 
-const tableWidth = 14;
-const tableHeight = 8;
-let currentCourt = 1;
-let hoursArray = [];
-let refresh= false;
+const tableWidth = 14;  //we have 13 rows for each hour of the table and 1 row fot the days
+const tableHeight = 8;  //we have 7 rows for each day of the table and 1 row for the hours
+let currentCourt = 1;   //the court we currently see at the page
+let hoursArray = [];    //here we store the hours of the table
+let refresh= false;     //variable used when a new reservation is made
 
+
+//when a booking state changes (booking slot is not available anymore), the makeBooking function fetches the results given at the /booking/make page with the date and time of the slot that changed
 let makeBooking = (event) => { 
     refresh = true;
     let date = event.target.getAttribute("date");
@@ -17,15 +19,18 @@ let makeBooking = (event) => {
         (response) => response.json()
         .then((json) => fillCells(json))
     )
-    //setTimeout(location.reload(), 2000);
 }
 
+//function used to hide the popups when cancel button is pressed
 let closeForm = () => { 
     let modal_form = document.querySelector("#accept_decline .modal-container");
     modal_form.style.zIndex = "-1";
     modal_form.style.display = "none";
 }
 
+
+//confirmForm enables the modal container for the confirmantion of the slot availability change
+//when proceed button is clicked, the slot availability changes from available to unavailable (adds reservation)
 let confirmForm = (date, time) => { 
     let modal_form = document.querySelector("#accept_decline .modal-container");
     modal_form.style.zIndex = "500";
@@ -38,10 +43,16 @@ let confirmForm = (date, time) => {
     cancelChange.addEventListener("click", closeForm);
 }
 
+//calls confirm reservation form for the specific slot
 let getIdForBooking = (event) => { 
     confirmForm(event.target.getAttribute("date"), event.target.getAttribute("time"));
 }
 
+
+//function used to fill the slots of the tables, according to the availability of each slot
+//available slots have a different symbol from unavailable slots
+//at the beginning, all slots have availability = 'true'
+//if a reservation with the same date and time with a specific slot exists, then this slot has availability = 'false'
 let fillCells = (reservations) => { 
 
     const data = document.querySelectorAll(".data_row td"); 
@@ -66,7 +77,7 @@ let fillCells = (reservations) => {
             cell.innerHTML = "&#10003;";
             cell.style.color = "#19E600";
             cell.style.backgroundColor = '#f5f7f9';
-            cell.addEventListener("click", getIdForBooking);
+            cell.addEventListener("click", getIdForBooking);   //an available slot has event listener that adds new reservation when clicked (and it turns into unavailable slot)
             cell.style.backgroundColor = '#f5f7f9';
         }
         else if (cell.getAttribute("availability") == "false") { 
@@ -78,6 +89,8 @@ let fillCells = (reservations) => {
     if (refresh) {refresh= false; location.reload();};
 }
 
+
+//sets the time value of each cell of the table, according to the hour cell (first row) of the column it belongs in
 let identifyDataColumns = () => { 
 
     const datarows = document.querySelectorAll(".data_row"); 
@@ -95,6 +108,8 @@ let identifyDataColumns = () => {
 
 }
 
+
+//fills the first row of the table with the given tablehour values of the hourslots objects
 let fillHourRow = (hourslots) => {
 
     const data_length = hourslots.length;
@@ -114,6 +129,9 @@ let fillHourRow = (hourslots) => {
     identifyDataColumns();
 }
 
+
+//ccreates the text that the first column (the column with the dates) contains
+//the date of each cell of the first row is a date between the current date and the date after 7 days
 let fillDayColumn = () => { 
 
     const month_cell = document.querySelector(".hours .cell0"); 
@@ -133,6 +151,8 @@ let fillDayColumn = () => {
 
 }
 
+
+//creates the cells of each row and adds date value to each cell, where date is a date between the current date and the date after 7 days
 let fillRow = (day, row) => { 
 
     let rowDate = new Date();
@@ -157,6 +177,8 @@ let fillRow = (day, row) => {
 
 }
 
+
+//sets class names to rows (first row has different class name from the rest)
 let makeTable = () => {
 
     for (let i = 0; i<tableHeight; i++) { 
@@ -174,14 +196,19 @@ let makeTable = () => {
     fillDayColumn();
 }
 
+//gets the hours that will fill the first row of the table and calls fillHourRow function
 let renderTablehours = (hourslots) => { 
     fillHourRow(hourslots);
 }
 
+
+//gets the reservations of the current court and calls fillCells function
 let renderCells = (reservations) => { 
     fillCells(reservations);
 }
 
+
+//gets the number of the current court and sets current court = this number
 let setCourt = (court) => { 
     currentCourt = court;
     let court_info = document.querySelector(`#court${currentCourt}`); 
@@ -189,6 +216,8 @@ let setCourt = (court) => {
     fetchTablehours();
 }
 
+
+//fetches all reservations for current court
 let fetchReservations = () => { 
     fetch('booking/availability')
     .then( 
@@ -199,6 +228,8 @@ let fetchReservations = () => {
     )
 }
 
+
+//fetches the number of the current court from the bookingController
 let fetchCurrentCourt = () => { 
     fetch('/booking/courts')
     .then(
@@ -209,6 +240,8 @@ let fetchCurrentCourt = () => {
     )
 }
 
+
+//gets the hours of the table that are stored in the database
 let fetchTablehours = () => { 
     fetch('/booking/hours')
     .then(

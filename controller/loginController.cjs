@@ -2,9 +2,11 @@ const bcrypt = require("bcrypt");
 const dotenv = require("dotenv");
 
 let userModel = require("../model/model_pg.cjs");
-// let tournamentsController = require ('./tournamentsController.cjs');
-// let bookingController = require ('./bookingController.cjs');
 
+
+//function used when the complete button of the sign up popup gets clicked
+//variable check used so we can check if the user filled all the fields of the form (all fields are necessary to be filled)
+//if registration is successful, then redirect to login page
 let register = (req, res) => {
     let check = true; 
     for (let key of Object.keys(req.body)) {
@@ -33,6 +35,15 @@ let register = (req, res) => {
 
 }
 
+
+
+//function used when the complete button of the login popup gets clicked
+//variable check used so we can check if the user filled all the fields of the form (all fields are necessary to be filled)
+//if login is successful, then we check if the user exists in the database
+//if the user does not exist, redirect to login with login error message (no such user)
+//if the user exists, check if the given password matches the password of the account at the database with the same username
+//if it matches, create a new session for the specific user and redirect to the main page
+//else, redirect to login with login error message (wrong password)
 let login = (req, res, next) => { 
     let check = true;
     for (let key of Object.keys(req.body)) {
@@ -71,11 +82,14 @@ let login = (req, res, next) => {
 
 }
 
+//destroys session for the user that requested logout
 let logout = (req, res) => { 
     req.session.destroy(); 
     res.redirect('/');
 }
 
+//when trying to access a specific page that you can only access if you have an account, this function will check if a session for the specific user exists
+//if it does not exist (and the url of the current page is not the url for the login nor sign up page), then redirect to login page
 let checkAuthenticated = (req, res, next) => { 
     if (req.session.loggedUserId){ 
         next();
@@ -92,6 +106,7 @@ let checkAuthenticated = (req, res, next) => {
 }
 
 
+//get the admin rights for the specific user from the accounts table database
 let getAdminRights = (req, res) => { 
     userModel.getAdminRights(req.session.loggedUserId, function(err, adminRights) {
         if(err) { 

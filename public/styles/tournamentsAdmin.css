@@ -9,6 +9,15 @@
     padding-right: 10px;
 }
 
+.modal #modal_poster {
+    position: relative;
+    left: 20%;
+    top: -20px;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+}
+
 .buttons { 
     display: flex;
     flex-direction: column;
@@ -32,10 +41,6 @@
 }
 
 .admin_button{ 
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; */
-
     height: fit-content; 
     background-color: white;
     padding: 20px 0px 20px 0px;
@@ -285,6 +290,7 @@
 .tournament_poster img{ 
     max-width: 400px;
     max-height: 400px;
+    border-radius: 20px;
 }
 
 /*those will be done with js*/

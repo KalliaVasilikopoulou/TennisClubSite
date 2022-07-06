@@ -1,3 +1,4 @@
+//used express for apis
 const express = require('express');
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.urlencoded({extended: false}));
 const currentSession = require("./app-setup/app_setup_session.cjs");
 app.use(currentSession);
 
+//public folder for public files
 app.use(express.static('public'));
 
 app.use((req, res, next) => {
@@ -24,6 +26,7 @@ app.use((req, res, next) => {
 const routes = require('./routes/routes.cjs');
 app.use('/', routes);
 
+//set default layout of website to main.hbs
 app.engine('hbs', exphbs.engine({
   extname: 'hbs', 
   defaultLayout: 'main.hbs', 

@@ -204,6 +204,7 @@
 .tournament_poster img{ 
     max-width: 400px;
     max-height: 400px;
+    border-radius: 20px;
 }
 
 /*those will be done with js*/
@@ -248,6 +249,44 @@
 
 table {
     padding: 0px 20px 0px 20px;
+}
+
+.admin_button #addTournamentBtn {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+}
+
+.admin_button{ 
+    height: fit-content; 
+    background-color: white;
+    padding: 20px 0px 20px 0px;
+    margin: 0 auto;
+}
+
+.admin_button button { 
+    position: relative;
+    left: 42.4%; 
+
+    width: 15.5%; 
+    height: 60px;
+
+    border: none; 
+    border-radius: 10px; 
+    color: white; 
+    background-color: grey; 
+    font-size: 16px;
+}
+
+
+@media only screen and (min-width: 500px) and (max-width: 1200px) {
+    .admin_button button { 
+        position: relative;
+        left: 42.4%;
+        width: 25.5%;
+    }
+
 }
 
 
@@ -354,5 +393,10 @@ table {
     .tournament_description .tournament_text>*{
         font-size: 14px;
     }
-}
 
+    .admin_button button { 
+        position: relative;
+        left: 42.4%;
+        width: 45.5%;
+    }
+}

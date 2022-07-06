@@ -61,7 +61,6 @@
     flex-direction: column;
 
     width: 100%;
-    /*background-color: #d7d700;*/
     background-image: url("../imgs/tennisPage/kale-salad.jpg");
 }
 
@@ -207,17 +206,3 @@
     }
 
 }
-
-/* @media only screen and (max-width: 1570px) { 
-    .tennis_info #play_tennis{ 
-        width: 35%;
-    }
-    
-    .tennis_info #tennis_lessons{ 
-        width: 35%;
-    }
-    
-    .tennis_info #tennis_tournaments{ 
-        width: 35%;
-    }    
-} */

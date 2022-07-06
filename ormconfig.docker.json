@@ -1,0 +1,18 @@
+{
+    "type": "postgres",
+    "host": "db",
+    "post": 5432,
+    "username": "postgres",
+    "password": "benzaiten2014",
+    "database": "postgres",
+    "synchronise": true,
+    "logging":false,
+    "entities": ["dist/src/entity/**/*"],
+    "migrations": ["dist/src/migration/**/*"],
+    "subscribers": ["dist/src/subscriber/**/*"],
+    "cli": {
+        "entitiesDir": "dist/src/entity",
+        "migrationsDir": "dist/src/migration",
+        "subscribersDir": "dist/src/subscriber"
+    }
+}

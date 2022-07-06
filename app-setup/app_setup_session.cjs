@@ -8,7 +8,7 @@ let currentSession =
         resave: false,
         saveUninitialized: false,
         cookie:{ 
-            maxAge: 1000*60*60,
+            maxAge: 1000*60*60, //cookie lasts for an hour
             sameSite: true,
         }
     })

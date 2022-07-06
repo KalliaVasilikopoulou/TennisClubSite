@@ -230,7 +230,7 @@
     .table { 
         font-size: 14px;
     }
-/*how to make table overflow on x axis instead of shrink?*/
+
     .table tbody { 
         overflow-x: scroll;
     }

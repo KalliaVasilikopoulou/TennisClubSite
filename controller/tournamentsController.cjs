@@ -13,6 +13,7 @@ const monthsEnglish = {0: 'January', 1: 'February', 2: 'March', 3: 'April', 4: '
 let loadpopup = null;
 
 
+//used to turn a list of month items with one attribute (monhtname in engish) into a list of month items with two attributes (monthname in greek and monthid in greek)
 function translate (months){
     for (m of months){
         m.monthname = m.monthname.replace(/\s+/g, '');
@@ -25,6 +26,7 @@ function translate (months){
     }
 }
 
+//used to turn date format to yyyy-mm-dd (more readable)
 function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
@@ -39,6 +41,7 @@ function formatDate(date) {
     return [day, month, year].join('/');
 }
 
+//uses formatDate function to turn start date and end date format of each tournament in tournaments list input into format yyyy-mm-dd
 function fixDates (tournaments){
     for (tour of tournaments){
         tour.startdate = formatDate(tour.startdate);
@@ -46,6 +49,7 @@ function fixDates (tournaments){
     }
 }
 
+//direct to tournamentForm page (also sends json object list of all tournaments of database)
 function renderTournamentForm(req, res) { 
     let scripts = [];
     model.getTournaments(function(err, tournaments) { 
@@ -58,6 +62,7 @@ function renderTournamentForm(req, res) {
     });
 }
 
+//gets all tournaments of database and sends them as response
 function allTournaments(req,res) {
     model.getTournaments(function(err, rows) { 
         if(err) { 
@@ -69,6 +74,7 @@ function allTournaments(req,res) {
     });
 }
 
+//gets the tournament that the user selected from the database and directs to tournamentForm page, where it sends the selected tournament as json object
 function addTournamentToForm (req,res) {
     let scripts = [];
 
@@ -82,6 +88,8 @@ function addTournamentToForm (req,res) {
     });
 }
 
+//gets tournament as request object and adds it to database and, then, redirects to tournamentsAdmin page
+//if startdate ir enddate request value is null, then the current date is given to each one
 function addTournamentToDB (req,res) {
     model.getTournamentsNumber(function(err, number) {
         if (err)
@@ -111,15 +119,12 @@ function addTournamentToDB (req,res) {
                                 translate(months);
                                 if (addError){
                                     console.log(addError);
-                                    // completed = "false";
                                     res.send("Τα στοιχεία που συμπληρώσατε δεν είναι εγκυρα! Ελέγξτε αν έχετε συμπληρώσει σωστά τα πεδία της φόρμας. Πηγαίνετε στην προηγούμενη σελίδα για να επαναλάβετε την προσπάθεια σας...");
                                 }
                                 else {
                                     console.log("form submitted");
-                                    // completed = "true";
                                     res.redirect("/tournamentsAdmin");
                                 }
-                                // res.render('tournaments', {title: "Villia Tennis Club | Tournaments", style: "tournaments.css", tournaments: tournaments, months: months , scripts: scripts, completed: completed});
                             }
                         });
                     }
@@ -129,6 +134,7 @@ function addTournamentToDB (req,res) {
     }); 
 }
 
+//gets tournament as request object and deletes it from the database and, then, redirects to tournamentsAdmin page
 function deleteTournamentFromDB (req,res) {
     model.deleteTournament(req.body.tournamentid, function(err, number) {
         if (err)
@@ -147,6 +153,7 @@ function deleteTournamentFromDB (req,res) {
     }); 
 }
 
+//gets month as request object and deletes every tournament that starts in this month from the database and, then, redirects to tournamentsAdmin page
 function deleteMonthFromDB (req,res) {
     model.deleteMonth(req.body.monthid, function(err, month) {
         if (err)
@@ -165,15 +172,17 @@ function deleteMonthFromDB (req,res) {
     }); 
 }
 
+//gets selected tournament from database and redirects to tournamentsAdmin page with variable loadpopup = "loadEditTournament"
+//when loadpopup = "loadEditTournament", the function that opens the modal container for editing of a specific tournament is triggered
 function editTournamentSelect(req,res) {
-    let scripts = [{script: '/scripts/tournamentPopup.js'}];
+    let scripts = [];
     model.getTournamentById(req.query.tournamentid, function(err, selected) { 
         if(err) { 
             res.send(err);
         }
         else {
 
-            //DUE TO TIMEZONE PROBLEMS, WE HAVE TO MANUALLY ADD ONE DAY TO THE DATES
+            //Due to timezone problems, we have to manually add one day to the dates
             selected[0].startdate.setDate(selected[0].startdate.getDate()+1);
             selected[0].enddate.setDate(selected[0].enddate.getDate()+1);
 
@@ -204,9 +213,10 @@ function editTournamentSelect(req,res) {
 
 
 
-
+//gets selected tournament from database and redirects to tournamentsAdmin page with variable loadpopup = "loadDeleteTournament"
+//when loadpopup = "loadDeleteTournament", the function that opens the modal container for deleting of a specific tournament is triggered
 function deleteTournamentSelect(req,res) {
-    let scripts = [{script: '/scripts/tournamentPopup.js'}];
+    let scripts = [];
     model.getTournamentById(req.query.tournamentid, function(err, selected) { 
         if(err) { 
             res.send(err);
@@ -235,9 +245,11 @@ function deleteTournamentSelect(req,res) {
     });
 }
 
-
+//gets number of tournaments that the selected month contains from database and redirects to tournamentsAdmin page with variable loadpopup = "loadDeleteMonth"
+//when loadpopup = "loadDeleteMonth", the function that opens the modal container for deleting of a specific month and all the tournaments that it contains is triggered
+//function translate is called for selected month, so we can make the month obejct more usable (monthname = the attribute that equals the name of the month in greek and monthid = the attribute that equals the name of the month in english)
 function deleteMonthSelect(req,res) {
-    let scripts = [{script: '/scripts/tournamentPopup.js'}];
+    let scripts = [];
     model.getTournaments(function(err, tournaments) { 
         if(err) { 
             res.send(err);
@@ -260,10 +272,6 @@ function deleteMonthSelect(req,res) {
                             loadpopup = "loadDeleteMonth";
                             res.render('tournamentsAdmin', {layout: 'signed', title: "Villia Tennis Club | Tournaments", style: "tournamentsAdmin.css", tournaments: tournaments, months: months ,selected: selectedMonth[0], loadpopup: loadpopup, scripts: scripts});
                         }});
-                    // selectedMonth = [{monthname: req.query.monthid}];
-                    // translate(selectedMonth);
-                    // loadpopup = "loadDeleteMonth";
-                    // res.render('tournamentsAdmin', {layout: 'signed', title: "Villia Tennis Club | Tournaments", style: "tournamentsAdmin.css", tournaments: tournaments, months: months ,selected: selectedMonth[0], loadpopup: loadpopup, scripts: scripts});
                 }
             });
         }
@@ -272,14 +280,14 @@ function deleteMonthSelect(req,res) {
 
 
 
-
+//gets all new tournament values as request object and updates the tournament with id = request.tournamentid  at the database (new values = the values from the request body) and, then, redirects to tournamentsAdmin page
+//if startdate ir enddate request value is null, then the current date is given to each one
 function editTournamentAtDB (req,res) {
     req.body = JSON.parse(JSON.stringify(req.body));
     model.getTournamentsNumber(function(err, number) {
         if (err)
             return console.error(err.message);
         else{
-            //req.body.poster = req.body.poster.replace("blob:","");
             var todayDate = new Date().toISOString().slice(0, 10);
             if (req.body.startdate == "") req.body.startdate = todayDate;
             if (req.body.enddate == "") req.body.enddate = todayDate;
@@ -320,6 +328,8 @@ function editTournamentAtDB (req,res) {
     }); 
 }
 
+//directs to tournamentsAdmin page and sends all tournaments stored at database
+//fixedDates function is used at all tournaments' start dates and end dates to change the format of the dates
 function renderTournamentAdmin(req, res) { 
     let scripts = [{script: '/scripts/tournamentPopup.cjs'}]; 
     model.getTournaments(function(err, tournaments) { 
@@ -340,10 +350,6 @@ function renderTournamentAdmin(req, res) {
                         else {
                             translate(months);
                             fixDates(myTournaments);
-                            // translate(months);
-                            // res.render('tournaments', {layout: 'signed', title: "Villia Tennis Club | Tournaments", style: "tournaments.css", tournaments: tournaments, months: months , scripts: scripts});
-                            // href="/userTournaments"
-                            
                             res.render('tournamentsAdmin', {layout: 'signed', title: "Villia Tennis Club | Tournaments", style: "tournamentsAdmin.css", tournaments: tournaments , myTournaments: myTournaments, months: months, scripts: scripts});
                         }
             });
@@ -354,7 +360,8 @@ function renderTournamentAdmin(req, res) {
 
 
 
-
+//directs to tournaments page and sends all tournaments stored at database
+//fixedDates function is used at all tournaments' start dates and end dates to change the format of the dates
 function renderTournament(req, res) { 
     let scripts = [{script: '/scripts/tournamentPopup.cjs'}]; 
     model.getTournaments(function(err, tournaments) { 
@@ -375,11 +382,6 @@ function renderTournament(req, res) {
                         else {
                             translate(months);
                             fixDates(myTournaments);
-                            // 
-                            // translate(months);
-                            // res.render('tournaments', {layout: 'signed', title: "Villia Tennis Club | Tournaments", style: "tournaments.css", tournaments: tournaments, months: months , scripts: scripts});
-                            // href="/userTournaments"
-                            
                             res.render('tournaments', {layout: 'signed', title: "Villia Tennis Club | Tournaments", style: "tournaments.css", tournaments: tournaments, myTournaments: myTournaments , months: months, reservations: bookingController.accountReservations, scripts: scripts});
                         }
                     });
@@ -389,6 +391,10 @@ function renderTournament(req, res) {
     });
 }
 
+
+//checks if the user that has logged in as a simple user or an administrator and directs to different pages each time
+// if simple user -> direct to tournaments page
+// if administrator -> direct to tournamentsAdmin page
 function renderChoice (req, res) { 
     if(req.session.adminRights) { 
         renderTournamentAdmin(req, res);
@@ -399,6 +405,10 @@ function renderChoice (req, res) {
 }
 
 
+//checks if the account that requested to join the tournament is an administrator or not
+//if account = admin: redirect to tournamentForm page (admin account can not join tournaments, it cant just modify them)
+//else: check if account already joined in the same tournament (variable joined is true if account already joined in the same tournament)
+//join tournament if if not joined, else just change comments and replace them with the new ones the user made on the new tournament participation form
 function joinTournament (req,res) {
     model.getAdminRights(req.session.loggedUserId, function(err, adminRights) {
         if(err) { 
@@ -406,7 +416,6 @@ function joinTournament (req,res) {
         }
         else {
             if (adminRights[0].adminrights) {
-                console.log("Admin account can not join tournaments...");
                 res.redirect("/tournamentForm");
             }
             else {
@@ -431,40 +440,10 @@ function joinTournament (req,res) {
             }
         }
     });
-    // model.searchJoin(req.session.loggedUserId, req.body.tournamentid, function(searchErr, joined) {
-    //     if (searchErr){
-    //         res.send(searchErr);
-    //     }
-    //     else {
-    //         model.joinTournament(joined, req.session.loggedUserId, req.body.tournamentid, req.body.comments, function(err, join) {
-    //             if (err)
-    //                 return console.error(err.message);
-    //             else {
-    //                 if(err) { 
-    //                     res.send(err);
-    //                 }
-    //                 else {
-    //                     res.redirect("/tournamentForm");
-    //                 }
-    //             }
-    //         }); 
-    //     }});
-    // model.joinTournament(req.session.loggedUserId, req.query.tournamentid, req.query.comments, function(err, join) {
-    //     if (err)
-    //         return console.error(err.message);
-    //     else {
-    //         if(err) { 
-    //             res.send(err);
-    //         }
-    //         else {
-    //             res.redirect("/tournamentForm");
-    //         }
-    //     }
-    // }); 
 }
 
 
-
+//deletes tournament join row at join table of database with participantid = the participant id of the request and tournamentid = the tournament id of the request
 function cancelJoinTournament (req,res) {
     model.cancelJoinTournament(req.session.loggedUserId, req.query.tournamentid, function(err, cancelJoinTournament) {
         if (err)
@@ -480,6 +459,7 @@ function cancelJoinTournament (req,res) {
     }); 
 }
 
+//directs to showComments page and sends all comments at join table stored at database (if there are any comments -> emptyJoin variable checks if any comment exists)
 function rendershowComments(req,res) {
     let scripts = [];
     model.getAllJoins(function(err, joins) {
@@ -492,25 +472,21 @@ function rendershowComments(req,res) {
                 if (joins[j].comments != "")
                     emptyJoin=0;
             if (emptyJoin) joins = null;
-            // href="/userTournaments"
             res.render('tournamentComments', {layout: 'signed', title: "Villia Tennis Club | Tournament Comments", style: "tournamentComments.css", joins: joins , scripts: scripts});
         }
     });
 }
 
 
-
+//gets all tournaments that the user account with id = the id of the request, fixes dates formats of tournaments with fixDates function and sends the json objects in a list as response
 function renderUserTournaments(req,res) {
-    // let scripts = [];
     model.getUserTournaments(req.session.loggedUserId, function(err, myTournaments) {
         if(err) { 
             res.send(err);
         }
         else {
             fixDates(myTournaments);
-            // href="/userTournaments"
             res.send (myTournaments);
-            // res.render('userTournaments', {layout: 'signed', title: "Villia Tennis Club | Your Tournaments", style: "userTournaments.css", tournaments: tournaments , scripts: scripts});
         }
     });
 }
@@ -521,7 +497,9 @@ let allImages;
 let imagesInUse;
 let imagesNotUsed;
 
-
+//called every time a tournament is deleted or modified (or a whole month is deleted)
+//checks if the images that are in the files folder are in the database
+//if an image is in the files folder but not in the database (this means that we don't need it), it deletes it
 function cleanDisk() {
     imagesInUse = [];
     allImages = fs.readdirSync("public/files/");

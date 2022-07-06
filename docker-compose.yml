@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  db:
+    image: postgres
+    environment:
+      PG_USER: postgres
+      PG_DATABASE: postgres
+      PG_PASSWORD: benzaiten2014
+      PG_PORT: 5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  web:
+    image: tennis-club
+    depends_on:
+     - db
+    command: ["./wait-for-it.sh", "db:5432", "--", "nodejs", "app.cjs"]
+    ports: '3000:3000'
+

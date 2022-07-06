@@ -4,7 +4,8 @@ const monthNumsEnglish = {0: 'January', 1: 'February', 2: 'March', 3: 'April', 4
 let existing_months =[];
 let mode;
 
-
+//makes all month and tournament rows in page
+//if there are no tournaments, a text appers that informs the user that there are no tournaents
 function appendMonthsTournaments(tournaments) {
     if (tournaments.length === 0 ) {
         let field = document.querySelector('.tournament_rows');
@@ -24,7 +25,7 @@ function appendMonthsTournaments(tournaments) {
 
         return;
     }
-    
+
     for (let tour of tournaments){
         tour.startdate = new Date(tour.startdate);
         let tourMonth = tour.startdate.getMonth();
@@ -55,7 +56,6 @@ function appendMonthsTournaments(tournaments) {
     let month_title_field = document.createElement('div');
     month_title_field.className = 'month_title';
     let text_field = document.createElement('h4');
-    //text_field.contentEditable = 'True';
     month_title_field.appendChild(text_field);
     monthRow.append(month_title_field);
     tourInfoRow.appendChild(monthRow);
@@ -67,6 +67,7 @@ function appendMonthsTournaments(tournaments) {
     }
 }
 
+//adds the field with the title of the month to the page
 function addMonthTitleDB(monthId, monthName) {
 
     let field = document.getElementById(monthId).querySelector('.month_row .month_title h4');
@@ -76,9 +77,10 @@ function addMonthTitleDB(monthId, monthName) {
 
 }
 
+//creates new field for a tournament
 function newTournamentField_NE(tour, tourMonth) {
 
-    tournament_row = createTournamentRow_NE(tour.tournamentid);
+    tournament_row = createTournamentRow_NE();
     let month = document.getElementById("month"+tourMonth);
     month.appendChild(tournament_row);
     addTournamentTitleDB(tournament_row.id, tour.tournamentid, tour.title);
@@ -86,13 +88,11 @@ function newTournamentField_NE(tour, tourMonth) {
     addTournamentPosterDB(tournament_row.id, tour.poster);
 }
 
-function createTournamentRow_NE(tournamentid) { 
-
-    //tournaments_counter +=1; 
+//creates the field that will contain the title, the details and the poster of each tournament
+function createTournamentRow_NE() { 
 
     let row = document.createElement('div');
     row.className = 'tournament_row';
-    //row.classList.add("current_tourn");
 
     let tournaments_list = document.getElementsByClassName('tournament_row');
     for (let i in tournaments_list)
@@ -113,23 +113,23 @@ function createTournamentRow_NE(tournamentid) {
     
     let title = document.createElement('h4');
     title.className = 'tournament_title';
-    //title.contentEditable = 'True';
     text.appendChild(title);
     
     let details = document.createElement('p');
     details.className = 'tournament_details';
-    //details.contentEditable = 'True';
     text.appendChild(details);
 
     let poster = document.createElement('div');
     poster.className = 'tournament_poster';
-    //details.contentEditable = 'True';
     description.appendChild(poster);
     row.appendChild(infoRow);
 
     return row
 }
 
+
+//creates a field that will contain the title of each tournament
+//this field has id with value = the id of the corresponding tournament
 function addTournamentTitleDB(tourRowId, tourId, tourTitle) {
 
         let tournament = document.getElementById(tourRowId);
@@ -139,6 +139,9 @@ function addTournamentTitleDB(tourRowId, tourId, tourTitle) {
         field.appendChild(text);
 }
 
+
+//creates a field that will contain the details of each tournament
+//if there are no descriptions for a tournament, a textnode with a general text will be created and added to the page instead
 function addTournamentDetailsDB(tourId, tourDetails) { 
 
         let tournament = document.getElementById(tourId);
@@ -150,6 +153,8 @@ function addTournamentDetailsDB(tourId, tourDetails) {
 }
 
 
+//creates a field that will contain the poster of each tournament
+//if there is no poster for a tournament, a textnode with a general text will be created and added to the page instead
 function addTournamentPosterDB(tourId, tourPoster) { 
 
     let tournament = document.getElementById(tourId);
@@ -162,6 +167,9 @@ function addTournamentPosterDB(tourId, tourPoster) {
     field.appendChild(poster);
 
 }
+
+
+//creates the table of the tournaments page (creates the headers)
 const rowLength = 5;
 
 function addTableHeaders() { 
@@ -188,6 +196,7 @@ function addTableHeaders() {
 }
 
 
+//fetches the list with the tournaments as json objects
 let fetchAllTournaments = () => { 
     fetch('/tournaments/allTournaments')     //the fetched result is a list of strings
     .then(
@@ -196,6 +205,8 @@ let fetchAllTournaments = () => {
     )
 }
 
+
+//gets the list with the json objects and calls appendMonthsTournaments to build the months and the tournaments of the database
 let renderAllTournaments = (tournaments) => {
     appendMonthsTournaments(tournaments);
 }

@@ -1,6 +1,8 @@
 let collapse = document.querySelector(".collapse_button");
 collapse.addEventListener("click", showSideNavBar); 
 
+
+//sideNavBar visibility changes according to 'state' element value
 function showSideNavBar() {
 
     let sideNavBar = document.querySelector(".sidenav-container");

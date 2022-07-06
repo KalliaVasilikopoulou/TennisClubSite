@@ -1,6 +1,8 @@
 let accountBtn = document.querySelector(".connectedButton");
 accountBtn.addEventListener("click", showAccountMenu);
 
+
+//accountMenu visibility changes according to 'state' element value
 function showAccountMenu() {
 
     let accountMenu = document.querySelector(".account");
@@ -16,50 +18,17 @@ function showAccountMenu() {
 
 }
 
-
+//if the account that has logged in is an administrator, the account menu has only one option and this option is to log out
 function hideAccountChoices(adminRights){
     if (adminRights){
-
         let accountChoice = document.querySelectorAll(".accountChoice");
         accountChoice[0].style.display = "none";
         accountChoice[1].style.display = "none";
-
-        // let reservationsLi = document.createElement('li');
-        // reservationsLi.className = "accountChoice";
-        // let reservationsA = document.createElement('a');
-        // reservationsA.className = "choise";
-        // reservationsA.innerHTML = "Οι κρατήσεις μου";
-        // reservationsLi.appendChild(reservationsA);
-        // let reservationsDiv = document.createElement('div');
-        // reservationsDiv.id = "reservations";
-        // reservationsDiv.className = "accountInfoDropdown";
-        // reservationsLi.appendChild(reservationsDiv);
-        // let reservationsUl = document.createElement('ul');
-        // reservationsUl.className = "accountList";
-        // reservationsDiv.appendChild(reservationsUl);
-        // let liElement = document.querySelector(".accountChoices");
-        // liElement.insertBefore(reservationsLi, liElement.firstChild);
-
-        // let tournamentsLi = document.createElement('li');
-        // tournamentsLi.className = "accountChoice";
-        // let tournamentsA = document.createElement('a');
-        // tournamentsA.className = "choise";
-        // tournamentsA.innerHTML = "Τα τουρνουά μου";
-        // tournamentsLi.appendChild(tournamentsA);
-        // let tournamentsDiv = document.createElement('div');
-        // tournamentsDiv.id = "tournaments";
-        // tournamentsDiv.className = "accountInfoDropdown";
-        // tournamentsLi.appendChild(tournamentsDiv);
-        // let tournamentsUl = document.createElement('ul');
-        // tournamentsUl.className = "accountList";
-        // tournamentsDiv.appendChild(tournamentsUl);
-        // liElement = document.querySelector(".accountChoices");
-        // liElement.insertBefore(tournamentsLi, liElement.firstChild);
-        
     }
 }
 
 
+//function that adds the info about all the tournaments that the user has joined in the account menu
 function addMyTournaments(tournaments){
     let accountList = document.querySelector("#tournaments .accountList");
     for (tour of tournaments){
@@ -68,21 +37,18 @@ function addMyTournaments(tournaments){
 
         let title = document.createElement('span');
         title.innerHTML = 'Τουρνουά: '+ tour.title
-        // title.className = 'row';
         listItem.appendChild(title);
 
         let startdate = document.createElement('span');
         startdate.innerHTML = 'Έναρξη: ' + tour.startdate;
-        // startdate.className = 'row';
         listItem.appendChild(startdate);
 
         let enddate = document.createElement('span');
         enddate.innerHTML = 'Λήξη: '+ tour.enddate;
-        // enddate.className = 'row';
         listItem.appendChild(enddate);
 
         let location = window.location.href;
-        location = "/"+location.split("/").pop();
+        location = "/"+location.split("/").pop();  //location parameter is used so we can redirect to the same page when we cancel a tournament participation 
 
         let tournamentCancelBtn = document.createElement('button');
         let tournamentCancelHref = document.createElement('a');
@@ -91,7 +57,6 @@ function addMyTournaments(tournaments){
         tournamentCancelHref.style['-webkit-text-stroke-width'] = '0.6px';
         tournamentCancelHref.style['-webkit-text-stroke-color'] = 'grey';
         tournamentCancelHref.href = '/cancelJoinTournament?tournamentid='+tour.tournamentid+'&location='+location;
-        // tournamentCancelBtn.className = 'row';
         tournamentCancelBtn.appendChild(tournamentCancelHref);
         listItem.appendChild(tournamentCancelBtn);
 
@@ -103,7 +68,7 @@ function addMyTournaments(tournaments){
     }
 }
 
-
+//function that adds the info about all the court reservations that the user has made in the account menu
 function addMyReservations(reservations){
 
     let accountList = document.querySelector("#reservations .accountList");
@@ -113,21 +78,18 @@ function addMyReservations(reservations){
 
         let court = document.createElement('span');
         court.innerHTML = 'Γήπεδο: '+ rsv.courtid;
-        // court.className = 'row';
         listItem.appendChild(court);
 
         let bookingDate = document.createElement('span');
         bookingDate.innerHTML = 'Ημερομηνία: '+ rsv.reservationdate;
-        // bookingDate.className = 'row';
         listItem.appendChild(bookingDate);
 
         let bookingTime = document.createElement('span');
         bookingTime.innerHTML = 'Ώρα: '+ rsv.reservationtime;
-        // bookingTime.className = 'row';
         listItem.appendChild(bookingTime);
 
         let location = window.location.href;
-        location = "/"+location.split("/").pop();
+        location = "/"+location.split("/").pop();  //location parameter is used so we can redirect to the same page when we cancel a court reservation 
 
         let reservationCancelBtn = document.createElement('button');
         let reservationCancelHref = document.createElement('a');
@@ -136,7 +98,6 @@ function addMyReservations(reservations){
         reservationCancelHref.style['-webkit-text-stroke-width'] = '0.6px';
         reservationCancelHref.style['-webkit-text-stroke-color'] = 'grey';
         reservationCancelHref.href = '/cancelReservation?reservationid='+rsv.reservationid+'&location='+location;
-        // reservationCancelBtn.className = 'row';
         reservationCancelBtn.appendChild(reservationCancelHref);
         listItem.appendChild(reservationCancelBtn);
 
@@ -149,6 +110,7 @@ function addMyReservations(reservations){
 }
 
 
+//fetches the list with the tournaments the user has joined in as json objects
 let fetchUserTournaments = () => { 
     fetch('/tournaments/userTournaments')     //the fetched result is a list of strings
     .then(
@@ -157,13 +119,13 @@ let fetchUserTournaments = () => {
     )
 }
 
+//gets the list with the json objects and calls addMyTournaments to build the user's tournaments of the database
 let renderUserTournaments = (tournaments) => {
-    console.log(tournaments);
     addMyTournaments(tournaments);
 }
 
 
-
+//fetches the list with the court reservations the user has made as json object
 let fetchUserReservations = () => { 
     fetch('/booking/userReservations')     //the fetched result is a list of strings
     .then(
@@ -172,8 +134,8 @@ let fetchUserReservations = () => {
     )
 }
 
+//gets the list with the json objects and calls addMyReservations to build the user's reservations of the database
 let renderUserReservations = (reservations) => {
-    console.log(reservations);
     addMyReservations(reservations);
 }
 

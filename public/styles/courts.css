@@ -18,6 +18,7 @@
     height: fit-content;
     min-height: 300px;
     background-color: white;
+    text-shadow: -1.2px -1.2px 0 #000, 1.2px -1.2px 0 #000, -1.2px 1.2px 0 #000, 1.2px 1.2px 0 #000;
     padding-bottom: 30px;
     
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../imgs/courtsPage/courtsPageBanner.jpg");

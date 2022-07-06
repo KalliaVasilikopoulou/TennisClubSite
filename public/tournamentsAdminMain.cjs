@@ -6,6 +6,8 @@ let mode;
 let modal;
 
 
+//makes all month and tournament rows in page
+//if there are no tournaments, a text appers that informs the user that there are no tournaents
 function appendMonthsTournaments(tournaments) {
     if (tournaments.length === 0 ) {
         let field = document.querySelector('.tournament_rows');
@@ -56,21 +58,19 @@ function appendMonthsTournaments(tournaments) {
     let month_title_field = document.createElement('div');
     month_title_field.className = 'month_title';
     let text_field = document.createElement('h4');
-    //text_field.contentEditable = 'True';
     month_title_field.appendChild(text_field);
     monthRow.append(month_title_field);
 
     
-    /////////MONTH BUTTTONS (delete month)
+    //month buttons element that contains all the buttons for the management of each month (delete month button)
+    //this field has id with value = the name of the corresponding month
     let monthButtons = document.createElement('div');
     monthButtons.className = 'month_buttons';
     monthRow.appendChild(monthButtons);
 
     let deleteMonthBtn = document.createElement('span');
     deleteMonthBtn.className = 'month_delete';
-    // deleteTournamentBtn.contentEditable = 'True';
     monthButtons.appendChild(deleteMonthBtn);
-    /////////
 
     tourInfoRow.appendChild(monthRow);
 
@@ -83,6 +83,7 @@ function appendMonthsTournaments(tournaments) {
     }
 }
 
+//adds the field with the title of the month to the page
 function addMonthTitleDB(monthId, monthName) {
 
     let field = document.getElementById(monthId).querySelector('.month_row .month_title h4');
@@ -92,9 +93,10 @@ function addMonthTitleDB(monthId, monthName) {
 
 }
 
+//creates new field for a tournament
 function newTournamentField_NE(tour, tourMonth) {
 
-    tournament_row = createTournamentRow_NE(tour.tournamentid);
+    tournament_row = createTournamentRow_NE();
     let month = document.getElementById("month"+tourMonth);
     month.appendChild(tournament_row);
     addTournamentTitleDB(tournament_row.id, tour.tournamentid, tour.title);
@@ -104,13 +106,13 @@ function newTournamentField_NE(tour, tourMonth) {
     addTournamentEditBtn(tournament_row.id, tour.tournamentid);
 }
 
-function createTournamentRow_NE(tournamentid) { 
 
-    //tournaments_counter +=1; 
+//creates the field that will contain the title, the details and the poster of each tournament
+//this field, also, contains the buttons that wll be used for the management of each tournament (delete tournament button, edit tournament button)
+function createTournamentRow_NE() { 
 
     let row = document.createElement('div');
     row.className = 'tournament_row';
-    //row.classList.add("current_tourn");
 
     let tournaments_list = document.getElementsByClassName('tournament_row');
     for (let i in tournaments_list)
@@ -131,21 +133,18 @@ function createTournamentRow_NE(tournamentid) {
     
     let title = document.createElement('h4');
     title.className = 'tournament_title';
-    //title.contentEditable = 'True';
     text.appendChild(title);
     
     let details = document.createElement('p');
     details.className = 'tournament_details';
-    //details.contentEditable = 'True';
     text.appendChild(details);
 
     let poster = document.createElement('div');
     poster.className = 'tournament_poster';
-    //details.contentEditable = 'True';
     description.appendChild(poster);
 
 
-    ////////TOURNAMENT BUTTONS
+    //tournament management buttons
 
     let tournamentButtons = document.createElement('div');
     tournamentButtons.className = 'tournament_buttons';
@@ -153,22 +152,20 @@ function createTournamentRow_NE(tournamentid) {
 
     let deleteTournamentBtn = document.createElement('span');
     deleteTournamentBtn.className = 'tournament_delete';
-    // deleteTournamentBtn.contentEditable = 'True';
     tournamentButtons.appendChild(deleteTournamentBtn);
 
     let editTournamentBtn = document.createElement('span');
     editTournamentBtn.className = 'tournament_edit';
-    // editTournamentBtn.contentEditable = 'True';
     tournamentButtons.appendChild(editTournamentBtn);
-
-    ////////END TOURNMENT BUTTONS
-    
 
     row.appendChild(infoRow);
 
     return row
 }
 
+
+//creates a field that will contain the title of each tournament
+//this field has id with value = the id of the corresponding tournament
 function addTournamentTitleDB(tourRowId, tourId, tourTitle) {
 
         let tournament = document.getElementById(tourRowId);
@@ -178,6 +175,9 @@ function addTournamentTitleDB(tourRowId, tourId, tourTitle) {
         field.appendChild(text);
 }
 
+
+//creates a field that will contain the details of each tournament
+//if there are no descriptions for a tournament, a textnode with a general text will be created and added to the page instead
 function addTournamentDetailsDB(tourId, tourDetails) { 
 
         let tournament = document.getElementById(tourId);
@@ -189,6 +189,8 @@ function addTournamentDetailsDB(tourId, tourDetails) {
 }
 
 
+//creates a field that will contain the poster of each tournament
+//if there is no poster for a tournament, a textnode with a general text will be created and added to the page instead
 function addTournamentPosterDB(tourId, tourPoster) { 
 
     let tournament = document.getElementById(tourId);
@@ -203,6 +205,9 @@ function addTournamentPosterDB(tourId, tourPoster) {
 }
 
 
+//creates delete nutton for each tournament of the database
+//this button contains a link to another page
+//at the other page a request message to delete the tournament with the given id is sent each time
 function addTournamentDeleteBtn(tourRowId, tourId) {
 
     let tournament = document.getElementById(tourRowId);
@@ -219,13 +224,14 @@ function addTournamentDeleteBtn(tourRowId, tourId) {
     deleteTournHref.style.color = "white";
     deleteTournButton.appendChild(deleteTournHref);
     deleteTournHref.appendChild(document.createTextNode("Διαγραφή τουρνουά"));
-    //deleteTournButton.addEventListener("click", deleteTournamentPopup);
     btn.appendChild(deleteTournButton);
     field.appendChild(btn);
 }
 
 
-
+//creates edit nutton for each tournament of the database
+//this button contains a link to another page
+//at the other page a request message to edit the tournament with the given id is sent each time
 function addTournamentEditBtn(tourRowId, tourId) {
 
     let tournament = document.getElementById(tourRowId);
@@ -242,12 +248,14 @@ function addTournamentEditBtn(tourRowId, tourId) {
     editTournHref.style.color = "white";
     editTournHref.appendChild(document.createTextNode("Επεξεργασία τουρνουά"));
     editTournButton.appendChild(editTournHref);
-    //editTournButton.addEventListener("click", editTournamentSelectPopup);
     btn.appendChild(editTournButton);
     field.appendChild(btn);
 }
 
 
+//creates delete nutton for each month that corresponds to the start date each tournament of the database
+//this button contains a link to another page
+//at the other page a request message to delete the month with the given id is sent each time
 function addMonthDeleteBtn (tourInfoRowId, monthId) {
 
     let tourInfoRow = document.getElementById(tourInfoRowId);
@@ -264,13 +272,13 @@ function addMonthDeleteBtn (tourInfoRowId, monthId) {
     deleteMonthHref.style.color = "white";
     deleteMonthHref.appendChild(document.createTextNode("Διαγραφή μήνα"));
     deleteMonthButton.appendChild(deleteMonthHref);
-    //deleteMonthButton.addEventListener("click", deleteMonthPopup);
     btn.appendChild(deleteMonthButton);
     field.appendChild(btn);
 
 }
 
 
+//creates the table of the tournamentsAdmin page (creates the headers)
 const rowLength = 5;
 
 function addTableHeaders() { 
@@ -296,17 +304,13 @@ function addTableHeaders() {
     
 }
 
-//ONE FOR APPENDING A TOURNAMENT
-//ONE FOR DELETING A TOURNAMENT
-//ONE FOR CHANGING A TOURNAMENT
-//ONE FOR DELETING A MONTH
-
-//and, shall I add, one to rule them all 
+//create main buttons at the bottom of the tournaments list (one to add a anew tournament and one to see the comments of other user accounts when joining a tournament)
 
 const buttons = document.querySelector(".buttons");
 
 
 //add tournament button
+//when clicked, the popup for tournament addition appears
 let btn = document.createElement("div");
 btn.className = "admin_button";
 let addTournButton = document.createElement("button"); 
@@ -316,52 +320,29 @@ addTournButton.appendChild(document.createTextNode("Προσθήκη τουρν�
 btn.appendChild(addTournButton);
 buttons.appendChild(btn);
 
-
-// //delete tournament button
-// btn = document.createElement("div");
-// btn.className = "admin_button";
-// let deleteTournButton = document.createElement("button"); 
-// deleteTournButton.setAttribute("id", "deleteTournamentBtn"); 
-// deleteTournButton.appendChild(document.createTextNode("Διαγραφή τουρνουά"));
-// btn.appendChild(deleteTournButton);
-
-// console.log(document.querySelectorAll('.tournament_row'));
-// for (let tourRow of document.getElementsByClassName('tournament_row')){
-//     console.log('TOURNAMENT ROW');
-//     btn = document.createElement("div");
-//     btn.className = "admin_button";
-//     btn.id = tourRow.querySelector(".info_row").id;
-//     let deleteTournButton = document.createElement("button"); 
-//     deleteTournButton.setAttribute("id", "deleteTournamentBtn"); 
-//     deleteTournButton.appendChild(document.createTextNode("Διαγραφή τουρνουά"));
-//     btn.appendChild(deleteTournButton);
-//     tourRow.appendChild(btn);
-// }
-// // buttons.appendChild(btn);
+//show comments button
+//when clicked, it directs the user to another page, theshowComments page
+btn = document.createElement("div");
+btn.className = "admin_button";
+let showCommentsBtn = document.createElement("button"); 
+showCommentsBtn.setAttribute("id", "addTournamentBtn");
+showCommentsBtn.style.backgroundColor = "blueviolet";
+showCommentsBtn.style.padding= "10px";
+let showCommentsHref = document.createElement("a");
+showCommentsHref.href = '/showComments';
+showCommentsHref.style.textDecoration = "none";
+showCommentsHref.style.color = "white";
+showCommentsHref.style.fontWeight = "bold";
+showCommentsHref.appendChild(document.createTextNode("ΔΕΙΤΕ ΤΑ ΣΧΟΛΙΑ ΤΩΝ ΧΡΗΣΤΩΝ"));
+showCommentsBtn.appendChild(showCommentsHref);
+btn.appendChild(showCommentsBtn);
+buttons.appendChild(btn);
 
 
-// //delete month button
-// btn = document.createElement("div");
-// btn.className = "admin_button";
-// let deleteMonthButton = document.createElement("button"); 
-// deleteMonthButton.setAttribute("id", "deleteMonthBtn"); 
-// deleteMonthButton.appendChild(document.createTextNode("Διαγραφή μήνα"));
-// btn.appendChild(deleteMonthButton);
-// buttons.appendChild(btn);
-
-
-// //edit tournament button
-// btn = document.createElement("div");
-// btn.className = "admin_button";
-// let editTournButton = document.createElement("button"); 
-// editTournButton.setAttribute("id", "editTournamentSelectBtn"); 
-// editTournButton.appendChild(document.createTextNode("Επεξεργασία τουρνουά"));
-// btn.appendChild(editTournButton);
-// buttons.appendChild(btn);
-
-
-//let addTour = document.querySelector("#addTour");
-
+//function that checks what is the value of the checkValue variable
+//if the value is loadEditTournament, the popup for editing of a specific tournament appears
+//if the value is loadDeleteTournament, the popup for deleting of a specific tournament appears
+//if the value is loadDeleteMonth, the popup for deleting of a specific month appears
 function checkValue () {
     let checkValue = document.querySelector(".check_value");
     if (checkValue.innerHTML === "loadEditTournament"){
@@ -379,9 +360,9 @@ function checkValue () {
 }
 
 
-///tournaments popup funtions///
+//tournaments popup funtions
 
-
+//makes the modal container for adding a new tournament appear
 function addTournamentPopup() {
 
     window.scrollTo(0,0);
@@ -398,6 +379,7 @@ function addTournamentPopup() {
 }
 
 
+//makes the modal container for deleting a specific tournament appear
 function deleteTournamentPopup() { 
 
     let popup = document.querySelector("#deleteTournament");
@@ -411,6 +393,8 @@ function deleteTournamentPopup() {
 
 }
 
+
+//makes the modal container for editing a specific tournament appear
 function editTournamentPopup() { 
 
     let popup = document.querySelector("#editTournament");
@@ -424,6 +408,8 @@ function editTournamentPopup() {
 
 }
 
+
+//makes the modal container for deleting a specific month appear
 function deleteMonthPopup() { 
 
     let popup = document.querySelector("#deleteMonth");
@@ -438,20 +424,7 @@ function deleteMonthPopup() {
 }
 
 
-function editTournamentSelectPopup() { 
-
-    let popup = document.querySelector("#editTournamentSelect");
-    modal = popup.querySelector(".modal-container");
-
-    closeBtn = popup.querySelector(".close");
-    closeBtn.addEventListener("click", closePopup);
-
-    modal.style.zIndex = "500";
-    modal.style.display = "flex";
-
-}
-
-
+//hides the visible modal container
 function closePopup() { 
 
     modal.style.zIndex = "-1";
@@ -459,28 +432,8 @@ function closePopup() {
 
 }
 
-////////////
 
-
-
-/////////// image input to bytes
-
-// const imageInput = document.querySelectorAll('#image');
-// const hiddenImageInput = document.querySelectorAll('#hidden_image');
-
-// for (let i=0 ; i<imageInput.length; i++)
-//     imageInput[i].addEventListener('change', (e) => {
-//         const [file] = imageInput[i].files;
-//         if (file) {
-//             console.log(x=URL.createObjectURL(file));
-//             let field = document.querySelector('#pleaaase');
-//             field.src = x;
-//             hiddenImageInput[i].value = URL.createObjectURL(file);
-//   }
-// });
-//////////////
-
-
+//fetches the list with the tournaments as json objects
 let fetchAllTournaments = () => { 
     fetch('/tournaments/allTournaments')     //the fetched result is a list of strings
     .then(
@@ -489,6 +442,7 @@ let fetchAllTournaments = () => {
     )
 }
 
+//gets the list with the json objects and calls appendMonthsTournaments to build the months and the tournaments of the database
 let renderAllTournaments = (tournaments) => {
     appendMonthsTournaments(tournaments);
 }

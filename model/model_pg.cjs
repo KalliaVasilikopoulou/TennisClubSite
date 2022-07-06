@@ -3,6 +3,8 @@ const sql = require('./db.pg.js');
 const bcrypt = require('bcrypt');
 
 //used by logincontroller
+
+//gets all info of account from database according to username input and sends them as response
 let getUserByUsername = (username, callback) => { 
 
     const query = { 
@@ -25,6 +27,8 @@ let getUserByUsername = (username, callback) => {
 
 }
 
+//checks if account with given username value already exists
+//if account with given username value does not exist, it adds account with given values to database
 let registerUser = (username, password, email, fullname, callback) => { 
 
     getUserByUsername(username, async(err, userIdbyUsername) => { 
@@ -59,6 +63,7 @@ let registerUser = (username, password, email, fullname, callback) => {
     })
 }
 
+//gets adminrights value from database according to username input and sends it as response
 let getAdminRights = (accountid, callback) => {
     const query = { 
         text: 
@@ -80,6 +85,8 @@ let getAdminRights = (accountid, callback) => {
 }
 
 //used by booking controller
+
+//gets all hours from the table tabletimes of the database and sends them as response
 let getTablehours = (callback) => { 
 
     const query = { 
@@ -97,8 +104,14 @@ let getTablehours = (callback) => {
     })
 }
 
+
+//adds reservation with given values as inputs at the database reservation table
 let bookSlot = (userid, date, time, courtid, callback) => { 
     
+    //used for testing
+    //need to uncomment command below before runnig command  $ npm test
+    if (userid == null) {userid=2}
+
     const query = { 
         text: 
         `INSERT INTO reservation(reservationdate, reservationtime, reserveeid, courtid)
@@ -118,6 +131,7 @@ let bookSlot = (userid, date, time, courtid, callback) => {
 
 }
 
+//adds reservation with given values as inputs at the database reservation table
 let changeSlotAvailability = (userid, date, time, courtid, callback) => { 
 
     const query = { 
@@ -138,6 +152,7 @@ let changeSlotAvailability = (userid, date, time, courtid, callback) => {
 
 }
 
+//deletes reservation with given values from reservation table of database
 let deleteReservation = (date, time, courtid, callback) => { 
 
     const query = { 
@@ -159,6 +174,7 @@ let deleteReservation = (date, time, courtid, callback) => {
 
 }
 
+//gets all reservations from database reservation table (for a specific court) where courtid = the given id of the court
 let courtReservations = (courtid, callback) => { 
     
     const query = { 
@@ -180,6 +196,7 @@ let courtReservations = (courtid, callback) => {
 
 }
 
+//gets all reservations from database reservation table (for a specific account) where reserveeid = the given id of the user
 let accountReservations = (userid, callback) => { 
 
     const query = { 
@@ -200,7 +217,7 @@ let accountReservations = (userid, callback) => {
     })
 }
 
-
+//deletes a specific reservation that an account has made previously
 let cancelReservation= (reserveeid, reservationid, callback) => {
     const query = { 
         text: 
@@ -222,6 +239,8 @@ let cancelReservation= (reserveeid, reservationid, callback) => {
 
 
 //used by tournament controller 
+
+//gets all values of all tournaments and sends them (as response) as a list of json objects
 let getTournaments = (callback) => {
     const query = { 
         text: 
@@ -240,6 +259,7 @@ let getTournaments = (callback) => {
 
 }
 
+//gets all values of a tournament with a specific id and sends them (as response) as a list that contains one json object
 let getTournamentById = (tournamentId, callback) => {
     const query = { 
         text: 
@@ -258,6 +278,7 @@ let getTournamentById = (tournamentId, callback) => {
 
 }
 
+//gets the number of all the tournaments that the tournament table contains
 let getTournamentsNumber = (callback) => {
     const query = { 
         text: 
@@ -276,6 +297,10 @@ let getTournamentsNumber = (callback) => {
 
 }
 
+//adds new tournament to database tournament table
+//if title is null, it adds a general title value
+//if tournament poster is null: it adds null value to the poster column
+//else: the path of the poster at the files folder is added to poster column
 let addTournament = (newTournament, callback) => {
     if (newTournament.title == '') newTournament.title = 'Επερχόμενο Τουρνουά (untitled)';
     if (newTournament.skilllevel == '') newTournament.skilllevel = null;
@@ -306,6 +331,7 @@ let addTournament = (newTournament, callback) => {
 
 }
 
+//deletes tournament with given id from database tournament table
 let deleteTournament = (tournamentid, callback) => {
     const query = { 
         text: 
@@ -324,6 +350,7 @@ let deleteTournament = (tournamentid, callback) => {
 
 }
 
+//gets all months (month in english as monthname) that correspond to the start dates of the tournaments that the database tournament table contains
 let getMonths = (callback) => {
     const query = { 
         text: 
@@ -343,6 +370,7 @@ let getMonths = (callback) => {
 
 }
 
+//deletes all tournaments with startdates that correspond to the given month (given monthid)
 let deleteMonth = (monthid, callback) => {
     const query = { 
         text: 
@@ -361,6 +389,7 @@ let deleteMonth = (monthid, callback) => {
 
 }
 
+//gets all tournaments that have startdates that correspond to the given month (given monthid)
 let getMonthTournaments = (monthid, callback) => {
     const query = { 
         text: 
@@ -379,7 +408,10 @@ let getMonthTournaments = (monthid, callback) => {
 
 }
 
-
+//updates tournament at tournament table of database with given values
+//if title is null, it adds a general title value
+//if tournament poster is null: the old poster value doesn't change
+//else: the path of the poster at the files folder is added to poster column
 let updateTournament = (newTournament, callback) => {
     if (newTournament.title == '') newTournament.title = 'Επερχόμενο Τουρνουά (untitled)';
     if (newTournament.skilllevel == '') newTournament.skilllevel = null;
@@ -412,7 +444,7 @@ let updateTournament = (newTournament, callback) => {
 
 }
 
-
+//gets all values of row of table joins at database with participantid = the participant id of the request and tournamentid = the tournament id of the request
 let searchJoin = (participantid, tournamentid, callback) => {
     const query = { 
         text: 
@@ -431,7 +463,9 @@ let searchJoin = (participantid, tournamentid, callback) => {
 
 }
 
-//below are functions added after handing project in 
+//checks if participant has already joined in the same tournament
+//if yes: the function updates the comment value with the given one
+//if no: the function adds new row in the joins table if the database with the given values
 let joinTournament= (joined, participantid, tournamentid, comments, callback) => {
         let query;
         if (joined.length == 0)
@@ -457,26 +491,10 @@ let joinTournament= (joined, participantid, tournamentid, comments, callback) =>
                 callback(null, res.rows)  
             }
         })
-    // const query = { 
-    //     text: 
-    //     `insert into joins(participantid, tournamentid, comments)
-    //      VALUES (${participantid}, '${tournamentid}', '${comments}')
-    //      where ;`
-    // }
-
-
-    // sql.query(query, (err, res) => { 
-    //     if(err) { 
-    //         callback(err.stack);
-    //     }
-    //     else { 
-    //         callback(null, res.rows)  
-    //     }
-    // })
-
 }
 
 
+//deletes a specific join request at a specific tournament that an account has made previously
 let cancelJoinTournament= (participantid, tournamentid, callback) => {
     const query = { 
         text: 
@@ -496,6 +514,7 @@ let cancelJoinTournament= (participantid, tournamentid, callback) => {
 }
 
 
+//gets all the tournaments that a specific account has joined in and sends them as response
 let getUserTournaments = (participantid, callback) => {
     const query = { 
         text: 
@@ -516,6 +535,7 @@ let getUserTournaments = (participantid, callback) => {
 
 }
 
+//gets all account name , title and comments of all the join requests that have been made and stored in the join table of the database
 let getAllJoins = (callback) => {
     const query = { 
         text: 

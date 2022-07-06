@@ -1,3 +1,4 @@
+//when the page is reloaded, the tournament that the user selected gets the attribute selected='true' in the options list
 function selectedTournament () {
 
     let select = document.querySelector("select");
