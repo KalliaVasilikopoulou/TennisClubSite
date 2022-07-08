@@ -35,3 +35,11 @@ SESSION_NAME =
  
  ------
  late updates to main branch for heroky deployment (final app is in release branch)
+ 
+ 
+ 
+ ------
+ heroku deployment succesful
+ 
+ heroku link:
+ https://tennis-club-site.herokuapp.com/
