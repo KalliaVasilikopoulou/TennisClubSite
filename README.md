@@ -37,3 +37,18 @@ SESSION_NAME =
  
 --------
 Η τελευταία έκδοση στο release branch δεν εκόθηκε μέσω merge από το main branch, επειδή στο τελευταίο pull request και merge που έγινε κάποια αρχεία που ανέβηκαν είχαν προβληματικό κώδικα, ενώ άλλα δεν ανέβηκαν ποτέ...
+
+
+ 
+ 
+ 
+ ------
+ heroku deployment succesful
+ 
+ heroku link:
+ https://tennis-club-site.herokuapp.com/
+ 
+ 
+ heroku admin account example:
+ username: kallia
+ password: kallia
