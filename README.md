@@ -43,3 +43,7 @@ SESSION_NAME =
  
  heroku link:
  https://tennis-club-site.herokuapp.com/
+ 
+admin account examole:
+username: kallia
+password: kallia
